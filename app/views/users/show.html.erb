@@ -1,0 +1,28 @@
+<h1><%= current_user.nickname%>さんのマイページ</h1>
+
+<!-- 個人情報編集 ------------------------------>
+<div class='main'>
+  <div class='item-contents'>
+    <div class="title-bar">
+      <h2 class="title-page-top">個人情報</h2>
+    </div>
+
+    <div class = "table-user" >
+      <table border = "1" bordercolor= #dedede>
+      <tr>
+        <th class="detail-profile">ニックネーム</th>
+        <td><%= @user.nickname %></td>
+      </tr>
+      <tr>
+        <th class="detail-profile">メールアドレス</th>
+        <td><%= @user.email %></td>
+      </tr>
+      <tr>
+        <th class="detail-profile">名前</th>
+        <td><%= @user.family_name %><%= @user.first_name %></td>
+      </tr>
+      </table>
+        <%= link_to "編集する", edit_user_registration_path, class:"edit-btn" %>  
+    </div>
+  </div>
+</div>
