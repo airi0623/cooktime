@@ -3,6 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
         :recoverable, :rememberable, :validatable
+        
+  mount_uploader :icon, IconUploader
+  # icon画像用の「iconカラム」と「IconUploaderクラス」を紐づけます。
 
   with_options presence: true do
     validates :nickname 
