@@ -1,0 +1,29 @@
+.navbar{
+  /* background-color: #fffbf6; */
+  margin-bottom: 30px;
+}
+
+.nav-item{
+  margin:10px 10px 0 10px;
+}
+
+.square-btn{
+  width: 120px;
+  border-radius: 10px;
+  background-color: #cb2f27;
+  color: #FFFF;
+  text-align: center;
+}
+
+.square-btn:hover{
+  width:120px;
+  border-radius: 10px;
+  background-color: #dd7069;
+  color: #FFFF;
+  text-align: center;
+}
+
+
+
+
+

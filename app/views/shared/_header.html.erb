@@ -1,0 +1,22 @@
+<!-- Navigation-->
+<header class='top-page-header'>
+    <nav class="navbar navbar-expand-md navbar-light">
+      <%= link_to "cooktime", root_path, class: "navbar-brand" %>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="lists-right navbar-nav text-uppercase ml-auto">
+          <li class="nav-item"><a class="nav-link text-btn" href="#team">Team</a></li>
+          <li class="nav-item"><a class="nav-link text-btn" href="#contact">Contact</a></li>
+          <% if user_signed_in? %>
+            <li class="nav-item"><%= link_to "マイページ", user_path(current_user.id), method: :get, class: "nav-link square-btn user-nickname" %></li> 
+            <li class="nav-item"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "nav-link square-btn logout " %></li> 
+          <% else %>
+            <li class="nav-item"><%= link_to 'ログイン', new_user_session_path, method: :get,class: "nav-link square-btn login" %></li>
+            <li class="nav-item"><%= link_to '新規登録', new_user_registration_path, class: "nav-link square-btn sign-up" %></li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+</header>
