@@ -4498,7 +4498,7 @@ input[type="button"].btn-block {
   }
   .navbar-expand-md .navbar-nav .nav-link {
     padding: 10px;
-    margin: 10px 10px 10px 0;
+    margin: 10px 0px 10px 0;
   }
   .navbar-expand-md > .container,
   .navbar-expand-md > .container-fluid, .navbar-expand-md > .container-sm, .navbar-expand-md > .container-md, .navbar-expand-md > .container-lg, .navbar-expand-md > .container-xl {
