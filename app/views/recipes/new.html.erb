@@ -1,0 +1,68 @@
+<%= render "shared/header" %>
+
+<div class="container my-5">
+<h2 class="recipes-post-title">レシピ</h2>
+
+  <%= form_with model: @recipe, class:"recipes-post-main", local: true do |f| %>
+    <%# エラー文 %>
+    <%= render 'shared/error_messages', model: f.object %>
+
+    <%# フォーム内容 %>
+    <div class="new-recipes">
+      <div class="row form-box">
+        <div class="forms-item indispensable col-md-3">
+          レシピタイトル
+        </div>
+        <%= f.text_field :title, class:"input-area recipes-title col-md-7", id:"recipe-title" %>
+      </div>  
+      <div class="row form-box">
+        <div class="forms-item col-md-3">
+          料理の特徴
+        </div>
+        <%= f.text_area :feature, class:"input-area recipes-feature col-md-7", id:"recipe-feature", placeholder:"料理の特徴（1,000文字まで）茄子をごま油で焼いてから甘めの味付けでとろりとするまで煮ました。茄子に甘辛いタレが絡んで、白いご飯にぴったりです！" , maxlength:"1000" %>
+      </div>
+      <div class="row form-box">
+        <div class="forms-item col-md-3">
+          食べ方
+        </div>
+        <%= f.text_area :eat, class:"input-area recipes-eat col-md-7", id:"recipe-eat", placeholder:"食べ方のポイント" %>
+      </div>
+      <div class="row form-box">
+        <div class="forms-item col-md-3">
+          カテゴリーの選択
+        </div>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"input-area select-box col-2", id:"item-sales-status"}) %>
+      </div>
+      <div class="row form-box">
+        <div class="forms-item col-md-3">
+          冷蔵保存の日持ち
+        </div>
+        <div class="mx-3">
+          冷蔵保存で約<%= f.number_field :cold_date, class:"input-area recipes-cold-date" %>日
+        </div>
+      </div>
+      <div class="row form-box">
+        <div class="forms-item col-md-3">
+          冷凍保存の日持ち
+        </div>
+        <div class="mx-3">
+          冷凍保存で約<%= f.number_field :frozen_date, class:"input-area recipes-frozen-date" %>日
+        </div>
+      </div>
+      <div class="row form-box">
+        <div class="forms-item col-md-3">
+          調理時間
+        </div>
+        <div class="mx-3">
+          約<%= f.number_field :frozen_date, class:"input-area recipes-time" %>分
+        </div>
+      </div>
+      <div class="row form-box">
+        <div class="forms-item col-md-3">
+          つくり方
+        </div>
+        <%= f.text_area :text, class:"input-area recipes-text col-md-7" %>
+      </div>
+    </div>
+  <% end %>
+</div>
