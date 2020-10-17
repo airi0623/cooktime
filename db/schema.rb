@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_15_103650) do
+ActiveRecord::Schema.define(version: 2020_10_17_082424) do
 
   create_table "ingredients", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "recipe_id", null: false
@@ -31,9 +31,10 @@ ActiveRecord::Schema.define(version: 2020_10_15_103650) do
     t.integer "cold_date"
     t.integer "frozen_date"
     t.integer "time", null: false
-    t.string "cook", null: false
+    t.string "text", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "image"
     t.index ["user_id"], name: "index_recipes_on_user_id"
   end
 

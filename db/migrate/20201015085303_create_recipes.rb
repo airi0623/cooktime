@@ -9,7 +9,7 @@ class CreateRecipes < ActiveRecord::Migration[6.0]
       t.integer :cold_date
       t.integer :frozen_date
       t.integer :time,         null: false
-      t.string :cook,          null: false
+      t.string :text,          null: false
 
       t.timestamps
     end
