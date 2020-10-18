@@ -27,12 +27,13 @@
         </div>
         <%= f.password_field :password , class:"input-area users-password col-md-7", id:"user-password" %>
       </div> 
-
-      <div class='login-btn'>
-        <%= f.submit "ログイン" ,class:"login-red-btn" %>
-      </div>
-      <div class='top-btn'>
-        <%= link_to "TOP", root_path, class:"top-btn" %> 
+      <div class='row login-btn-box'>
+        <div class='login-btn col-md-3'>
+          <%= f.submit "ログイン" ,class:"login-red-btn" %>
+        </div>
+        <div class='top-link col-md-3'>
+          <%= link_to "TOPページへ戻る", root_path, class:"top-red-link" %> 
+        </div>
       </div>
     </div>
   <% end %>

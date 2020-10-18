@@ -11,6 +11,12 @@
     <div class="new-recipes">
       <div class="row form-box">
         <div class="forms-item indispensable col-md-3">
+          画像
+        </div>
+        <%= f.file_field :image, class:"input-area recipes-image col-md-7", id:"recipe-image"%> 
+      </div>  
+      <div class="row form-box">
+        <div class="forms-item indispensable col-md-3">
           レシピタイトル
         </div>
         <%= f.text_field :title, class:"input-area recipes-title col-md-7", id:"recipe-title" %>
@@ -31,14 +37,14 @@
         <div class="forms-item col-md-3">
           カテゴリーの選択
         </div>
-        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"input-area select-box col-2", id:"item-sales-status"}) %>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"input-area select-box col-md-2", id:"item-sales-status"}) %>
       </div>
       <div class="row form-box">
         <div class="forms-item col-md-3">
           冷蔵保存の日持ち
         </div>
         <div class="mx-3">
-          冷蔵保存で約<%= f.number_field :cold_date, class:"input-area recipes-cold-date" %>日
+          冷蔵保存で約<%= f.number_field :cold_date, class:"input-area recipes-cold-date col-3", min:"0" %>日
         </div>
       </div>
       <div class="row form-box">
@@ -46,7 +52,7 @@
           冷凍保存の日持ち
         </div>
         <div class="mx-3">
-          冷凍保存で約<%= f.number_field :frozen_date, class:"input-area recipes-frozen-date" %>日
+          冷凍保存で約<%= f.number_field :frozen_date, class:"input-area recipes-frozen-date col-3", min:"0"  %>日
         </div>
       </div>
       <div class="row form-box">
@@ -54,14 +60,20 @@
           調理時間
         </div>
         <div class="mx-3">
-          約<%= f.number_field :frozen_date, class:"input-area recipes-time" %>分
+          約<%= f.number_field :time, class:"input-area recipes-time", min:"0"  %>日
         </div>
       </div>
+
+
+      
       <div class="row form-box">
         <div class="forms-item col-md-3">
           つくり方
         </div>
         <%= f.text_area :text, class:"input-area recipes-text col-md-7" %>
+      </div>
+      <div class='submit-btn'>
+        <%= f.submit "送信" ,class:"submit-red-btn" %>
       </div>
     </div>
   <% end %>

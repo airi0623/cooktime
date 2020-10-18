@@ -10,6 +10,9 @@ class Recipe < ApplicationRecord
   # has_many    :comments
   # has_many    :adds
 
+  # validates :cold_date,   format: {with: /\d/}
+  # validates :frozen_date, format: {with: /\d/}
+
   with_options presence: true do
     validates :user_id
     validates :title
@@ -17,6 +20,5 @@ class Recipe < ApplicationRecord
     validates :category_id, numericality: { other_than: 1, message: "を選択してください" } 
     validates :time,        format: {with: /\d/}
   end
-  validates :cold_date,   format: {with: /\d/}
-  validates :frozen_date, format: {with: /\d/}
+
 end
