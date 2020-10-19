@@ -37,7 +37,7 @@
         <div class="forms-item col-md-3">
           カテゴリーの選択
         </div>
-        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"input-area select-box col-md-2", id:"item-sales-status"}) %>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"input-area recipes-category col-md-2", id:"recipe-category"}) %>
       </div>
       <div class="row form-box">
         <div class="forms-item col-md-3">
@@ -64,8 +64,19 @@
         </div>
       </div>
 
+      <%#材料%>
+      <div class="row form-box">
+        <div class="forms-item col-md-3">
+          材料
+        </div>
+          <% thing_options = Things.order(:id).map{ |c| [c.thing_name, c.id, data{ children_path: ingredient_things_path(c) }]} %>
+          <%= f.select(:thing_id, thing_options, { include_blank: true }, class:"input-area ingredients-thing-name col-md-3", id:"ingredient-thing-name", data: {index:0}  %>
+          <div class="input-area">単位</div>
+          <%= f.number_field :amount, class:"input-area ingredients-amount col-1",id:"ingredient-amount", min:"0" %>
+          <div class="input-area">単位</div>
+      </div>
+      <%# /材料%>
 
-      
       <div class="row form-box">
         <div class="forms-item col-md-3">
           つくり方
