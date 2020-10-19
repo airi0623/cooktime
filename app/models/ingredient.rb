@@ -1,4 +1,5 @@
 class Ingredient < ApplicationRecord
+  belongs_to    :recipe
   belongs_to    :thing
 
   with_options presence: true do

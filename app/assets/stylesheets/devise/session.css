@@ -1,0 +1,69 @@
+.login-btn-box{
+  display: flex;
+  justify-content: center;
+  padding-top: 8vh;
+}
+
+/* ログインボタン  */
+.login-btn{
+  display: flex;
+  justify-content: center;
+}
+
+.login-red-btn{
+  height: 50px;
+  width: 300px;
+  margin: 5px 15px;
+  border: none;
+  border-radius: 30px;
+  background-color: #cb2f27;
+  color: #FFFF;
+}
+
+.login-red-btn:hover{
+  height: 50px;
+  width: 300px;
+  margin: 0 15px;
+  border: none;
+  border-radius: 30px;
+  background-color: #dd7069;
+  color: #FFFF;
+}
+
+/* TOPリンクボタン */
+.top-link a:hover{
+  　text-decoration: none;
+  }
+
+.top-link{
+  display: flex;
+  justify-content: center;
+}
+
+.top-red-link{
+  height: 50px;
+  width: 300px;
+  margin: 5px 15px;
+  border: solid 2px #cb2f27;
+  border-radius: 30px;
+  color: #cb2f27;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.top-red-link:hover{
+  height: 50px;
+  width: 300px;
+  margin: 0 15px;
+  border: solid 2px  #dd7069;
+  border-radius: 30px;
+  color:  #dd7069;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
