@@ -1,8 +1,8 @@
 class ThingsController < ApplicationController
   
-  def index
-    thing = Thing.find(params[:id])
-    render json: ingredients.things.select(:id, :thing-name)
-  end
+  # def index
+  #   @things = Thing.order(:id).map { |c| [c.thing_name, c.id, data: { thing_path: things_path(c) }] }
+  #   render json: ingredients.things.select(:id, :thing_name)
+  # end
 
 end

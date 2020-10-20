@@ -3,7 +3,7 @@
 <div class="container my-5">
 <h2 class="recipes-post-title">レシピ</h2>
 
-  <%= form_with model: @recipe, class:"recipes-post-main", local: true do |f| %>
+  <%= form_with(model: @recipe, class:"recipes-post-main", local: true) do |f| %>
     <%# エラー文 %>
     <%= render 'shared/error_messages', model: f.object %>
 
@@ -66,14 +66,17 @@
 
       <%#材料%>
       <div class="row form-box">
-        <div class="forms-item col-md-3">
-          材料
-        </div>
-          <% thing_options = Things.order(:id).map{ |c| [c.thing_name, c.id, data{ children_path: ingredient_things_path(c) }]} %>
-          <%= f.select(:thing_id, thing_options, { include_blank: true }, class:"input-area ingredients-thing-name col-md-3", id:"ingredient-thing-name", data: {index:0}  %>
+        <%= f.fields_for :ingredients do |form| %>
+          <div class="forms-item col-md-3">
+            材料
+          </div>
+          <% thing_options = Thing.order(:id).map { |c| [c.thing_name, c.id, data: { children_path: things_path(c) }] } %>
+          <%= form.select(:thing_id, thing_options, { prompt: "---"}, {class:"input-area ingredients-thing-name col-md-3", id:"ingredient-thing-name"}) %>
+          <%#= form.collection_select(:thing_id, Thing.all, :id, :thing_name, { prompt: "---"}, {class:"input-area ingredients-thing-name col-md-3", id:"ingredient-thing-name"}) %>
           <div class="input-area">単位</div>
-          <%= f.number_field :amount, class:"input-area ingredients-amount col-1",id:"ingredient-amount", min:"0" %>
+          <%= form.number_field :amount, class:"input-area ingredients-amount col-1",id:"ingredient-amount", min:"0" %>
           <div class="input-area">単位</div>
+        <% end %>
       </div>
       <%# /材料%>
 
