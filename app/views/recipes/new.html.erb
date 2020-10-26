@@ -1,0 +1,91 @@
+<%= render "shared/header" %>
+
+<div class="container my-5">
+<h2 class="recipes-post-title">レシピ</h2>
+
+  <%= form_with model: @recipe, class:"recipes-post-main", local: true do |f| %>
+    <%# エラー文 %>
+    <%= render 'shared/error_messages', model: f.object %>
+
+    <%# フォーム内容 %>
+    <div class="new-recipes">
+      <div class="row form-box">
+        <div class="forms-item indispensable col-md-3">
+          画像
+        </div>
+        <%= f.file_field :image, class:"input-area recipes-image col-md-7", id:"recipe-image"%> 
+      </div>  
+      <div class="row form-box">
+        <div class="forms-item indispensable col-md-3">
+          レシピタイトル
+        </div>
+        <%= f.text_field :title, class:"input-area recipes-title col-md-7", id:"recipe-title" %>
+      </div>  
+      <div class="row form-box">
+        <div class="forms-item col-md-3">
+          料理の特徴
+        </div>
+        <%= f.text_area :feature, class:"input-area recipes-feature col-md-7", id:"recipe-feature", placeholder:"料理の特徴（1,000文字まで）茄子をごま油で焼いてから甘めの味付けでとろりとするまで煮ました。茄子に甘辛いタレが絡んで、白いご飯にぴったりです！" , maxlength:"1000" %>
+      </div>
+      <div class="row form-box">
+        <div class="forms-item col-md-3">
+          食べ方
+        </div>
+        <%= f.text_area :eat, class:"input-area recipes-eat col-md-7", id:"recipe-eat", placeholder:"食べ方のポイント" %>
+      </div>
+      <div class="row form-box">
+        <div class="forms-item col-md-3">
+          カテゴリーの選択
+        </div>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"input-area recipes-category col-md-2", id:"recipe-category"}) %>
+      </div>
+      <div class="row form-box">
+        <div class="forms-item col-md-3">
+          冷蔵保存の日持ち
+        </div>
+        <div class="mx-3">
+          冷蔵保存で約<%= f.number_field :cold_date, class:"input-area recipes-cold-date col-3", min:"0" %>日
+        </div>
+      </div>
+      <div class="row form-box">
+        <div class="forms-item col-md-3">
+          冷凍保存の日持ち
+        </div>
+        <div class="mx-3">
+          冷凍保存で約<%= f.number_field :frozen_date, class:"input-area recipes-frozen-date col-3", min:"0"  %>日
+        </div>
+      </div>
+      <div class="row form-box">
+        <div class="forms-item col-md-3">
+          調理時間
+        </div>
+        <div class="mx-3">
+          約<%= f.number_field :time, class:"input-area recipes-time", min:"0"  %>日
+        </div>
+      </div>
+
+      <%#材料%>
+      <div class="row form-box">
+        <div class="forms-item col-md-3">
+          材料
+        </div>
+          <% thing_options = Things.order(:id).map{ |c| [c.thing_name, c.id, data{ children_path: ingredient_things_path(c) }]} %>
+          <%= f.select(:thing_id, thing_options, { include_blank: true }, class:"input-area ingredients-thing-name col-md-3", id:"ingredient-thing-name", data: {index:0}  %>
+          <div class="input-area">単位</div>
+          <%= f.number_field :amount, class:"input-area ingredients-amount col-1",id:"ingredient-amount", min:"0" %>
+          <div class="input-area">単位</div>
+      </div>
+      <%# /材料%>
+
+      <div class="row form-box">
+        <div class="forms-item col-md-3">
+          つくり方
+        </div>
+        <%= f.text_area :text, class:"input-area recipes-text col-md-7" %>
+      </div>
+      <div class='submit-btn'>
+        <%= f.submit "送信" ,class:"submit-red-btn" %>
+      </div>
+    </div>
+  <% end %>
+</div>

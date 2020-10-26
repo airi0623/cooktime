@@ -1,0 +1,36 @@
+.top-slide-img {
+  border-radius: 40px;
+  width: 80vw;
+  height: 70vh;
+  object-fit: cover;
+  
+  /* position: absolute; */
+}
+
+
+
+
+/* .contents .mv .mv-main .mv-main-img {
+  width: 80vw;
+  height: 70vh;
+  margin: 0 auto;
+  border-radius: 40px;
+  overflow: hidden;
+  position: relative;
+  /* z-indexにrelative、 absoluteいるらしい 
+}
+
+.contents .mv .mv-main .mv-main-img > span {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
+
+/* .top-slide-img:not(:first-child){
+  display:none;
+} */
+

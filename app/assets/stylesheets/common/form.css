@@ -1,0 +1,45 @@
+.form-box{
+  margin-top: 30px;
+}
+
+.forms-item{
+  font-size: 15px;
+  margin: 0 15px 0 15px;
+  display: flex;
+  align-items: center;
+  color: black;
+}
+
+.input-area{
+  height: 50px;
+  padding: 10px;
+  margin: 0 15px 0 15px;
+  line-height : 2;
+  background-color : rgba(203, 46, 39, 0.04);
+  border-radius : 8px;
+  border : none;
+}
+
+.submit-btn{
+  display: flex;
+  justify-content: center;
+  margin-top: 5vh;
+}
+
+.submit-red-btn{
+  height: 50px;
+  width: 300px;
+  border: none;
+  border-radius: 30px;
+  background-color: #cb2f27;
+  color: #FFFF;
+}
+
+.submit-red-btn:hover{
+  height: 50px;
+  width: 300px;
+  border: none;
+  border-radius: 30px;
+  background-color: #dd7069;
+  color: #FFFF;
+}
