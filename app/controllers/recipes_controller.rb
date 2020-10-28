@@ -8,7 +8,6 @@ class RecipesController < ApplicationController
     authenticate_user!
     @recipe = Recipe.new
     @ingredient = @recipe.ingredients.build
-    # binding.pry
   end
 
   def create
