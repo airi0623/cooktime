@@ -77,6 +77,8 @@
           <%= form.number_field :amount, class:"input-area ingredients-amount col-1",id:"ingredient-amount", min:"0" %>
           <div class="input-area">単位</div>
         <% end %>
+        <div class="add-btn">
+        </div>
       </div>
       <%# /材料%>
 
@@ -86,6 +88,7 @@
         </div>
         <%= f.text_area :text, class:"input-area recipes-text col-md-7" %>
       </div>
+
       <div class='submit-btn'>
         <%= f.submit "送信" ,class:"submit-red-btn" %>
       </div>

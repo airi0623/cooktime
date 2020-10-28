@@ -1,6 +1,7 @@
 class Ingredient < ApplicationRecord
   belongs_to :recipe,  optional: true
-  belongs_to :thing
+  #belongs_to :thing
+  belongs_to_active_hash :thing
   
   with_options presence: true do
     # validates :recipe_id
