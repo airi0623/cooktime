@@ -7,8 +7,8 @@ require('jquery')
 require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
-// require("@nathanvda/cocoon")
 require("jquery")
+require("../ingredient")
 import "cocoon";
 // require("../scripts")
 
