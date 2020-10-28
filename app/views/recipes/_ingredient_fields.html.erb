@@ -1,0 +1,11 @@
+<div class="nested-fields" id="nested">
+
+  <% thing_options = Thing.order(:id).map { |c| [c.thing_name, c.id, data: { children_path: things_path(c) }] } %>
+  <%= f.select(:thing_id, thing_options, { prompt: "---"}, {class:"input-area ingredients-thing-name", id:"ingredient-thing-name"}) %>
+  <%#= form.collection_select(:thing_id, Thing.all, :id, :thing_name, { prompt: "---"}, {class:"input-area ingredients-thing-name col-md-3", id:"ingredient-thing-name"}) %>
+  <div class="input-area box-spoon" id='spoon-auto' data-spoon='0'>単位</div>
+  <%= f.number_field :amount, class:"input-area ingredients-amount",id:"ingredient-amount", min:"0" %>
+  <div class="input-area box-unit" id='unit-auto' data-unit='0'>単位</div>
+
+  <%= link_to_remove_association "材料を削除", f %>
+</div>
