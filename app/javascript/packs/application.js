@@ -9,6 +9,8 @@ require("@rails/activestorage").start()
 require("channels")
 require("jquery")
 require("../ingredient")
+require("../preview")
+
 import "cocoon";
 // require("../scripts")
 

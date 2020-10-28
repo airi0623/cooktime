@@ -16,6 +16,7 @@
 }
 
 .square-btn:hover{
+  transition: 0.5s ;
   width:120px;
   border-radius: 10px;
   background-color: #dd7069;
