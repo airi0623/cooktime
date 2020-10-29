@@ -4,7 +4,10 @@ class Recipe < ApplicationRecord
 
   has_many      :ingredients, dependent: :destroy
   accepts_nested_attributes_for :ingredients, allow_destroy: true
-  mount_uploader :image, ImageUploader
+
+  mount_uploaders :images, ImageUploader
+  serialize :images, JSON
+
   belongs_to    :user
 
   # has_many    :cooks
@@ -22,9 +25,5 @@ class Recipe < ApplicationRecord
     validates :eat
     validates :category_id, numericality: { other_than: 1, message: "を選択してください" } 
     validates :time,        format: {with: /\d/}
-    #ingredientsバリデーション 
-    validates :recipe_id
-    validates :thing_id
-    validates :amount, format: {with: /\d/}
   end
 end

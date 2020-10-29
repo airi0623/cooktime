@@ -34,16 +34,8 @@ ActiveRecord::Schema.define(version: 2020_10_20_014154) do
     t.string "text", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "image"
+    t.string "images"
     t.index ["user_id"], name: "index_recipes_on_user_id"
-  end
-
-  create_table "things", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "thing_name", null: false
-    t.string "spoon"
-    t.string "unit"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
