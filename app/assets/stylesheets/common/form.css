@@ -36,6 +36,7 @@
 }
 
 .submit-red-btn:hover{
+  transition: 0.5s ;
   height: 50px;
   width: 300px;
   border: none;

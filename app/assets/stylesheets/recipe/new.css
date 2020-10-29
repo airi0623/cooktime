@@ -11,3 +11,27 @@ h2{
   height: 120px;
 }
 
+/* 画像を選択ボタン */
+.click-upload{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 100%;
+  text-align: center;
+  color: #cb2f27;
+  border: 2px solid #cb2f27;
+  border-radius: 30px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.click-upload:hover{
+  transition: 0.3s ;
+  color: #ffffff;
+  background-color:#dd7069 ;
+}
+
+.upload-btn{
+  display: none;
+}

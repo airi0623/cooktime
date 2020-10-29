@@ -1,0 +1,19 @@
+
+<div class="nested-fields" id="nested">
+  <%# <table class="table"> <%# table-borderless table-sm
+    <tr>
+      <td> %>
+        <% thing_options = Thing.order(:id).map { |c| [c.thing_name, c.id, data: { unit: c.unit, spoon:c.spoon }] } %>
+
+        <span><%= f.select(:thing_id, thing_options, { prompt: "---"}, {class:"select", data:{select:0}, id:"thing-select" }) %></span> 
+
+        <span class="box-spoon" id='spoon-auto' data-spoon='0'></span>
+
+        <span><%= f.number_field :amount, class:"ingredients-amount",id:"ingredient-amount", min:"0" %></span> 
+
+      <span class="box-unit" id='unit-auto' data-unit='0'></span>
+        <%= link_to_remove_association "削除", f %>
+      <%# </td>
+    </tr>
+  </table> %>
+</div>
