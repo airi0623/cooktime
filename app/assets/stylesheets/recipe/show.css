@@ -1,0 +1,151 @@
+/* 画像 -----------------------------------*/
+.meal-img{
+  height: 350px;
+  width: 100%;
+  object-fit: cover;
+  margin-top:20px;
+  margin-bottom:20px;
+  border-radius: 20px;
+  display: inline-block;
+}
+.recipe-img li {
+  list-style: none;
+}
+/* カテゴリー,調理時間,冷蔵,冷凍-------------- */
+.category-time-days{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 45px;
+}
+/* カテゴリー */
+.show-recipe-category{
+  position: relative;
+  margin-left: 20px;
+  height:50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 1.5rem 2rem;
+  border-radius: 0;
+  border-radius: 100vh;
+  background-color:#cb2f27;
+}
+.show-recipe-category:before{
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  content: '';
+  border: 3px dotted #ffffff;
+  border-radius: 100vh;
+}
+/* 調理時間・冷蔵・冷凍 */
+.category-time-days span{
+  font-size: 15px;
+}
+/* 調理時間 */
+.show-recipe-time{
+  margin-left:10px; 
+  padding: 5px 20px 5px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right:dashed 1px #cb2f27;
+}
+.icon-time{
+  margin-right:10px; 
+  height: 25px;
+  width: 25px;
+}
+/* 冷蔵・冷凍日持ち */
+.icon-cold{
+  margin-right:10px; 
+  margin-left:10px; 
+  height: 25px;
+  width: 25px;
+}
+.show-recipe-days{
+  padding: 5px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right:dashed 1px #cb2f27;
+}
+.show-recipe-days span .days{
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Quicksand', sans-serif;
+  margin: 0 5px 0 5px;
+  color:#cb2f27;
+}
+/* 特徴・食べ方 -----------------------------------------*/
+.feature-eat{
+  display: flex;
+}
+.feature{
+  position: relative;
+  margin: 0 10px 25px 10px;
+  padding:25px 20px 15px 20px;
+  border:solid 2px #cb2f27;
+  border-radius: 20px;
+}
+.feature h3{
+  position: absolute;
+  display: inline-block;
+  padding: 10px;
+  top: -23px;
+  left:35%;
+  font-size:20px;
+  color:#cb2f27;
+  background-color: #fffbf6;
+  font-weight: bold;
+}
+.eat {
+  position: relative;
+  margin: 0 10px 25px 10px;
+  padding:25px 20px 15px 20px;
+  border:solid 2px #cb2f27;
+  border-radius: 20px;
+}
+.eat h3{
+  position: absolute;
+  display: inline-block;
+  padding: 10px;
+  top: -23px;
+  left:39%;
+  font-size:20px;
+  color:#cb2f27;
+  background-color: #fffbf6;
+  font-weight: bold;
+}
+/* 材料 -----------------------------------------------*/
+.ingredients h3{
+  display: inline-block;
+  padding: 10px;
+  font-size:20px;
+  color:#cb2f27;
+  background-color: #fffbf6;
+  font-weight: bold;
+}
+.ingredients{
+  margin-bottom:25px;
+}
+
+/* 作り方 -----------------------------------------------*/
+p {
+  white-space: pre-wrap;
+}
+.cook h3{
+  display: inline-block;
+  padding: 10px;
+  font-size:20px;
+  color:#cb2f27;
+  background-color: #fffbf6;
+  font-weight: bold;
+}
+
+

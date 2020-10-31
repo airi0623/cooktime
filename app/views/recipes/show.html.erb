@@ -1,4 +1,79 @@
+<%= render "shared/header" %>
+<%= render "shared/fixed-btn" %>
 
 <div class="container">
-  <%= link_to "rinnku", new_recipe_path %>
+  <%= link_to "レシピ登録", new_recipe_path %>
+  <%= link_to "root", root_path %>
+
+  <h2 class="concept-title">(レシピ名)の作り方</h2>
+
+  <!-- 画像・アイコン・カテゴリ・冷蔵・冷凍 -->
+  <div class="contents">
+    <div class='recipe-img '>
+      <div id='slide' class="col-md-6">
+        <%# @item.images.each do |image| %>
+          <li><%= image_tag "image.png", alt:"料理画像", class:"meal-img"%></li>
+          <%#= image_tag image, class:'item-box-img' %>
+        <%# end %>
+      </div>
+    </div>
+    <!-- アイコン -->
+    <div class='user-icon-s'>
+      
+    </div>
+    <!-- カテゴリ・冷蔵・冷凍 -->
+    <div class='row category-time-days'>
+      <div class="show-recipe-category col-md-2 col-5">
+        カテゴリー
+      </div>
+      <div class="show-recipe-time col-md-2 col-5">
+        <%= image_tag "icon-time.png", alt:"料理画像", class:"icon-time"%>
+        <span>約10分</span>
+      </div>
+      <div class="show-recipe-days col-md-3 col-6">
+        <%= image_tag "icon-cold.png", alt:"料理画像", class:"icon-cold"%>
+        <span>冷蔵保存 約<span class="days">4</span>日間</span>
+      </div>
+      <div class="show-recipe-days col-md-3 col-6">
+        <%= image_tag "icon-frozen.png", alt:"料理画像", class:"icon-time"%>
+        <span>冷凍保存 約<span class="days">10</span>日間</span>
+      </div>
+    </div>
+    <!-- 特徴 -->
+    <div class='row feature-eat'>
+      <div class="feature col-md-5">
+        <h3>料理の特徴</h3>
+        <p>ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります</p>
+      </div>
+      <div class="eat col-md-5">
+        <h3>食べ方</h3>
+        <p>ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります</p>
+      </div>
+    </div>
+    <!-- 材料 -->
+    <div class='ingredients'>
+      <h3>材料</h3>
+      <table class="table-ingredients col-md-8">
+        <tr>
+          <td >にんじん</td>
+          <td>大さじ・４・ml</td>
+        </tr>
+        <tr>
+          <td>じゃがいも</td>
+          <td>大さじ・４・ml</td>
+        </tr>
+        <tr>
+          <td>豚肉</td>
+          <td>大さじ・４・ml</td>
+        </tr>
+      </table>      
+      </div>
+    </div>
+    <!-- 材料 -->
+      <div class='cook'>
+        <h3>つくり方</h3>
+        <p>作り方が入ります</p>
+      </div>
+
+  </div>
 </div>
