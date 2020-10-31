@@ -1,0 +1,44 @@
+/* 人気レシピ */
+.icon-star{
+  margin-right:10px; 
+  height: 25px;
+  width: 25px;
+}
+.content-title{
+  display: flex;
+  align-items: center;
+}
+.recipes-index-title{
+  color: #cb2f27;
+  font-size: 20px;
+  font-weight: bolder;
+}
+/* 画像*/
+.img-main {
+  width:100%;
+  margin-top: 10px;
+  padding-right:6px;
+  padding-left:6px;
+  object-fit: cover;
+  border-radius: 50px;
+}
+.img-second{
+  width:50%;
+  height:100%;
+  padding-left:6px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+.img-second-box{
+  height:180px;
+  display: flex;
+  margin-top: 10px;
+}
+/* 調理時間*/
+.index-recipe-time{
+  margin-left:10px; 
+  padding: 5px 20px 5px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

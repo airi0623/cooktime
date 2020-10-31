@@ -14,10 +14,11 @@ require("../ingredient")
 require("../preview")
 require("../top")
 require('../slick.min')
+// require('../slide')
 
 
 // require("../slide")
-require("../scripts")
+//require("../scripts")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
