@@ -4,6 +4,10 @@ class RecipesController < ApplicationController
     @recipes = Recipe.all.order("created_at DESC")
   end
 
+  def about
+    
+  end
+
   def new
     authenticate_user!
     @recipe = Recipe.new

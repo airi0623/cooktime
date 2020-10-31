@@ -29,7 +29,6 @@
   color: #ffffff;
   font-weight: bold;
   padding: 1.5rem 2rem;
-  border-radius: 0;
   border-radius: 100vh;
   background-color:#cb2f27;
 }
@@ -40,7 +39,7 @@
   width: calc(100% - 4px);
   height: calc(100% - 4px);
   content: '';
-  border: 3px dotted #ffffff;
+  border: 2px dotted #ffffff;
   border-radius: 100vh;
 }
 /* 調理時間・冷蔵・冷凍 */
