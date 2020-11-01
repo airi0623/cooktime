@@ -1,22 +1,136 @@
 <%= render "shared/header" %>
 <%= render "shared/fixed-btn" %>
 
-<%= link_to "レシピ登録", new_recipe_path %>
-
 
 <div class="container">
-  <div class="contents">
-    <div class="mv">
-
-      <div class="mv-main">
-        <div id='slick'>
-          <li><%= image_tag "top_1.jpg", alt:"料理画像", class:"top-slide-img"%></li>
-          <li><%= image_tag "top_3.jpg", alt:"料理画像", class:"top-slide-img"%></li>
-          <li><%= image_tag "top_2.jpg", alt:"料理画像", class:"top-slide-img"%></li>
+  <div class="content-famous">
+    <div class="content-title">
+      <%= image_tag "icon-star-red.png", alt:"★", class:"icon-star"%>
+      <span class="recipes-index-title">人気レシピ</span>
+    </div>
+    <!-- 人気のレシピ全体 -->
+    <div class="row img-main-box">
+      <div class='main-box col-md-7'>
+        <%= image_tag "img-1.jpg", alt:"料理画像", class:"img-main"%>
+        <div class="famous-big-box">
+          <div class="famous-title">料理レシピのタイトルタイトルタイトル</div>
+          <div class="big-category-time">  
+            <div class="big-index-recipe-category">
+              <%= image_tag "icon-category.png", alt:"料理画像", class:"icons-type"%>
+              <span>デザート</span>
+            </div>
+            <div class="big-index-recipe-time">
+              <%= image_tag "icon-time.png", alt:"料理画像", class:"icons-type"%>
+              <span>約<span class="number">10</span>分</span>
+            </div>
+          </div> 
         </div>
       </div>
-      
+      <!-- ２つ目以降の人気レシピ -->
+      <div class='second-box col-md-5'>
+        <div class='img-second-box'>
+          <%= image_tag "img-1.jpg", alt:"料理画像", class:"img-second"%>
+          <div class="famous-box">
+            <div class="famous-title">料理レシピのタイトルタイトルタイトル</div>
+            <div class="index-recipe-category">
+              <%= image_tag "icon-category.png", alt:"料理画像", class:"icons-type"%>
+              <span>デザート</span>
+            </div>
+            <div class="index-recipe-time">
+              <%= image_tag "icon-time.png", alt:"料理画像", class:"icons-type"%>
+              <span>約<span class="number">10</span>分</span>
+            </div>
+          </div>
+        </div>
+        <div class='img-second-box'>
+          <%= image_tag "img-1.jpg", alt:"料理画像", class:"img-second"%>
+          <div class="famous-box">
+            <div class="famous-title">料理レシピのタイトルタイトルタイトル</div>
+            <div class="index-recipe-category">
+              <%= image_tag "icon-category.png", alt:"料理画像", class:"icons-type"%>
+              <span>デザート</span>
+            </div>
+            <div class="index-recipe-time">
+              <%= image_tag "icon-time.png", alt:"料理画像", class:"icons-type"%>
+              <span>約<span class="number">10</span>分</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div>
+  <!-- 検索ボックス -->
+  <div class="search-contents">
+    <!-- フリー検索部分 -->
+    <form class="search-form col-md-8" action="#">
+      <input class='input-box' placeholder='(未実装)キーワードから探す'>
+      <button class="btn-search">
+        <%= image_tag "icon-search.png", class:"icon-search" %>
+      </button>
+    </form>
+    <!-- カテゴリ別検索部分 -->
+    <div class="row">
     </div>
   </div>
 </div>
+
+<div class="list-wrap">
+  <h2>新着レシピ</h2>
+  <div class='recipe-contents'>
+    <ul class='row'>
+      <!-- レシピ一つづつ -->
+      <% @recipes.each do |recipe|%>
+        <li class='list col-md-3 col-6'>
+          <%= link_to recipe_path(recipe.id) do %>
+            <!-- 人気 -->
+            <div class='famous-point-box'>
+              <div><%= image_tag "icon-star-light_green.png", alt:"star", class:"icons-type"%></div>
+              <div class="good">いいね</div><span><%= recipe.frozen_date %></span>
+            </div> 
+            <!-- タイトル -->
+            <div class="recipe-title">
+              <h3>
+                <%= recipe.title %>
+              </h3>
+            </div>  
+            <!-- 画像 -->
+            <div class='recipe-img-index'>
+              <%= image_tag recipe.images[0].url, class: "img-recipe" %>
+            </div>
+            <!--画像の下の細かいコンテンツ-->
+            <div class='recipe-info'>
+              <table class="table-index" width="100%">
+                <tr>
+                  <td class='index recipe-category'>
+                    <%= image_tag "icon-category.png", alt:"料理画像", class:"icons-type"%>
+                    <span><%= recipe.category.name %></span>
+                  </td>
+                  <td class='index recipe-time'>
+                    <%= image_tag "icon-time.png", alt:"料理画像", class:"icons-type"%>
+                    <span>約<%= recipe.time %>分</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class='index recipe-days'>
+                    <%= image_tag "icon-cold.png", alt:"料理画像", class:"icons-type"%>
+                    <span>約<%= recipe.cold_date%>日</span>
+                  </td>
+                  <td class='index recipe-days'>
+                    <%= image_tag "icon-frozen.png", alt:"料理画像", class:"icons-type"%>
+                    <span>約<%= recipe.frozen_date %>日</span>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <!-- もっと見るボタン -->
+  <div class="btn-more-box">
+    <%= link_to "もっと見る", root_path, class:"btn-more" %>
+  </div>
+</div>
+
 <%= render "shared/footer" %>

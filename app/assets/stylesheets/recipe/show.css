@@ -1,3 +1,18 @@
+/* 共通 -----------------------------------*/
+/* 数字_赤_太字 */
+span .number{
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Quicksand', sans-serif;
+  margin: 0 5px 0 5px;
+  color:#cb2f27;
+}
+/* アイコン */
+.icons-type{
+  margin-right:4%; 
+  height: 22px;
+  width: 22px;
+}
 /* 画像 -----------------------------------*/
 .meal-img{
   height: 350px;
@@ -16,71 +31,53 @@
   display: flex;
   align-items: center;
   width: 100%;
-  margin-bottom: 45px;
+  margin: 0 0 45px 10px;
+  padding-right:10px;
 }
 /* カテゴリー */
 .show-recipe-category{
-  position: relative;
-  margin-left: 20px;
-  height:50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  font-weight: bold;
-  padding: 1.5rem 2rem;
-  border-radius: 0;
-  border-radius: 100vh;
-  background-color:#cb2f27;
-}
-.show-recipe-category:before{
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  width: calc(100% - 4px);
-  height: calc(100% - 4px);
-  content: '';
-  border: 3px dotted #ffffff;
-  border-radius: 100vh;
-}
-/* 調理時間・冷蔵・冷凍 */
-.category-time-days span{
-  font-size: 15px;
-}
-/* 調理時間 */
-.show-recipe-time{
-  margin-left:10px; 
   padding: 5px 20px 5px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-right:dashed 1px #cb2f27;
+  border-left:dashed 1px #cb2f27;
 }
-.icon-time{
-  margin-right:10px; 
-  height: 25px;
-  width: 25px;
+.show-recipe-category span{
+  font-size: 18px;
+  font-weight: bold;
+  color: #cb2f27;
 }
+
+
+/* 調理時間・冷蔵・冷凍 */
+
+/* 調理時間 */
+.show-recipe-time{
+  padding: 5px 20px 5px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right:dashed 1px #cb2f27;
+  border-left:dashed 1px #cb2f27;
+}
+
 /* 冷蔵・冷凍日持ち */
-.icon-cold{
-  margin-right:10px; 
-  margin-left:10px; 
-  height: 25px;
-  width: 25px;
-}
-.show-recipe-days{
+.show-recipe-cold{
   padding: 5px 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-right:dashed 1px #cb2f27;
+  border-left:dashed 1px #cb2f27;
 }
-.show-recipe-days span .days{
-  font-size: 20px;
-  font-weight: bold;
-  font-family: 'Quicksand', sans-serif;
-  margin: 0 5px 0 5px;
-  color:#cb2f27;
+.show-recipe-frozen{
+  padding: 5px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right:dashed 1px #cb2f27;
+  border-left:dashed 1px #cb2f27;
 }
 /* 特徴・食べ方 -----------------------------------------*/
 .feature-eat{

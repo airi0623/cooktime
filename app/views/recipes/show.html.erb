@@ -2,9 +2,6 @@
 <%= render "shared/fixed-btn" %>
 
 <div class="container">
-  <%= link_to "レシピ登録", new_recipe_path %>
-  <%= link_to "root", root_path %>
-
   <h2 class="concept-title">(レシピ名)の作り方</h2>
 
   <!-- 画像・アイコン・カテゴリ・冷蔵・冷凍 -->
@@ -23,20 +20,21 @@
     </div>
     <!-- カテゴリ・冷蔵・冷凍 -->
     <div class='row category-time-days'>
-      <div class="show-recipe-category col-md-2 col-5">
-        カテゴリー
+      <div class="show-recipe-category col-md-2 col-6">
+        <%= image_tag "icon-category.png", alt:"料理画像", class:"icons-type"%>
+        <span>デザート</span>
       </div>
-      <div class="show-recipe-time col-md-2 col-5">
-        <%= image_tag "icon-time.png", alt:"料理画像", class:"icon-time"%>
-        <span>約10分</span>
+      <div class="show-recipe-time col-md-2 col-6">
+        <%= image_tag "icon-time.png", alt:"料理画像", class:"icons-type"%>
+        <span>約<span class="number">10</span>分</span>
       </div>
-      <div class="show-recipe-days col-md-3 col-6">
-        <%= image_tag "icon-cold.png", alt:"料理画像", class:"icon-cold"%>
-        <span>冷蔵保存 約<span class="days">4</span>日間</span>
+      <div class="show-recipe-cold col-md-3 col-6">
+        <%= image_tag "icon-cold.png", alt:"料理画像", class:"icons-type"%>
+        <span>冷蔵保存 約<span class="number">4</span>日間</span>
       </div>
-      <div class="show-recipe-days col-md-3 col-6">
-        <%= image_tag "icon-frozen.png", alt:"料理画像", class:"icon-time"%>
-        <span>冷凍保存 約<span class="days">10</span>日間</span>
+      <div class="show-recipe-frozen col-md-3 col-6">
+        <%= image_tag "icon-frozen.png", alt:"料理画像", class:"icons-type"%>
+        <span>冷凍保存 約<span class="number">10</span>日間</span>
       </div>
     </div>
     <!-- 特徴 -->
