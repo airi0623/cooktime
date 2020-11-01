@@ -1,0 +1,19 @@
+    
+    <%= search_form_for @p, url: items_search_path do |f| %>
+      <div class="">
+        <%= f.label :category_id, 'カテゴリー' %>
+        <%= f.collection_select :category_id, Category.all, :id, :name, selected: @category.id %>
+      </div>
+      <div class="">
+        <%= f.label :category_id, 'カテゴリー' %>
+        <%= f.collection_select :category_id, Category.all, :id, :name, selected: @category.id %>
+      </div>
+      <div class="">
+        <%= f.label :category_id, 'カテゴリー' %>
+        <%= f.collection_select :category_id, Category.all, :id, :name, selected: @category.id %>
+      </div>
+      <div class="">
+        <%= f.label :category_id, 'カテゴリー' %>
+        <%= f.collection_select :category_id, Category.all, :id, :name, selected: @category.id %>
+      </div>
+    <% end %>
