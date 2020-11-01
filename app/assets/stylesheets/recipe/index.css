@@ -1,4 +1,5 @@
-/* 人気レシピ */
+/* 人気レシピ -----------------------------*/
+/* タイトル部分 */
 .icon-star{
   margin-right:10px; 
   height: 25px;
@@ -13,7 +14,7 @@
   font-size: 20px;
   font-weight: bolder;
 }
-/* 画像*/
+/* 大 画像・タイトル・カテゴリー・調理時間*/
 .img-main {
   width:100%;
   margin-top: 10px;
@@ -22,6 +23,40 @@
   object-fit: cover;
   border-radius: 50px;
 }
+.famous-big-box{
+  width:96%;
+  margin-top:10px;
+}
+.big-category-time{
+  width:100%;
+  margin: 0 10px ;
+  display: flex;
+  border-bottom: dashed 1px #cb2f27;
+}
+.famous-title{
+  margin: 0 0 5px 10px; 
+  padding: 5px 10px 5px 5px;
+  display: flex;
+  align-items: center;
+  color:#cb2f27;
+  font-size: 15px;
+  font-weight: bold;
+}
+.big-index-recipe-category{
+  width:50%;
+  margin: 0 0 5px 10px; 
+  padding: 5px 10px 5px 5px;
+  display: flex;
+  align-items: center;
+}
+.big-index-recipe-time{
+  width:50%;
+  margin: 0 0 5px 10px; 
+  padding: 5px 10px 5px 5px;
+  display: flex;
+  align-items: center;
+}
+/* 小 画像・タイトル・カテゴリー・調理時間*/
 .img-second{
   width:50%;
   height:100%;
@@ -34,11 +69,29 @@
   display: flex;
   margin-top: 10px;
 }
-/* 調理時間*/
-.index-recipe-time{
-  margin-left:10px; 
-  padding: 5px 20px 5px 20px;
+.famous-box{
+  width:100%;
+}
+.famous-title{
+  margin: 0 0 5px 10px; 
+  padding: 5px 10px 5px 5px;
   display: flex;
-  justify-content: center;
   align-items: center;
+  color:#cb2f27;
+  font-size: 15px;
+  font-weight: bold;
+}
+.index-recipe-category{
+  margin: 0 0 5px 10px; 
+  padding: 5px 10px 5px 5px;
+  display: flex;
+  align-items: center;
+  border-bottom: dashed 1px #cb2f27;
+}
+.index-recipe-time{
+  margin: 0 0 5px 10px; 
+  padding: 5px 10px 5px 5px;
+  display: flex;
+  align-items: center;
+  border-bottom: dashed 1px #cb2f27;
 }
