@@ -20,11 +20,6 @@
     display: block;
     margin: 0;
     padding: 0;
-    // ＊＊以下追加
-    display: flex;
-    justify-content: center;
-    border-radius: 40px;
-    // ＊＊
 
     &:focus {
         outline: none;
@@ -48,7 +43,7 @@
     position: relative;
     left: 0;
     top: 0;
-    // display: block;
+    display: block;
     margin-left: auto;
     margin-right: auto;
 

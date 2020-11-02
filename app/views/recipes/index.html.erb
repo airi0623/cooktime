@@ -82,7 +82,7 @@
       <% @recipes.each do |recipe|%>
         <li class='list col-md-3 col-6'>
           <%= link_to recipe_path(recipe.id) do %>
-            <!-- 人気 -->
+            <!-- いいねトマト -->
             <div class='famous-point-box'>
               <div><%= image_tag "icon-star-light_green.png", alt:"star", class:"icons-type"%></div>
               <div class="good">いいね</div><span><%= recipe.frozen_date %></span>
