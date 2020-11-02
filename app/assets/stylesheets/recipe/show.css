@@ -15,6 +15,7 @@ span .number{
 }
 /* いいねトマト・選択中トマト ----------------------------*/
 /* いいねトマトはindex */
+/* 選択中トマト */
 .tomato-box{
   display: flex;
 }
@@ -42,7 +43,15 @@ span .number{
   font-size: 18px;
   font-weight: bolder;
 }
-
+/* 未選択トマト */
+.icons-type-gry{
+  width:25px;
+  height:25px;
+  padding: 5px;
+  margin: 0 10px 5px 0;
+  border-radius: 100%;
+  background-color: #c4c5c3;
+} 
 /* 画像 -----------------------------------*/
 .recipe-img{
   padding: 10px;

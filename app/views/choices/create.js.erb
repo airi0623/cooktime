@@ -1,0 +1,1 @@
+$("#choice-btn-<%= @recipe.id%>").html("<%= escape_javascript(render partial: "choices/choice", locals: { recipe: @recipe }) %>");
