@@ -12,7 +12,7 @@ class Recipe < ApplicationRecord
   has_many :choices
   has_many :users, through: :choices
 
-  # すでにいいねしたかどうか」を判断するためのメソッド
+  # すでにいいねしたかどうかを判断するためのメソッド
   def choiced_by?(user)
     choices.where(user_id: user).exists?
   end
