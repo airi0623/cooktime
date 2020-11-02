@@ -18,14 +18,14 @@ span .number{
 .tomato-box{
   display: flex;
 }
-.select-box{
+.choice-box{
   width:100%;
   height:30px;
   display: flex;
   align-items: center;
   color:black;
 }
-.select-box .icons-type{
+.choice-box .icons-type{
   width:25px;
   height:25px;
   padding: 5px;
@@ -33,12 +33,12 @@ span .number{
   border-radius: 100%;
   background-color: #adda7c;
 } 
-.select-box .select{
+.choice-box .select{
   margin-right: 6px;
   font-size: 14px;
   font-weight: bolder;
 }
-.select-box span{
+.choice-box span{
   font-size: 18px;
   font-weight: bolder;
 }
