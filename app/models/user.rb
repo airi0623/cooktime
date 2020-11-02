@@ -7,6 +7,9 @@ class User < ApplicationRecord
   mount_uploader :icon, IconUploader
   # icon画像用の「iconカラム」と「IconUploaderクラス」を紐づけます。
 
+  has_many :choices
+  has_many :recipes, through: :choices
+
   with_options presence: true do
     validates :nickname 
     validates :family_name, format: { with: /\A[ぁ-んァ-ン一-龥]/, message: "は全角(漢字・平仮名)で入力してください"}
