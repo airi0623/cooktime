@@ -29,7 +29,8 @@ class RecipesController < ApplicationController
   end
 
   def show
-    # @recipe = Recipe.find(params[:id])
+    @recipe = Recipe.find(params[:id])
+    @ingredients = Ingredient.where(recipe_id: params[:id])
   end
 
   private

@@ -2,77 +2,88 @@
 <%= render "shared/fixed-btn" %>
 
 <div class="container">
-  <h2 class="concept-title">(レシピ名)の作り方</h2>
-
-  <!-- 画像・アイコン・カテゴリ・冷蔵・冷凍 -->
-  <div class="contents">
-    <div class='recipe-img '>
-      <div id='slide' class="col-md-6">
-        <%# @item.images.each do |image| %>
-          <li><%= image_tag "image.png", alt:"料理画像", class:"meal-img"%></li>
-          <%#= image_tag image, class:'item-box-img' %>
-        <%# end %>
-      </div>
+  <h2 class="concept-title"><%=@recipe.title%></h2>
+  <div class=tomato-box row>
+    <!-- いいねトマト -->
+    <div class='famous-point-box col-md-2'>
+      <div><%= image_tag "icon-star-light_green.png", alt:"star", class:"icons-type"%></div>
+      <div class="good">いいね</div><span>１</span>
+    </div> 
+    <!-- 選択中トマト -->
+    <div class='choice-box col-md-2'>
+      <div><%= image_tag "icon-star-light_green.png", alt:"star", class:"icons-type"%></div>
+      <div class="choice">選択中</div>
     </div>
+  </div>
+  <!-- 画像・アイコン・カテゴリ・冷蔵・冷凍 -->
+  <div class="contents ">
+    <div class="row ajust-mb-30">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <div class="recipe-img " id='slide' >
+          <% @recipe.images.each do |image| %>
+            <li><%= image_tag image.url, alt:"料理画像", class:"center-block meal-img"%></li>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+
     <!-- アイコン -->
     <div class='user-icon-s'>
       
     </div>
     <!-- カテゴリ・冷蔵・冷凍 -->
     <div class='row category-time-days'>
-      <div class="show-recipe-category col-md-2 col-6">
+      <div class="show-recipe-category col-md-3 col-6">
         <%= image_tag "icon-category.png", alt:"料理画像", class:"icons-type"%>
-        <span>デザート</span>
+        <span><%= @recipe.category.name %></span>
       </div>
-      <div class="show-recipe-time col-md-2 col-6">
+      <div class="show-recipe-time col-md-3 col-6">
         <%= image_tag "icon-time.png", alt:"料理画像", class:"icons-type"%>
-        <span>約<span class="number">10</span>分</span>
+        <span>約<span class="number"><%= @recipe.time %></span>分</span>
       </div>
       <div class="show-recipe-cold col-md-3 col-6">
         <%= image_tag "icon-cold.png", alt:"料理画像", class:"icons-type"%>
-        <span>冷蔵保存 約<span class="number">4</span>日間</span>
+        <span>冷蔵保存 約<span class="number"><%= @recipe.cold_date %></span>日間</span>
       </div>
       <div class="show-recipe-frozen col-md-3 col-6">
         <%= image_tag "icon-frozen.png", alt:"料理画像", class:"icons-type"%>
-        <span>冷凍保存 約<span class="number">10</span>日間</span>
+        <span>冷凍保存 約<span class="number"><%= @recipe.frozen_date %></span>日間</span>
       </div>
     </div>
     <!-- 特徴 -->
-    <div class='row feature-eat'>
-      <div class="feature col-md-5">
-        <h3>料理の特徴</h3>
-        <p>ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります</p>
+    <div class='row feature-eat-box'>
+      <div class="col-md-6">
+        <div class="feature-eat">
+          <h3>料理の特徴</h3>
+          <p><%= @recipe.feature %></p>
+        </div>
       </div>
-      <div class="eat col-md-5">
-        <h3>食べ方</h3>
-        <p>ここにテキストが入りますここにテキストが入りますここにテキストが入りますここにテキストが入ります</p>
+      <div class="col-md-6">
+        <div class="feature-eat eat">
+          <h3>食べ方</h3>
+          <p><%= @recipe.eat %></p>
+        </div>
       </div>
     </div>
     <!-- 材料 -->
     <div class='ingredients'>
       <h3>材料</h3>
-      <table class="table-ingredients col-md-8">
-        <tr>
-          <td >にんじん</td>
-          <td>大さじ・４・ml</td>
-        </tr>
-        <tr>
-          <td>じゃがいも</td>
-          <td>大さじ・４・ml</td>
-        </tr>
-        <tr>
-          <td>豚肉</td>
-          <td>大さじ・４・ml</td>
-        </tr>
-      </table>      
-      </div>
+      <% @ingredients.each do |ingredient|%>
+        <table class="table-ingredients col-md-5">
+          <tr>
+            <td ><%= ingredient.thing.thing_name %></td>
+            <td class="td-position"><%= ingredient.thing.spoon %><%= ingredient.amount %><%= ingredient.thing.unit %></td>
+          </tr>
+        </table>
+      <% end %>
     </div>
-    <!-- 材料 -->
-      <div class='cook'>
-        <h3>つくり方</h3>
-        <p>作り方が入ります</p>
-      </div>
-
+    <!-- つくり方 -->
+    <div class='cook col-md-12'>
+      <h3>つくり方</h3>
+      <p><%= @recipe.text %></p>
+    </div>
   </div>
 </div>
 

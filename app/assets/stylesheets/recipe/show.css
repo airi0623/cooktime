@@ -13,17 +13,53 @@ span .number{
   height: 22px;
   width: 22px;
 }
+/* いいねトマト・選択中トマト ----------------------------*/
+/* いいねトマトはindex */
+.tomato-box{
+  display: flex;
+}
+.choice-box{
+  width:100%;
+  height:30px;
+  display: flex;
+  align-items: center;
+  color:black;
+}
+.choice-box .icons-type{
+  width:25px;
+  height:25px;
+  padding: 5px;
+  margin: 0 10px 5px 0;
+  border-radius: 100%;
+  background-color: #adda7c;
+} 
+.choice-box .select{
+  margin-right: 6px;
+  font-size: 14px;
+  font-weight: bolder;
+}
+.choice-box span{
+  font-size: 18px;
+  font-weight: bolder;
+}
+
 /* 画像 -----------------------------------*/
+.recipe-img{
+  padding: 10px;
+  display: flex;
+  text-align: center; /* justify使えない */
+  justify-content: center;
+  display: block;
+}
 .meal-img{
-  height: 350px;
   width: 100%;
+  height: 50vh;
   object-fit: cover;
   margin-top:20px;
-  margin-bottom:20px;
   border-radius: 20px;
-  display: inline-block;
+  /* margin:0 auto; */
 }
-.recipe-img li {
+#slide li {
   list-style: none;
 }
 /* カテゴリー,調理時間,冷蔵,冷凍-------------- */
@@ -48,10 +84,6 @@ span .number{
   font-weight: bold;
   color: #cb2f27;
 }
-
-
-/* 調理時間・冷蔵・冷凍 */
-
 /* 調理時間 */
 .show-recipe-time{
   padding: 5px 20px 5px 20px;
@@ -61,7 +93,6 @@ span .number{
   border-right:dashed 1px #cb2f27;
   border-left:dashed 1px #cb2f27;
 }
-
 /* 冷蔵・冷凍日持ち */
 .show-recipe-cold{
   padding: 5px 10px;
@@ -80,17 +111,20 @@ span .number{
   border-left:dashed 1px #cb2f27;
 }
 /* 特徴・食べ方 -----------------------------------------*/
-.feature-eat{
+.feature-eat-box{
   display: flex;
+
+  margin-bottom:50px;
 }
-.feature{
-  position: relative;
-  margin: 0 10px 25px 10px;
+.feature-eat{
+  height:100%;
+  margin: 0px 10px 0px 10px;
   padding:25px 20px 15px 20px;
+  position: relative;
   border:solid 2px #cb2f27;
   border-radius: 20px;
 }
-.feature h3{
+.feature-eat h3{
   position: absolute;
   display: inline-block;
   padding: 10px;
@@ -100,13 +134,6 @@ span .number{
   color:#cb2f27;
   background-color: #fffbf6;
   font-weight: bold;
-}
-.eat {
-  position: relative;
-  margin: 0 10px 25px 10px;
-  padding:25px 20px 15px 20px;
-  border:solid 2px #cb2f27;
-  border-radius: 20px;
 }
 .eat h3{
   position: absolute;
@@ -122,7 +149,6 @@ span .number{
 /* 材料 -----------------------------------------------*/
 .ingredients h3{
   display: inline-block;
-  padding: 10px;
   font-size:20px;
   color:#cb2f27;
   background-color: #fffbf6;
@@ -131,18 +157,21 @@ span .number{
 .ingredients{
   margin-bottom:25px;
 }
-
+.td-position{
+  text-align:left;
+  text-align:right;
+}
 /* 作り方 -----------------------------------------------*/
 p {
   white-space: pre-wrap;
 }
 .cook h3{
   display: inline-block;
-  padding: 10px;
   font-size:20px;
   color:#cb2f27;
   background-color: #fffbf6;
   font-weight: bold;
 }
-
-
+.cook{
+  margin-top: 50px;
+}

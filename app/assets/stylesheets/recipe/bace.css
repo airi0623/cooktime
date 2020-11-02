@@ -1,5 +1,5 @@
 body {
-	background-color:#fffbf6;		/*ページ全体の背景色*/
+	background-color :#fffbf6; 	/*ページ全体の背景色*/
 	font-size:95%;			/* フォントサイズを95%にする */
 	font-family: "Yu Gothic", YuGothic, sans-serif;
 	line-height:1.5;		/* 行の高さを1.5倍にする */

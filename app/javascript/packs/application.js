@@ -14,7 +14,7 @@ require("../ingredient")
 require("../preview")
 require("../top")
 require('../slick.min')
-// require('../slide')
+require('../slide')
 
 
 // require("../slide")
