@@ -1,0 +1,78 @@
+
+/* マイページ --------------------------------------- */
+/* アイコン画像とニックネーム */
+.icon-title{
+  text-align: center;
+}
+.icon-title h2{
+  color: black;
+  font-weight: bolder;
+  margin-bottom: 20px;
+}
+.icon-user_img{
+  margin-bottom: 20px;
+  border-radius: 100%;
+}
+/* 個人情報編集、登録したレシピ、選択した料理 */
+.my_page-btn{
+  margin: 10px 10px 5px 10px; 
+  height: 60px;
+  background-color: #cb2f27;
+  border-radius: 10px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* position: relative; */
+}
+.my_page-btn-text{
+  padding-left: 20px;
+  padding-right: 0;
+  color : inherit;
+}
+/* 心得＊＊画像はdivに入れて処理 */
+.img-space{
+  margin-right: 20px;
+  padding-left: 20px;
+  border-left: 2px dotted #ffffff;
+}
+.icons-m-type{
+  width: 25px;
+  height: 25px;
+}
+/* 登録情報 ーーーーーーーーーーーーーーーーーーーーーー */
+.title-information{
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-weight: bold;
+}
+.table-user{
+  margin: 10px;
+}
+.table-user table{
+  width:100%;
+  table-layout: fixed;
+  border-collapse: collapse; /*隣り合うセルのボーダーを重ねて表示*/
+  border-collapse: separate;
+  font-weight: bolder;
+  border: none;
+}
+th.width40{
+  width:40%;
+  padding:10px 15px;
+}
+th.width60{
+  width:60%;
+  padding:10px 15px;
+}
+td .detail-profile{
+  padding:10px 15px;
+}
+.plofile-box{
+  margin: 10px;
+  padding: 20px;
+  border-radius: 15px;
+  border: 3px dotted #cb2f27;
+  font-weight: bolder;
+}

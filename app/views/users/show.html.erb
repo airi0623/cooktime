@@ -1,34 +1,59 @@
 <%= render "shared/header" %>
 <%= render "shared/fixed-btn" %>
 
-<h1><%= current_user.nickname%>さんのマイページ</h1>
+<div class="container">
 
-<!-- 個人情報編集 ------------------------------>
-<div class='main'>
-  <div class='item-contents'>
-    <div class="title-bar">
-      <h2 class="title-page-top">個人情報</h2>
+  <!-- 画像・ニックネーム ------------------------------>
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="icon-title col-md-4" >
+      <img src=<%= @user.icon %> class = "icon-user_img">
+      <h2><%= @user.nickname %></h2>
     </div>
-    <div class = icon >
-      <img src=<%= @user.icon %> class = "icon_image">
+    <div class="col-md-4"></div>
+  </div>
+  <div class="row btn-box">
+    <div class="col-md-4">
+      <label class="edit-user-btn  my_page-btn">
+        <%= link_to "個人情報編集",  edit_user_registration_path, class:"my_page-btn-text" %>
+        <div class="img-space"><%= image_tag "icon-user.png", alt:"icon画像", class:"icons-m-type"%></div>
+      </label>
     </div>
-    <div class = "table-user" >
-      <table border = "1" bordercolor= #dedede>
-      <tr>
-        <th class="detail-profile">ニックネーム</th>
-        <td><%= @user.nickname %></td>
-      </tr>
-      <tr>
-        <th class="detail-profile">メールアドレス</th>
-        <td><%= @user.email %></td>
-      </tr>
-      <tr>
-        <th class="detail-profile">名前</th>
-        <td><%= @user.family_name %><%= @user.first_name %></td>
-      </tr>
-      </table>
-        <%= link_to "編集する", edit_user_registration_path, class:"edit-btn" %>  
+    <div class="col-md-4">
+      <div class="my_page-btn">
+        <%= link_to "登録したレシピ", root_path, class:"my_page-btn-text" %>
+        <div class="img-space"><%= image_tag "icon-recipe.png", alt:"icon画像", class:"icons-m-type"%></div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="my_page-btn">
+        <%= link_to "料理をつくる", root_path, class:"my_page-btn-text" %>
+        <div class="img-space"><%= image_tag "icon-cook.png", alt:"icon画像", class:"icons-m-type"%></div>
+      </div>
+    </div>
+  </div>
+  <h2 class="title-information">登録情報</h2>
+  <div class="row">
+    <div class="col-md-6">
+      <div class = "table-user" >
+        <table>
+          <tr>
+            <th class="width40">メールアドレス</th>
+            <td class="detail-profile"><%= @user.email %></td>
+          </tr>
+          <tr>
+            <th class="width60">名前</th>
+            <td class="detail-profile"><%= @user.family_name %><%= @user.first_name %></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="plofile-box">
+        <p><%= @user.profile %></td></p>
+      </div>
     </div>
   </div>
 </div>
+
 <%= render "shared/footer" %>
