@@ -40,7 +40,7 @@ span .number{
   font-weight: bolder;
 }
 .choice-box span{
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bolder;
 }
 /* 未選択トマト */
@@ -122,8 +122,9 @@ span .number{
 /* 特徴・食べ方 -----------------------------------------*/
 .feature-eat-box{
   display: flex;
-
-  margin-bottom:50px;
+}
+.ajust-box-re-show{
+  margin-bottom: 30px;
 }
 .feature-eat{
   height:100%;
