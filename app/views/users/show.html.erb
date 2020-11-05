@@ -6,9 +6,13 @@
   <!-- 画像・ニックネーム ------------------------------>
   <div class="row">
     <div class="col-md-4"></div>
-    <div class="icon-title col-md-4" >
-      <img src=<%= @user.icon %> class="icon-user_img">
-      <h2><%= @user.nickname %></h2>
+    <div class="col-md-4 icon-user-box" >
+      <div class="icon-square">
+        <%= image_tag @user.icon.url, class: "icon-user_img" %>
+      </div>
+      <div class="nickname-show">
+        <h3><%= @user.nickname %></h2>
+      </div>
     </div>
     <div class="col-md-4"></div>
   </div>

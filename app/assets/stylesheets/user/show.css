@@ -1,18 +1,29 @@
 
 /* マイページ --------------------------------------- */
 /* アイコン画像とニックネーム */
-.icon-title{
-  text-align: center;
-}
-.icon-title h2{
+.nickname-show h3{
+  margin: 20px;
   color: black;
   font-weight: bolder;
-  margin-bottom: 20px;
+  text-align: center;
 }
-.icon-user_img{
-  width: 90%;
-  margin-bottom: 20px;
+.icon-square{
+  position: relative;
+}
+.icon-square:before {
+  content: '';
+  display: block;
+  width: 100%;
+  padding-top: 100%;
+}
+.icon-square .icon-user_img{
+  width: 100%;
+  height:100%;
+  position: absolute;
+  top: 0;
+  left: 0;
   border-radius: 100%;
+  object-fit: cover;
 }
 /* 個人情報編集、登録したレシピ、選択した料理 */
 .my_page-btn{
