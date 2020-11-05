@@ -1,0 +1,11 @@
+.profile-box{
+  padding: 20px;
+  /* border: 3px dotted #cb2f27; */
+  border-radius: 20px;
+  background-color: #ffe4e3;
+}
+.profile-box h3{
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: bolder;
+}
