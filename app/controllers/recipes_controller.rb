@@ -1,11 +1,9 @@
 class RecipesController < ApplicationController
+  def about
+  end
 
   def index
     @recipes = Recipe.all.order("created_at DESC").limit(12)
-  end
-
-  def about
-    
   end
 
   def new
@@ -32,6 +30,10 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @user = User.find(@recipe.user_id)
     @ingredients = Ingredient.where(recipe_id: params[:id])
+  end
+
+  def more
+    @recipes = Recipe.all.order("created_at DESC")
   end
 
   private

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'recipes#index'
   get 'choices' => 'choices#index'
+
   resources :users do
     member do
       get 'profile'
@@ -14,6 +15,7 @@ Rails.application.routes.draw do
     resources :ingredients
     collection do
       get 'about'
+      get 'more'
     end
   end
   resources :things

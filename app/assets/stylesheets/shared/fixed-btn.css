@@ -1,5 +1,5 @@
 .fixed-btn{
-  width:130px;
+  width:210px;
   height:60px;
   padding: 10px;
   right:0px;
@@ -17,26 +17,19 @@
   border-bottom-left-radius: 10px;
 }
 .top-fixed{
-  padding: 0 15px 0 10px;
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column; */
+  padding: 0 10px 0 15px;
   border-right: dotted 1px #FFFFFF;
 }
-.icon-text{
-  color: #fffbf6;
-  font-size:11px;
-}
-.icon-tomato{
-  height: 25px;
-  width: 25px;
-}
 .recipe-fixed{
-  padding: 0 2px 0 13px;
+  padding: 0 10px 0 10px;
   text-align: center;
 }
-.icon-recipe{
+/* アイコンサイズ、テキストフォントサイズ */
+.icon-type-fixed{
   height: 25px;
   width: 25px;
+}
+.text-icon{
+  color: #fffbf6;
+  font-size:11px;
 }
