@@ -159,14 +159,14 @@ ul {
 /* h2 タイトル */
 .list-wrap h2{
   margin-bottom: 40px;
-  font-size: 30px;
+  font-size: 25px;
   text-align: center;
   letter-spacing: 0.4em;
   position: relative;
 }
 .list-wrap h2::after {
   position: absolute;
-  bottom: 50px;
+  bottom: -20px;
   left: 0;
   width: 100%;
   height: 10px;
