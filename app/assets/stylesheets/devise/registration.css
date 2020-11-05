@@ -1,0 +1,40 @@
+/* form内容 -------------------------------*/
+.new-user{
+  margin-bottom: 50px;
+}
+/* プレビュー画像 */
+.user-icon{
+  margin: 15px;
+  height: 150px;
+  width:150px;
+  border-radius: 100%;
+}
+.icon-box{
+  display: flex;
+  justify-content: center;
+}
+.margin-15{
+  margin: 0 15px 0 15px;
+}
+/* 注意書き */
+.info-text{
+  font-size: 13px;
+  font-weight: bolder;
+  margin-left: 15px;
+  color: #cb2f27;
+}
+/* formのそと -------------------------------*/
+/* 本人確認  */
+.submit-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.attention{
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: bolder;
+  color: #cb2f27;
+}

@@ -1,5 +1,4 @@
 $(function() {
-  console.log("OK")
   $('#slide').slick({
     dots: true,
     infinite: true,
