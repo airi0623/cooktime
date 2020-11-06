@@ -1,4 +1,6 @@
 class RecipesController < ApplicationController
+  def about
+  end
 
   def index
     @recipes = Recipe.all.order("created_at DESC").limit(12)
@@ -40,13 +42,14 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @ingredients =Ingredient.where(recipe_id: @recipe.id)
     @choice = Choice.where(recipe_id: @recipe.id)
-
     if @recipe.destroy
-      
       redirect_to my_recipe_user_path(current_user.id)
     else
       redirect_to user_path(current_user.id)
     end
+
+  def more
+    @recipes = Recipe.all.order("created_at DESC")
   end
 
   private

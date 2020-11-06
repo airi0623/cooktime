@@ -259,3 +259,9 @@ ul {
   align-items: center;
   justify-content: center;
 }
+
+.btn-more:hover{
+  transition: 0.3s ;
+  color: #ffffff;
+  background-color:#dd7069 ;
+}
