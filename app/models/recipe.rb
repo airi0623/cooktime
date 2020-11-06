@@ -7,11 +7,13 @@ class Recipe < ApplicationRecord
   # 画像のアソシエーション
   mount_uploaders :images, ImageUploader
   serialize :images, JSON
-  # ユーザーのアソシエーション
+  # その他アソシエーション
   belongs_to :user
   has_many :choices 
   has_many :users, through: :choices
-
+  has_many :likes 
+  has_many :users, through: :likes
+  
   # すでにいいねしたかどうかを判断するためのメソッド
   def choiced_by?(user)
     choices.where(user_id: user).exists?
@@ -19,7 +21,6 @@ class Recipe < ApplicationRecord
 
   # has_many    :cooks
   # has_many    :comments
-  # has_many    :adds
 
   # presence trueじゃないのにエラーでる。
   # validates :cold_date,   format: {with: /\d/}

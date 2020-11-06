@@ -9,6 +9,8 @@ class User < ApplicationRecord
 
   has_many :choices
   has_many :recipes, through: :choices
+  has_many :likes
+  has_many :recipes, through: :likes
 
   with_options presence: true do
     validates :nickname 
