@@ -45,14 +45,14 @@
         <div class="forms-item col-md-3">
           料理の特徴
         </div>
-        <%= f.text_area :feature, class:"input-area recipes-feature col-md-7", id:"recipe-feature", placeholder:"料理の特徴（1,000文字まで）茄子をごま油で焼いてから甘めの味付けでとろりとするまで煮ました。茄子に甘辛いタレが絡んで、白いご飯にぴったりです！" , maxlength:"1000" %>
+        <%= f.text_area :feature, class:"input-area-wide recipes-feature col-md-7", id:"recipe-feature", placeholder:"料理の特徴（1,000文字まで）茄子をごま油で焼いてから甘めの味付けでとろりとするまで煮ました。茄子に甘辛いタレが絡んで、白いご飯にぴったりです！" , maxlength:"1000" %>
       </div>
       <!-- 食べ方 -->
       <div class="row form-box">
         <div class="forms-item col-md-3">
           食べ方
         </div>
-        <%= f.text_area :eat, class:"input-area recipes-eat col-md-7", id:"recipe-eat", placeholder:"食べ方のポイント" %>
+        <%= f.text_area :eat, class:"input-area-wide recipes-eat col-md-7", id:"recipe-eat", placeholder:"食べ方のポイント" %>
       </div>
       <!-- カテゴリー -->
       <div class="row form-box">
@@ -91,13 +91,13 @@
       <!-- 材料 -->
       <div id="btn-event" class="onegai">
         <div class="row form-box">
-          <div class="forms-item col-3">
+          <div class="forms-item col-md-3 col-2">
             材料
           </div>
-        
-          <div class="links">
+          
+          <div class="links col-md-2 col-5">
             <%= link_to_add_association "追加", f, :ingredients,
-            class: '',
+            class: 'add_fields',
             id: 'add-btn',
             data: {
               #association_insertion_traversal: 'closest',
@@ -135,7 +135,7 @@
         <div class="forms-item col-md-3">
           つくり方
         </div>
-        <%= f.text_area :text, class:"input-area recipes-text col-md-7" %>
+        <%= f.text_area :text, class:"input-area-wide recipes-text col-md-7" %>
       </div>
       <!-- 送信ボタン -->
       <div class='submit-btn'>
