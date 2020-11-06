@@ -15,7 +15,9 @@ require("../preview")
 require("../top")
 require('../slick.min')
 require('../slide')
+require('../calc')
 require('../preview_one')
+
 
 // require("../slide")
 //require("../scripts")

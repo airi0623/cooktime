@@ -15,8 +15,7 @@
     </div>
   </div>
   <!-- 画像・アイコン・カテゴリ・冷蔵・冷凍 -->
-  <div class="contents ">
-    <!-- 画像 -->
+  <div class="contents">
     <div class="row ajust-mb-30">
       <div class="col-md-2"></div>
       <div class="col-md-8">
@@ -79,8 +78,8 @@
       <% @ingredients.each do |ingredient|%>
         <table class="table-ingredients col-md-5">
           <tr>
-            <td ><%= ingredient.thing.thing_name %></td>
-            <td class="td-position"><%= ingredient.thing.spoon %><%= ingredient.amount %><%= ingredient.thing.unit %></td>
+            <td class="td-font"><%= ingredient.thing.thing_name %></td>
+            <td class="td-position td-font"><%= ingredient.thing.spoon %><%= ingredient.amount %><%= ingredient.thing.unit %></td>
           </tr>
         </table>
       <% end %>
