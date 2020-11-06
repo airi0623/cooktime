@@ -47,6 +47,7 @@ class RecipesController < ApplicationController
     else
       redirect_to user_path(current_user.id)
     end
+  end
 
   def more
     @recipes = Recipe.all.order("created_at DESC")
