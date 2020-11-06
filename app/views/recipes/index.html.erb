@@ -77,14 +77,14 @@
     <h2>新着レシピ</h2>
     <div class='recipe-contents'>
       <ul class='row'>
-        <!-- レシピ一つづつ -->
+      <!-- レシピ一つづつ -->
         <% @recipes.each do |recipe|%>
           <li class='list col-md-3 col-6'>
             <%= link_to recipe_path(recipe.id) do %>
               <!-- いいねトマト -->
               <div class='famous-point-box'>
                 <div><%= image_tag "icon-star-light_green.png", alt:"star", class:"icons-type"%></div>
-                <div class="good">いいね</div><span><%= recipe.frozen_date %></span>
+                <div class="good">お気に入り</div><span><%= recipe.frozen_date %></span>
               </div> 
               <!-- タイトル -->
               <div class="recipe-title">
