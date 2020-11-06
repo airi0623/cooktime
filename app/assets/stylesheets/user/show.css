@@ -38,6 +38,10 @@
   justify-content: space-between;
   /* position: relative; */
 }
+.my_page-btn:hover{
+  background-color: #dd7069;
+  transition: 0.5s ;
+}
 .my_page-btn-text{
   padding-left: 20px;
   padding-right: 0;
