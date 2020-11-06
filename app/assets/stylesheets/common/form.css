@@ -1,7 +1,7 @@
+/* フォーム */
 .form-box{
   margin-top: 30px;
 }
-
 .forms-item{
   font-size: 15px;
   margin: 0 15px 0 15px;
@@ -9,23 +9,30 @@
   align-items: center;
   color: black;
 }
-
 .input-area{
   height: 50px;
   padding: 10px;
   margin: 0 15px 0 15px;
   line-height : 2;
-  background-color : rgba(203, 46, 39, 0.04);
+  background-color :#fef2ee;
   border-radius : 8px;
   border : none;
 }
-
+.input-area-wide{
+  height: 150px;
+  padding: 10px;
+  margin: 0 15px 0 15px;
+  line-height : 2;
+  background-color :#fef2ee;
+  border-radius : 8px;
+  border : none;
+}
+/* ボタン */
 .submit-btn{
   display: flex;
   justify-content: center;
-  margin-top: 5vh;
+  margin-top: 10vh;
 }
-
 .submit-red-btn{
   height: 50px;
   width: 300px;
@@ -34,7 +41,6 @@
   background-color: #cb2f27;
   color: #FFFF;
 }
-
 .submit-red-btn:hover{
   transition: 0.5s ;
   height: 50px;

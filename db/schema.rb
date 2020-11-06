@@ -22,17 +22,16 @@ ActiveRecord::Schema.define(version: 2020_11_02_055649) do
   end
 
   create_table "ingredients", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "recipe_id", null: false
-    t.bigint "thing_id", null: false
+    t.bigint "recipe_id"
+    t.integer "thing_id", null: false
     t.integer "amount", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["recipe_id"], name: "index_ingredients_on_recipe_id"
-    t.index ["thing_id"], name: "index_ingredients_on_thing_id"
   end
 
   create_table "recipes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id", null: false
+    t.bigint "user_id"
     t.string "title", null: false
     t.string "feature"
     t.string "eat", null: false
@@ -66,4 +65,6 @@ ActiveRecord::Schema.define(version: 2020_11_02_055649) do
 
   add_foreign_key "choices", "recipes"
   add_foreign_key "choices", "users"
+  add_foreign_key "ingredients", "recipes"
+  add_foreign_key "recipes", "users"
 end
