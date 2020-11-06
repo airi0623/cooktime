@@ -19,6 +19,11 @@ class Recipe < ApplicationRecord
     choices.where(user_id: user).exists?
   end
 
+  def add_by?(user)
+    likes.where(user_id: user).exists?
+  end
+
+
   # has_many    :cooks
   # has_many    :comments
 

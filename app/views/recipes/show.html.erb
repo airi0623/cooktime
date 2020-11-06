@@ -5,9 +5,8 @@
   <h2 class="h2-title"><%=@recipe.title%></h2>
   <div class=tomato-box row>
     <!-- いいねトマト -->
-    <div class='famous-point-box col-md-2'>
-      <div><%= image_tag "icon-star-light_green.png", alt:"star", class:"icons-type"%></div>
-      <div class="good">お気に入り</div><span>１</span>
+    <div class='like-box col-md-3' id="like-btn-<%= @recipe.id %>">
+      <%= render 'likes/like', recipe: @recipe %>
     </div> 
     <!-- 選択中トマト -->
     <div class='choice-box col-md-2' id="choice-btn-<%= @recipe.id %>">

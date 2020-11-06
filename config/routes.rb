@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'recipes#index'
   resources :things
   get 'choices' => 'choices#index'
+  get 'likes' => 'likes#index'
 
   resources :users do
     member do
@@ -12,9 +13,10 @@ Rails.application.routes.draw do
     end
   end
   resources :recipes do
-    # choiceのcreateとdeleteを追加
     post 'choices' => 'choices#create'
     delete '/choices' => 'choices#destroy'
+    post 'likes' => 'likes#create'
+    delete '/likes' => 'likes#destroy'
     resources :ingredients
     collection do
       get 'about'

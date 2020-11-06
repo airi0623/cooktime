@@ -82,9 +82,9 @@
           <li class='list col-md-3 col-6'>
             <%= link_to recipe_path(recipe.id) do %>
               <!-- いいねトマト -->
-              <div class='famous-point-box'>
+              <div class='like-box'>
                 <div><%= image_tag "icon-star-light_green.png", alt:"star", class:"icons-type"%></div>
-                <div class="good">お気に入り</div><span><%= recipe.frozen_date %></span>
+                <div class="like-box">お気に入り<span><%= recipe.likes.length %></span></div>
               </div> 
               <!-- タイトル -->
               <div class="recipe-title">

@@ -22,7 +22,7 @@ class RecipesController < ApplicationController
     #@user = User.find(current_user.id)
     #@ingredient = @recipe.ingredients
     if @recipe.save
-      redirect_to user_path(id: current_user)
+      redirect_to my_recipe_user_path(id: current_user)
       # redirect先で必要なidがなかったのが原因??
     else
       render :new
