@@ -3,7 +3,7 @@
 
 
 <div class="container">
-<h2 class="h2-title">レシピ</h2>
+<h2 class="h2-title">レシピ編集</h2>
 
   <%= form_with(model: @recipe, class:"recipes-post-main", local: true) do |f| %>
     <!-- エラー文 -->
@@ -113,22 +113,6 @@
               <%= render "ingredient_fields", f: form %>
             <% end %>
       </div>
-        <!--cocoon前の記述
-        <div class="row form-box">
-          <%= f.fields_for :ingredients do |form| %>
-            <div class="forms-item col-md-3"></div>
-
-            <% thing_options = Thing.order(:id).map { |c| [c.thing_name, c.id, data: { children_path: things_path(c) }] } %>
-            <%= form.select(:thing_id, thing_options, { prompt: "---"}, {class:"input-area ingredients-thing-name col-md-3", id:"ingredient-thing-name"}) %>
-            <%#= form.collection_select(:thing_id, Thing.all, :id, :thing_name, { prompt: "---"}, {class:"input-area ingredients-thing-name col-md-3", id:"ingredient-thing-name"}) %>
-            <div class="input-area">単位</div>
-            <%= form.number_field :amount, class:"input-area ingredients-amount col-1",id:"ingredient-amount", min:"0" %>
-            <div class="input-area">単位</div>
-          <% end %>
-          <div class="add-btn">
-          </div>
-        </div>
-        -->
       <!-- つくり方 -->
       <div class="row form-box">
         <div class="forms-item col-md-3">

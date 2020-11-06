@@ -36,6 +36,17 @@ class RecipesController < ApplicationController
   end
 
   def edit
+    @recipe = Recipe.find(params[:id])
+  end
+
+  def update
+    @recipe = Recipe.find(params[:id])
+    @recipes = Recipe.where(user_id: current_user.id).order("created_at DESC")
+    if @recipe.update(recipe_params)
+      redirect_to my_recipe_user_path(id: current_user)
+    else
+      render :edit
+    end
   end
 
   def destroy

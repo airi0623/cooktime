@@ -6,5 +6,6 @@ class CreateIngredients < ActiveRecord::Migration[6.0]
       t.integer :amount,        null: false
       t.timestamps
     end
+    
   end
 end
