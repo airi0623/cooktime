@@ -1,7 +1,7 @@
 <%= render "shared/header" %>
 
 <div class="container my-5">
-  <h2 class="recipes-post-title">会員情報登録</h2>
+  <h2 class="h2-title">会員情報登録</h2>
 
   <%# modelhaはUserモデルであれば@userを渡す。%>
   <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>

@@ -5,7 +5,6 @@ class RecipesController < ApplicationController
   end
 
   def about
-    
   end
 
   def new
@@ -32,6 +31,22 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @user = User.find(@recipe.user_id)
     @ingredients = Ingredient.where(recipe_id: params[:id])
+  end
+
+  def edit
+  end
+
+  def destroy
+    @recipe = Recipe.find(params[:id])
+    @ingredients =Ingredient.where(recipe_id: @recipe.id)
+    @choice = Choice.where(recipe_id: @recipe.id)
+
+    if @recipe.destroy
+      
+      redirect_to my_recipe_user_path(current_user.id)
+    else
+      redirect_to user_path(current_user.id)
+    end
   end
 
   private

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :users do
     member do
       get 'profile'
+      get 'my_recipe'
     end
   end
   resources :recipes do
