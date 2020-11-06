@@ -18,19 +18,20 @@
         <label for="recipe-image" class ="click-upload col-md-7" id ="click-upload-id">
           <span>クリックして画像をアップロード</span>
           <%= f.file_field :image, multiple: true, class:"upload-btn", id:"recipe-image", name:"recipe[images][]", data: {index:0} %> 
+          <%# ファイル選択ボタンを生成 jsで生成 %>
         </label>
       </div>
       <!-- 画像挿入 -->
-      <div class="row form-box">
-        <div class = "image-box-big" id="image-box-big-id">
-          <%# <div class = "image-box" data-index = "index">
+      <div class="row form-box image-box-big" id="image-box-big-id">
+        <%#<div id="image-box" class="col-md-3 col-6" data-index="index" >
+            <div class = "image-box-s" >
               <img src ="URL" class = "image-size">
-                <div class = "change-box-edit-delete">
+            </div>` 
+              <div class = "change-box-edit-delete">
                 <div class = "change-box" id = recipe-image-edit-${imageElementNum } data-index="${imageElementNum}" >編集</div>
                 <div class = "change-box" id = recipe-image-delete-${imageElementNum } data-index="${imageElementNum}" >削除</div>
-              </div>` 
-            </div>  %>
-        </div>
+              </div>  
+          </div> %>
       </div>
       <!-- レシピタイトル -->
       <div class="row form-box">
