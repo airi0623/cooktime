@@ -7,8 +7,8 @@ class User < ApplicationRecord
   mount_uploader :icon, IconUploader
   # icon画像用の「iconカラム」と「IconUploaderクラス」を紐づけます。
 
-  has_many :choices
-  has_many :recipes, through: :choices
+  has_many :choices, foreign_key: :user_id, dependent: :destroy
+  has_many :recipes, through: :choices, foreign_key: :user_id, dependent: :destroy
 
   with_options presence: true do
     validates :nickname 

@@ -1,0 +1,17 @@
+a{
+  color: inherit;
+  text-decoration: none;
+}
+/* ユーザーアイコンの形 */
+.user-icon-s{
+  height: 70px;
+  width: 70px;
+  object-fit: cover;
+  border-radius: 100%;
+}
+/* イラストアイコンの形 */
+.icons-type{
+  margin-right:4%; 
+  height: 22px;
+  width: 22px;
+}

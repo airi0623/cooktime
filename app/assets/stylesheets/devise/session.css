@@ -32,14 +32,15 @@
 
 /* TOPリンクボタン */
 .top-link a:hover{
-  　text-decoration: none;
+  text-decoration: none;
   }
-
+.top-link a:hover{
+  text-decoration: none;
+  }
 .top-link{
   display: flex;
   justify-content: center;
 }
-
 .top-red-link{
   height: 50px;
   width: 300px;

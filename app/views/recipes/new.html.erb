@@ -1,8 +1,9 @@
 <%= render "shared/header" %>
 <%= render "shared/fixed-btn" %>
 
-<div class="container my-5">
-<h2 class="recipes-post-title">レシピ</h2>
+
+<div class="container">
+<h2 class="h2-title">レシピ</h2>
 
   <%= form_with(model: @recipe, class:"recipes-post-main", local: true) do |f| %>
     <!-- エラー文 -->
@@ -14,7 +15,7 @@
         <div class="forms-item indispensable col-md-3">
           画像
         </div>
-        <label for="recipe-image" class ="click-upload col-md-7" id ="click-upload-id"  >
+        <label for="recipe-image" class ="click-upload col-md-7" id ="click-upload-id">
           <span>クリックして画像をアップロード</span>
           <%= f.file_field :image, multiple: true, class:"upload-btn", id:"recipe-image", name:"recipe[images][]", data: {index:0} %> 
         </label>

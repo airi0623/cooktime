@@ -8,13 +8,21 @@ span .number{
   color:#cb2f27;
 }
 /* アイコン */
-.icons-type{
-  margin-right:4%; 
-  height: 22px;
-  width: 22px;
+/* icons-typeはparts */
+.link-user_page{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user-icon{
+  margin-right: 30px;
+}
+.user-name:hover{
+  color:#dd7069;
 }
 /* いいねトマト・選択中トマト ----------------------------*/
 /* いいねトマトはindex */
+
 /* 選択中トマト */
 .tomato-box{
   display: flex;
@@ -52,6 +60,17 @@ span .number{
   border-radius: 100%;
   background-color: #c4c5c3;
 } 
+/* ユーザーアイコン -------------------------*/
+.user-icon-box{
+  margin: 10px 10px 30px 10px ;
+  font-size: 18px;
+  font-weight: bolder;
+  display: flex;
+  align-items: center;
+}
+.nickname{
+  margin-left: 20px;
+}
 /* 画像 -----------------------------------*/
 .recipe-img{
   padding: 10px;

@@ -2,7 +2,7 @@
 <%= render "shared/fixed-btn" %>
 
 <div class="container">
-  <h2 class="concept-title"><%=@recipe.title%></h2>
+  <h2 class="h2-title"><%=@recipe.title%></h2>
   <div class=tomato-box row>
     <!-- いいねトマト -->
     <div class='famous-point-box col-md-2'>
@@ -28,9 +28,15 @@
       <div class="col-md-2"></div>
     </div>
 
-    <!-- アイコン -->
-    <div class='user-icon-s'>
-      
+    <!-- Userアイコン -->
+    <div class='user-icon-box'>
+      <%= link_to profile_user_path(@user.id)  do%>
+        <!-- :url記述したらエラーがでる -->
+        <div class="link-user_page">
+          <div class="user-icon"><%= image_tag @user.icon.url, alt:"アイコン", class:"user-icon-s"%></div>
+          <span class="user-name"><%= @user.nickname%>さん</span>が投稿したレシピ
+        </div>
+      <% end%>
     </div>
     <!-- カテゴリ・冷蔵・冷凍 -->
     <div class='row category-time-days'>
