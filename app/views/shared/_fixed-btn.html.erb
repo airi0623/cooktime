@@ -11,10 +11,11 @@
       <span>RECIPE</span>
     </a>
   </div>
-  <div class="recipe-fixed">
-    <a href="/recipes/new" class="icon-recipe text-icon">
+  <%= link_to do_cook_user_path(current_user.id)  do %>
+    <div class="recipe-fixed">
       <%= image_tag "icon-cook.png", alt:"RECIPE", class:"icon-type-fixed"%>
-      <span>COOK</span>
-    </a>
-  </div>
+      <span>COOK</span> 
+    </div>
+  <%end%>
 </div>
+
