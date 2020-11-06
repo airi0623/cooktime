@@ -1,0 +1,6 @@
+<div><%= image_tag "icon-star-light_green.png", alt:"tomato", class:"icons-type"%></div>
+<%= link_to  recipe_choices_path(choice.recipe_id), method: :delete, remote: true, id: :"recipe-button-#{choice.recipe_id}" do %>
+  <i class="fa-lg fas fa-heart icon-btn choiced"></i>
+  <span class="choice-box">選択中</span>
+<% end %>
+

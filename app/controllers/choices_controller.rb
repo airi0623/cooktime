@@ -2,9 +2,7 @@ class ChoicesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @recipes = Recipe.all.sort {|a,b| b.choices.count <=> a.choices.count}
 
-    # @categorys = Category.where(id: 2..10)
   end
 
   def create

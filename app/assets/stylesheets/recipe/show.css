@@ -80,7 +80,7 @@ span .number{
   padding-right:10px;
 }
 /* カテゴリー */
-.show-recipe-category{
+.rcipe-category{
   padding: 5px 20px 5px 20px;
   display: flex;
   justify-content: center;
@@ -170,6 +170,9 @@ span .number{
 .td-position{
   text-align:left;
   text-align:right;
+}
+.td-font{
+  font-weight: bolder;
 }
 /* 作り方 -----------------------------------------------*/
 p {
