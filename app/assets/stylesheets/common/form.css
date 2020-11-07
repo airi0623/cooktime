@@ -3,11 +3,12 @@
   margin-top: 30px;
 }
 .forms-item{
-  font-size: 15px;
   margin: 0 15px 0 15px;
+  font-size: 14px;
+  font-weight: bolder;
+  color: black;
   display: flex;
   align-items: center;
-  color: black;
 }
 .input-area{
   height: 50px;

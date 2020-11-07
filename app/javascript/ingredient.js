@@ -1,5 +1,15 @@
 $(function() {
   console.log("OK")
+
+  $('.select').on('change',function(e){
+    //spoonとunitを定義
+    const dataUnit = $("option:selected", this).data("unit");
+    const dataSpoon = $("option:selected", this).data("spoon");
+    //データを入れる
+    $(`[data-unit="0"]`).text(dataUnit)
+    $(`[data-spoon="0"]`).text(dataSpoon)
+  });
+
   let index = 1;
   $('.onegai') 
     .on('cocoon:after-insert', function(e, insertedItem) {
