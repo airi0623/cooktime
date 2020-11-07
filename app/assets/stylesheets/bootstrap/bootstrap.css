@@ -4497,7 +4497,7 @@ input[type="button"].btn-block {
     position: absolute;
   }
   .navbar-expand-md .navbar-nav .nav-link {
-    padding: 10px;
+    padding: 8px 20px;
     margin: 10px 0px 10px 0;
   }
   .navbar-expand-md > .container,
