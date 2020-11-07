@@ -6,7 +6,8 @@ h2 {
 .recipes-post-main{
   margin-top: 80px;
 }
-/* 画像を選択ボタン -------------------------------*/
+/* 画像プレビュー部分 -------------------------------*/
+/* 選択ボタン */
 .click-upload{
   height: 30px;
   width: 100%;
@@ -28,7 +29,7 @@ h2 {
 .upload-btn{
   display: none;
 }
-/* プレビューされた画像 --------------------------- */
+/* プレビューされた画像  */
 .image-box-s{
   position: relative;
   margin:10px;
@@ -48,7 +49,7 @@ h2 {
   border-radius: 10px;
   object-fit: cover;
 }
-/* 編集削除ボタン -------------------------------- */
+/* 編集削除ボタン  */
 .change-box-edit-delete{
   margin: 5px 10px 10px 10px;
   display: flex;
@@ -60,6 +61,11 @@ h2 {
 }
 .change-box{
   padding: 5px;
+}
+/* 冷凍保存・冷蔵保存 */
+.form-box .mx-3{
+  font-size: 14px;
+  font-weight: bolder;
 }
 /* 材料箇所のデザイン ------------------------------ */
 /* 材料追加ボタン */
