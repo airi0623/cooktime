@@ -18,9 +18,9 @@
       <div class="col-md-6 col-7">
         <div class="box-my_recipe ">
           <!-- いいねトマト -->
-          <div class='famous-point-box'>
+          <div class='like-box'>
             <div><%= image_tag "icon-star-light_green.png", alt:"star", class:"icons-type"%></div>
-            <div class="good">いいね</div><span><%= recipe.frozen_date %></span>
+            <div class="like-box">お気に入り<span><%= recipe.likes.length %></span></div>
           </div> 
           <h3 class="title-my_recipe"><%= recipe.title %></h3>
         </div>

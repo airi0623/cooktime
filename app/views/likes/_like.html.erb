@@ -1,0 +1,19 @@
+<% if user_signed_in? %>
+  <% if recipe.add_by?(current_user.id) %>
+    <div><%= image_tag "icon-star-light_green.png", alt:"tomato", class:"icons-type"%></div>
+    <%= link_to  recipe_likes_path(recipe.id), method: :delete, remote: true, id: :"recipe-button-#{recipe.id}" do %>
+      <i class="fa-lg fas fa-heart icon-btn choiced"></i>
+      <div class="like-box">お気に入り  <span><%= recipe.likes.length %></span></div>
+    <% end %>
+  <% else %>
+    <div><%= image_tag "icon-star-gry.png", alt:"tomato", class:"icons-type-gry"%></div>
+    <%= link_to recipe_likes_path(recipe.id), method: :post, remote: true, id: :"recipe-button-#{recipe.id}" do %>
+      <i class="fa-lg fas fa-heart icon-btn not-choice"></i>
+      <div class="like-box">お気に入り  <span><%= recipe.likes.length %></span></div>
+    <% end %>
+  <% end %>
+<% else %>
+  <div><%= image_tag "icon-star-gry.png", alt:"tomato", class:"icons-type-gry"%></div>
+  <i class="fa-lg fas fa-heart icon-btn not-choice"></i>
+  <div class="like-box">お気に入り  <span><%= recipe.likes.length %></span></div>
+<% end %>
