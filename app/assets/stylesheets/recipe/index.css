@@ -49,12 +49,16 @@
   margin: 0 0 5px 10px; 
   display: flex;
   align-items: center;
+  font-size: 15px;
+  font-weight: bolder;
 }
 .big-index-recipe-time{
   width:50%;
   margin: 0 0 5px 10px; 
   display: flex;
   align-items: center;
+  font-size: 14px;
+  font-weight: bolder;
 }
 /* 小 画像・タイトル・カテゴリー・調理時間*/
 .second-box{
@@ -90,6 +94,8 @@
   display: flex;
   align-items: center;
   border-bottom: dashed 1px #cb2f27;
+  font-size: 15px;
+  font-weight: bolder;
 }
 .index-recipe-time{
   margin: 0 0 5px 10px; 
@@ -97,6 +103,8 @@
   display: flex;
   align-items: center;
   border-bottom: dashed 1px #cb2f27;
+  font-size: 14px;
+  font-weight: bolder;
 }
 /* 検索ボックス ---------------------------------------*/
 .search-contents{

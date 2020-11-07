@@ -1,5 +1,6 @@
 class LikesController < ApplicationController
   def index
+    @recipes = Recipe.all.sort {|a,b| b.likes.count <=> a.likes.count}
   end
 
   def create

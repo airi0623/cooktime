@@ -4,6 +4,7 @@ class RecipesController < ApplicationController
 
   def index
     @recipes = Recipe.all.order("created_at DESC").limit(12)
+    @ranking = Recipe.all.sort {|a,b| b.likes.count <=> a.likes.count}
   end
 
   def about
