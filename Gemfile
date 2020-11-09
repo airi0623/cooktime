@@ -66,4 +66,5 @@ gem 'active_hash'
 gem "cocoon"
 gem 'jquery-rails'
 
-
+gem "aws-sdk-s3", require: false
+gem "fog-aws"

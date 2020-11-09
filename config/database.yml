@@ -50,5 +50,7 @@ test:
 production:
   <<: *default
   database: cooktime_production
-  username: cooktime
-  password: <%= ENV['COOKTIME_DATABASE_PASSWORD'] %>
+  username: root
+  #password: <%= ENV['COOKTIME_DATABASE_PASSWORD'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
