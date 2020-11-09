@@ -8,57 +8,60 @@
       <%= image_tag "icon-star-red.png", alt:"★", class:"icon-star"%>
       <span class="recipes-index-title">人気レシピ</span>
     </div>
-    <!-- 人気のレシピ全体 -->
-    <div class="row img-main-box">
-      <div class='main-box col-md-7'>
-        <%= image_tag @ranking[0].images[0].url, alt:"料理画像", class:"img-main"%>
-        <div class="famous-big-box">
-          <div class="famous-title"><%= @ranking[0].title %></div>
-          <div class="big-category-time">  
-            <div class="big-index-recipe-category">
-              <%= image_tag "icon-category.png", alt:"料理画像", class:"icons-type"%>
-              <span><%= @ranking[0].category.name %></span>
-            </div>
-            <div class="big-index-recipe-time">
-              <%= image_tag "icon-time.png", alt:"料理画像", class:"icons-type"%>
-              <span>約<span class="number"><%= @ranking[0].time %></span>分</span>
-            </div>
-          </div> 
+    <% unless @raning == nil %>
+      <!-- 人気のレシピ全体 -->
+      <div class="row img-main-box">
+        <div class='main-box col-md-7'>
+          <%= image_tag @ranking[0].images[0].url, alt:"料理画像", class:"img-main"%>
+          <div class="famous-big-box">
+            <div class="famous-title"><%= @ranking[0].title %></div>
+            <div class="big-category-time">  
+              <div class="big-index-recipe-category">
+                <%= image_tag "icon-category.png", alt:"料理画像", class:"icons-type"%>
+                <span><%= @ranking[0].category.name %></span>
+              </div>
+              <div class="big-index-recipe-time">
+                <%= image_tag "icon-time.png", alt:"料理画像", class:"icons-type"%>
+                <span>約<span class="number"><%= @ranking[0].time %></span>分</span>
+              </div>
+            </div> 
+          </div>
         </div>
-      </div>
-      <!-- ２つ目以降の人気レシピ -->
-      <div class='second-box col-md-5'>
-        <div class='img-second-box'>
-          <%= image_tag @ranking[1].images[0].url, alt:"料理画像", class:"img-second"%>
-          <div class="famous-box">
-            <div class="famous-title"><%= @ranking[1].title %></div>
-            <div class="index-recipe-category">
-              <%= image_tag "icon-category.png", alt:"料理画像", class:"icons-type"%>
-              <span><%= @ranking[1].category.name %></span>
+        <!-- ２つ目以降の人気レシピ -->
+        <div class='second-box col-md-5'>
+          <div class='img-second-box'>
+            <%= image_tag @ranking[1].images[0].url, alt:"料理画像", class:"img-second"%>
+            <div class="famous-box">
+              <div class="famous-title"><%= @ranking[1].title %></div>
+              <div class="index-recipe-category">
+                <%= image_tag "icon-category.png", alt:"料理画像", class:"icons-type"%>
+                <span><%= @ranking[1].category.name %></span>
+              </div>
+              <div class="index-recipe-time">
+                <%= image_tag "icon-time.png", alt:"料理画像", class:"icons-type"%>
+                <span>約<span class="number"><%= @ranking[1].time %></span>分</span>
+              </div>
             </div>
-            <div class="index-recipe-time">
-              <%= image_tag "icon-time.png", alt:"料理画像", class:"icons-type"%>
-              <span>約<span class="number"><%= @ranking[1].time %></span>分</span>
+          </div>
+          <div class='img-second-box'>
+            <%= image_tag @ranking[2].images[0].url, alt:"料理画像", class:"img-second"%>
+            <div class="famous-box">
+              <div class="famous-title"><%= @ranking[2].title %></div>
+              <div class="index-recipe-category">
+                <%= image_tag "icon-category.png", alt:"料理画像", class:"icons-type"%>
+                <span><%= @ranking[2].category.name %></span>
+              </div>
+              <div class="index-recipe-time">
+                <%= image_tag "icon-time.png", alt:"料理画像", class:"icons-type"%>
+                <span>約<span class="number"><%= @ranking[2].time %></span>分</span>
+              </div>
             </div>
           </div>
         </div>
-        <div class='img-second-box'>
-          <%= image_tag @ranking[2].images[0].url, alt:"料理画像", class:"img-second"%>
-          <div class="famous-box">
-            <div class="famous-title"><%= @ranking[2].title %></div>
-            <div class="index-recipe-category">
-              <%= image_tag "icon-category.png", alt:"料理画像", class:"icons-type"%>
-              <span><%= @ranking[2].category.name %></span>
-            </div>
-            <div class="index-recipe-time">
-              <%= image_tag "icon-time.png", alt:"料理画像", class:"icons-type"%>
-              <span>約<span class="number"><%= @ranking[2].time %></span>分</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> 
+      </div> 
+    <%end%>
   </div>
+
   <!-- 検索ボックス -->
   <div class="search-contents">
     <h2>新着レシピ</h2>
