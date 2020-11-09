@@ -15,7 +15,8 @@ span .number{
   align-items: center;
 }
 .user-icon{
-  margin-right: 30px;
+  margin: 0 30px;
+  text-align: center;
 }
 .user-name:hover{
   color:#dd7069;
@@ -122,7 +123,7 @@ span .number{
   padding-right:10px;
 }
 /* カテゴリー */
-.rcipe-category{
+.show-recipe-category{
   padding: 5px 20px 5px 20px;
   display: flex;
   justify-content: center;
@@ -206,6 +207,14 @@ span .number{
   background-color: #fffbf6;
   font-weight: bold;
 }
+.flex-box span{
+  color:#cb2f27;
+  font-size: 13px;
+}
+.table-ingredients .flex-box{
+  display: flex;
+  align-items: center;
+}
 .ingredients{
   margin-bottom:25px;
 }
@@ -213,9 +222,7 @@ span .number{
   text-align:left;
   text-align:right;
 }
-.td-font{
-  font-weight: bolder;
-}
+
 /* 作り方 -----------------------------------------------*/
 p {
   white-space: pre-wrap;

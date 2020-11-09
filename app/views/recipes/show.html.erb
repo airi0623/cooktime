@@ -31,9 +31,9 @@
     <div class='user-icon-box'>
       <%= link_to profile_user_path(@user.id)  do%>
         <!-- :url記述したらエラーがでる -->
-        <div class="link-user_page">
-          <div class="user-icon"><%= image_tag @user.icon.url, alt:"アイコン", class:"user-icon-s"%></div>
-          <span class="user-name"><%= @user.nickname%>さん</span>が投稿したレシピ
+        <div class="link-user_page row">
+          <div class="user-icon col-md-2"><%= image_tag @user.icon.url, alt:"アイコン", class:"user-icon-s"%></div>
+          <div class="class-md-4"><span class="user-name"><%= @user.nickname%>さん</span>が投稿したレシピ</div>
         </div>
       <% end%>
     </div>
@@ -73,12 +73,35 @@
     </div>
     <!-- 材料 -->
     <div class='ingredients'>
-      <h3>材料</h3>
+      <table class="table-ingredients col-md-8">
+        <tr>
+          <td class="flex-box">
+            <h3>材料</h3><span>(一人前)</span>
+          </td>
+          <td>
+          </td>
+          <td >
+            <input id="input-calc" type="number" name="nickname" class="input-calc-number">
+            <span>人前</span>
+          </td>
+        </tr>
+      </table>
       <% @ingredients.each do |ingredient|%>
-        <table class="table-ingredients col-md-5">
+        <table class="table-ingredients col-md-8">
           <tr>
-            <td class="td-font"><%= ingredient.thing.thing_name %></td>
-            <td class="td-position td-font"><%= ingredient.thing.spoon %><%= ingredient.amount %><%= ingredient.thing.unit %></td>
+            <td class="td-font">
+              <%= ingredient.thing.thing_name %>
+            </td>
+            <td class="td-position td-font">
+              <%= ingredient.thing.spoon %>
+              <span id="amount"><%= ingredient.amount %></span>
+              <%= ingredient.thing.unit %>
+            </td>
+            <td class="td-font output-calc">
+              <%= ingredient.thing.spoon %>
+              <span id='output'>計算</span>
+              <%= ingredient.thing.unit %>
+            </td>
           </tr>
         </table>
       <% end %>

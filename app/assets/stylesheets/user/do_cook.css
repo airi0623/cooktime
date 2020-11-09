@@ -38,14 +38,19 @@
   color: #cb2f27;
   font-weight: bolder ;
 }
-.ingredients-box h4{
-  margin-top: 30px;
+.table-ingredients h4{
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
   font-size: 16px;
   color: black;
   font-weight: bolder ;
 }
+
 .table-ingredients{
   table-layout: fixed; 
+  font-size: 15px;
+  color: black;
+  font-weight: bolder ;
 }
 .td-position{
   text-align: center;
@@ -63,9 +68,9 @@
   align-items: center;
 }
 .input-calc-number{
-  width: 80px;
-  height: 50px;
-  margin-right: 10px;
+  width: 50px;
+  height: 40px;
+  margin-right: 5px;
   padding: 10px;
   background-color: #fde9e2;
   border-radius: 10px;
@@ -74,15 +79,15 @@
 }
 .calc-box span{
   width:30px;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: bolder;
 }
 /* 計算が反映されるところ */
 .output-calc{
   height: 40px;
 }
-.output-calc span{
-  
+.output{
+  width:50px;
   height: 50px;
   padding: 10px;
   background-color: #fde9e2;
