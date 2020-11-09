@@ -15,10 +15,14 @@
   font-size: 20px;
   font-weight: bolder;
 }
-/* 大 画像・タイトル・カテゴリー・調理時間*/
+/* MAIN 画像・タイトル・カテゴリー・調理時間*/
+/* MAIN 画像 */
 .main-box{
   padding-right:10px;
   padding-left:10px;
+}
+.main-box-img{
+  position: relative;
 }
 .img-main {
   width:100%;
@@ -26,6 +30,22 @@
   object-fit: cover;
   border-radius: 30px;
 }
+.fixed-like-box{
+  height: 100px;
+  position: absolute;
+  top: 22px;
+  left:30px;
+}
+.white-block{
+  height: 35px;
+  width: 160px;
+  background-color: #fffbf6;
+  border-radius: 20px;
+  position: absolute;
+  top: 18px;
+  left:18px;
+}
+/* MAIN 詳細 */
 .famous-big-box{
   width:96%;
   margin-top:10px;
@@ -61,27 +81,33 @@
   font-size: 14px;
   font-weight: bolder;
 }
-/* 小 画像・タイトル・カテゴリー・調理時間*/
-.second-box{
+/* SECOND 画像・タイトル・カテゴリー・調理時間*/
+.second-box-big{
   padding-right:10px;
 }
+.second-box{
+  width: 100%;
+  height:50%;
+  margin-top: 10px;
+  display: flex;
+}
+.second-box-img{
+  width: 55%;
+}
 .img-second{
-  width:50%;
-  height:100%;
+  width:100%;
+  height:90%;
   padding-left:6px;
   border-radius: 20px;
   object-fit: cover;
 }
-.img-second-box{
-  height:180px;
-  display: flex;
-  margin-top: 10px;
-}
-.famous-box{
-  width:100%;
+.second-box-famous{
+  margin-left: 15px; 
+  margin-top: 8px; 
+  width:45%;
 }
 .famous-title{
-  margin: 0 0 5px 10px; 
+  margin-top: 5px; 
   padding: 5px 0px 5px 0px;
   display: flex;
   align-items: center;
@@ -90,7 +116,7 @@
   font-weight: bold;
 }
 .index-recipe-category{
-  margin: 0 0 5px 10px; 
+  margin-top: 5px; 
   padding: 5px 10px 5px 5px;
   display: flex;
   align-items: center;
@@ -99,7 +125,7 @@
   font-weight: bolder;
 }
 .index-recipe-time{
-  margin: 0 0 5px 10px; 
+  margin-top: 5px; 
   padding: 5px 10px 5px 5px;
   display: flex;
   align-items: center;
@@ -109,10 +135,17 @@
 }
 /* 検索ボックス ---------------------------------------*/
 .search-contents{
-  height:300px;
-  margin: 30px 0px 20px 0px;
-  padding:20px;
+  width: 100%;
+  padding: 30px 35px;
+  margin-top: 80px;
+  border:2px dashed #cb2f27;
+  border-radius: 10px;
+}
+.search-contents h2{
+  font-size: 25px;
   border-radius: 20px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
 }
 .search-form {
   width: 100%;
