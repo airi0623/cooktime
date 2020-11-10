@@ -142,34 +142,53 @@
   border-radius: 10px;
 }
 .search-contents h2{
+  margin-bottom: 20px;
   font-size: 25px;
   border-radius: 20px;
   font-weight: 400;
   letter-spacing: 0.2em;
 }
-.search-form {
-  width: 100%;
-  height: 5vh;
-  display: flex;
-  margin-bottom: 5px;
+.search-contents label{
+  font-size: 15px;
+  font-weight: 700;
 }
-.input-box {
+.input-search{
+  padding: 0 10px 0 10px;
+  margin: 4px;
   width: 100%;
-  height: 5vh;
-  padding-left: 10px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 10px;
+  /* border: 1px solid #cb2f27; */
+  background-color: #fde9e2;
+  border: none;
+}
+.search-btn-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .btn-search{
-  width: 5vh;
-  padding: 8px;
-  cursor: pointer;
+  margin-top:30px;
+  padding: 10px 50px;
   border: none;
-  text-align: center;
+  border-radius: 20px;
+  font-weight: 600;
+  color: #ffffff;
   background-color: #cb2f27;
+  cursor: pointer;
+  position: relative;
 }
-.icon-search{
-  height: 20px;
-  width: 20px;
+.btn-search:hover{
+  transition: 0.3s ;
+  background-color: #e7706a;
 }
+.search-btn-box .icons-type{
+  position: absolute;
+  top : 55%;
+  left: 30%;
+}
+
 /* レシピ表示 ---------------------------------------*/
 /* 共通項目 */
 .list-wrap{

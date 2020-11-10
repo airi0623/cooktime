@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :things
   get 'choices' => 'choices#index'
   get 'likes' => 'likes#index'
+  get 'recipes/search'
 
   resources :users do
     member do
@@ -12,6 +13,7 @@ Rails.application.routes.draw do
       get 'do_cook'
     end
   end
+
   resources :recipes do
     post 'choices' => 'choices#create'
     delete '/choices' => 'choices#destroy'

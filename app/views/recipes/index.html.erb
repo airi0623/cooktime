@@ -8,10 +8,11 @@
       <span class="recipes-index-title">人気レシピ</span>
     </div>
     <% unless @raning.present? %>
-      <!-- 人気のレシピ全体 -->
+      <!-- MAIN 人気のレシピ全体 -------------------------------------------->
       <div class="row img-main-box">
         <div class='main-box col-md-7'>
           <%= link_to recipe_path(@ranking[0].id) do %>
+            <!-- 画像 -->
             <div class="main-box-img">
               <%= image_tag @ranking[0].images[0].url, alt:"料理画像", class:"img-main"%>
             </div>
@@ -22,6 +23,7 @@
               <div><%= image_tag "icon-star-light_green.png", alt:"star", class:"icons-type"%></div>
               <div class="like-box">お気に入り<span><%= @ranking[1].likes.length %></span></div>
             </div> 
+            <!-- 人気レシピの詳細情報 -->
             <div class="famous-big-box">
               <div class="famous-title"><%= @ranking[0].title %></div>
               <div class="big-category-time">  
@@ -37,7 +39,7 @@
             </div>
           <%end%>
         </div>
-        <!-- ２つ目以降の人気レシピ -->
+        <!-- SECOND 人気レシピ -------------------------------------------------->
         <div class='second-box-big col-md-5'>
           <%= link_to recipe_path(@ranking[1].id) do %>
             <div class='second-box'>
@@ -90,23 +92,31 @@
       </div> 
     <%end%>
   </div>
-
-  <!-- 検索ボックス -->
+  <!-- 検索ボックス --------------------------------------------------------->
   <div class="search-contents">
     <h2>レシピ検索</h2>
-    <!-- フリー検索部分 -->
-    <form class="search-form col-md-8" action="#">
-      <input class='input-box' placeholder='(未実装)キーワードから探す'>
-      <button class="btn-search">
-        <%= image_tag "icon-search.png", class:"icon-search" %>
-      </button>
-    </form>
-    <!-- カテゴリ別検索部分 -->
-    <div class="row">
-    </div>
+    <%= search_form_for @p, url: recipes_search_path do |f| %>
+      <%= f.label :title_or_feature_cont, 'キーワード', class:'col-md-3' %>
+      <%= f.text_field :title_or_feature_cont, class: 'input-search col-md-8' %>
+      <br>
+      <%= f.label :category_id_eq, 'カテゴリー', class:'col-md-3' %>
+      <%= f.collection_select :category_id_eq, Category.all, :id, :name,{prompt: ""},{class:'input-search col-md-8'} %>
+      <br>
+      <%= f.label :cold_date_gteq, '冷蔵保存期間', class:'col-md-3' %>
+      <%= f.number_field :cold_date_gteq, class: 'input-search col-md-8' %>
+      <br>
+      <%= f.label :frozen_date_gteq, '冷凍保存期間', class:'col-md-3' %>
+      <%= f.number_field :frozen_date_gteq, class: 'input-search col-md-8' %>
+      <br>
+      <%= f.label :time_gteq, '調理時間', class:'col-md-3' %>
+      <%= f.number_field :time_gteq, class: 'input-search col-md-8' %>
+      <br>
+      <div class="col-12 search-btn-box">
+        <%= f.submit '検索', class: 'btn-search'%>
+      </div>
+    <% end %>
   </div>
-
-  <!-- 新着レシピ -->
+  <!-- 新着レシピ -----------------------------------------------------------> 
   <div class="list-wrap">
     <h2>新着レシピ</h2>
     <div class='recipe-contents'>
