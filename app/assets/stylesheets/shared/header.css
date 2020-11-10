@@ -1,9 +1,12 @@
+.top-page-header{
+  background-color: #fffbf6;
+}
 .navbar{
-  margin-bottom: 30px;
+  /* margin-bottom: 10px; */
 }
 /* ヘッダーのボタン ---------------------*/
 .nav-item{
-  margin:10px 10px 0 10px;
+  margin:0px 10px 0 0;
   font-size: 14px;
   font-weight: bolder;
   color: #cb2f27;

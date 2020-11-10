@@ -2,73 +2,74 @@
 <%= render "shared/fixed-btn" %>
 
 <div class="container">
-
-  <!-- 画像・ニックネーム ------------------------------>
-  <div class="row">
-    <div class="col-md-4"></div>
-    <div class="col-md-4 icon-user-box" >
-      <div class="icon-square">
-        <%= image_tag @user.icon.url, class: "icon-user_img" %>
+  <div class="wrap-wide">
+    <!-- 画像・ニックネーム ------------------------------>
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4 icon-user-box" >
+        <div class="icon-square">
+          <%= image_tag @user.icon.url, class: "icon-user_img" %>
+        </div>
+        <div class="nickname-show">
+          <h3><%= @user.nickname %></h2>
+        </div>
       </div>
-      <div class="nickname-show">
-        <h3><%= @user.nickname %></h2>
+      <div class="col-md-4"></div>
+    </div>
+    <div class="row btn-box">
+      <div class="col-md-3">
+        <%= link_to edit_user_registration_path  do %>
+          <div class="my_page-btn">
+            <div class="my_page-btn-text">登録情報編集</div>
+            <div class="img-space"><%= image_tag "icon-user.png", alt:"icon画像", class:"icons-m-type"%></div>
+          </div>
+        <%end%>
       </div>
-    </div>
-    <div class="col-md-4"></div>
-  </div>
-  <div class="row btn-box">
-    <div class="col-md-3">
-      <%= link_to edit_user_registration_path  do %>
-        <div class="my_page-btn">
-          <div class="my_page-btn-text">個人情報編集</div>
-          <div class="img-space"><%= image_tag "icon-user.png", alt:"icon画像", class:"icons-m-type"%></div>
-        </div>
-      <%end%>
-    </div>
-    <div class="col-md-3">
-      <%= link_to my_recipe_user_path  do %>
-        <div class="my_page-btn">
-          <div class="my_page-btn-text">登録したレシピ</div>
-          <div class="img-space"><%= image_tag "icon-recipe.png", alt:"icon画像", class:"icons-m-type"%></div>
-        </div>
-      <%end%>
-    </div>
-    <div class="col-md-3">
-      <%= link_to do_cook_user_path  do %>
-        <div class="my_page-btn">
-          <div class="my_page-btn-text">料理をつくる</div>
-          <div class="img-space"><%= image_tag "icon-cook.png", alt:"icon画像", class:"icons-m-type"%></div>
-        </div>
-      <%end%>
-    </div>
-    <div class="col-md-3">
-      <%= link_to edit_user_registration_path  do %>
-        <div class="my_page-btn">
-          <div class="my_page-btn-text">お気に入り</div>
-          <div class="img-space"><%= image_tag "icon-okiniiri.png", alt:"icon画像", class:"icons-m-type"%></div>
-        </div>
-      <%end%>
-    </div>
-  </div>
-  <h2 class="title-information">登録情報</h2>
-  <div class="row">
-    <div class="col-md-6">
-      <div class = "table-user" >
-        <table>
-          <tr>
-            <th class="width40">メールアドレス</th>
-            <td class="detail-profile"><%= @user.email %></td>
-          </tr>
-          <tr>
-            <th class="width60">名前</th>
-            <td class="detail-profile"><%= @user.family_name %><%= @user.first_name %></td>
-          </tr>
-        </table>
+      <div class="col-md-3">
+        <%= link_to my_recipe_user_path  do %>
+          <div class="my_page-btn">
+            <div class="my_page-btn-text">登録したレシピ</div>
+            <div class="img-space"><%= image_tag "icon-recipe.png", alt:"icon画像", class:"icons-m-type"%></div>
+          </div>
+        <%end%>
+      </div>
+      <div class="col-md-3">
+        <%= link_to do_cook_user_path  do %>
+          <div class="my_page-btn">
+            <div class="my_page-btn-text">料理をつくる</div>
+            <div class="img-space"><%= image_tag "icon-cook.png", alt:"icon画像", class:"icons-m-type"%></div>
+          </div>
+        <%end%>
+      </div>
+      <div class="col-md-3">
+        <%= link_to edit_user_registration_path  do %>
+          <div class="my_page-btn">
+            <div class="my_page-btn-text">お気に入り</div>
+            <div class="img-space"><%= image_tag "icon-okiniiri.png", alt:"icon画像", class:"icons-m-type"%></div>
+          </div>
+        <%end%>
       </div>
     </div>
-    <div class="col-md-6">
-      <div class="plofile-box">
-        <p><%= @user.profile %></td></p>
+    <h2 class="title-information">登録情報</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <div class = "table-user" >
+          <table>
+            <tr>
+              <th class="width40">メールアドレス</th>
+              <td class="detail-profile"><%= @user.email %></td>
+            </tr>
+            <tr>
+              <th class="width60">名前</th>
+              <td class="detail-profile"><%= @user.family_name %><%= @user.first_name %></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="plofile-box">
+          <p><%= @user.profile %></td></p>
+        </div>
       </div>
     </div>
   </div>

@@ -1,147 +1,128 @@
 <%= render "shared/header" %>
 <%= render "shared/fixed-btn" %>
 
-
 <div class="container">
-<h2 class="h2-title">レシピ編集</h2>
+  <div class="wrap">
+    <h2 class="h2-title">レシピ編集</h2>
+    <%= form_with(model: @recipe, class:"recipes-post-main", local: true) do |f| %>
+      <!-- エラー文 -->
+      <%= render 'shared/error_messages', model: f.object %>
 
-  <%= form_with(model: @recipe, class:"recipes-post-main", local: true) do |f| %>
-    <!-- エラー文 -->
-    <%= render 'shared/error_messages', model: f.object %>
-
-    <div class="new-recipes">
-      <!-- 画像ボタン -->
-      <div class="row form-box">
-        <div class="forms-item indispensable col-md-3">
-          画像
-        </div>
-        <label for="recipe-image" class ="click-upload col-md-7" id ="click-upload-id">
-          <span>クリックして画像をアップロード</span>
-          <%= f.file_field :image, multiple: true, class:"upload-btn", id:"recipe-image", name:"recipe[images][]", data: {index:0} %> 
-          <%# ファイル選択ボタンを生成 jsで生成 %>
-        </label>
-      </div>
-      <!-- 画像挿入 -->
-      <div class="row form-box image-box-big" id="image-box-big-id">
-        <%#<div id="image-box" class="col-md-3 col-6" data-index="index" >
-            <div class = "image-box-s" >
-              <img src ="URL" class = "image-size">
-            </div>` 
-              <div class = "change-box-edit-delete">
-                <div class = "change-box" id = recipe-image-edit-${imageElementNum } data-index="${imageElementNum}" >編集</div>
-                <div class = "change-box" id = recipe-image-delete-${imageElementNum } data-index="${imageElementNum}" >削除</div>
-              </div>  
-          </div> %>
-      </div>
-      <!-- レシピタイトル -->
-      <div class="row form-box">
-        <div class="forms-item indispensable col-md-3">
-          レシピタイトル
-        </div>
-        <%= f.text_field :title, class:"input-area recipes-title col-md-7", id:"recipe-title" %>
-      </div>
-      <!-- 料理の特徴 -->
-      <div class="row form-box">
-        <div class="forms-item col-md-3">
-          料理の特徴
-        </div>
-        <%= f.text_area :feature, class:"input-area-wide recipes-feature col-md-7", id:"recipe-feature", placeholder:"料理の特徴（1,000文字まで）茄子をごま油で焼いてから甘めの味付けでとろりとするまで煮ました。茄子に甘辛いタレが絡んで、白いご飯にぴったりです！" , maxlength:"1000" %>
-      </div>
-      <!-- 食べ方 -->
-      <div class="row form-box">
-        <div class="forms-item col-md-3">
-          食べ方
-        </div>
-        <%= f.text_area :eat, class:"input-area-wide recipes-eat col-md-7", id:"recipe-eat", placeholder:"食べ方のポイント" %>
-      </div>
-      <!-- カテゴリー -->
-      <div class="row form-box">
-        <div class="forms-item col-md-3">
-          カテゴリーの選択
-        </div>
-        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"input-area recipes-category col-md-2", id:"recipe-category"}) %>
-      </div>
-      <!-- 冷蔵保存の日持ち -->
-      <div class="row form-box">
-        <div class="forms-item col-md-3">
-          冷蔵保存の日持ち
-        </div>
-        <div class="mx-3">
-          冷蔵保存で約<%= f.number_field :cold_date, class:"input-area recipes-cold-date col-3", min:"0" %>日
-        </div>
-      </div>
-      <!-- 冷凍保存の日持ち -->
-      <div class="row form-box">
-        <div class="forms-item col-md-3">
-          冷凍保存の日持ち
-        </div>
-        <div class="mx-3">
-          冷凍保存で約<%= f.number_field :frozen_date, class:"input-area recipes-frozen-date col-3", min:"0"  %>日
-        </div>
-      </div>
-      <!-- 調理時間 -->
-      <div class="row form-box">
-        <div class="forms-item col-md-3">
-          調理時間
-        </div>
-        <div class="mx-3">
-          約<%= f.number_field :time, class:"input-area recipes-time", min:"0"  %>分
-        </div>
-      </div>
-      <!-- 材料 -->
-      <div id="btn-event" class="onegai">
+      <div class="new-recipes">
+        <!-- 画像ボタン -->
         <div class="row form-box">
-          <div class="forms-item col-md-3 col-2">
-            材料
+          <div class="forms-item indispensable col-md-3">
+            画像
           </div>
-          
-          <div class="links col-md-2 col-5">
-            <%= link_to_add_association "追加", f, :ingredients,
-            class: 'add_fields',
-            id: 'add-btn',
-            data: {
-              #association_insertion_traversal: 'closest',
-              association_insertion_node: '#detail-association-insertion-point',
-              association_insertion_method: 'after'
-            }
-            %>
+          <label for="recipe-image" class ="click-upload col-md-7" id ="click-upload-id">
+            <span>クリックして画像をアップロード</span>
+            <%= f.file_field :image, multiple: true, class:"upload-btn", id:"recipe-image", name:"recipe[images][]", data: {index:0} %> 
+          </label>
+        </div>
+        <!-- 画像挿入 -->
+        <div class="row form-box image-box-big" id="image-box-big-id">
+          <%#<div id="image-box" class="col-md-3 col-6" data-index="index" >
+              <div class = "image-box-s" >
+                <img src ="URL" class = "image-size">
+              </div>` 
+                <div class = "change-box-edit-delete">
+                  <div class = "change-box" id = recipe-image-edit-${imageElementNum } data-index="${imageElementNum}" >編集</div>
+                  <div class = "change-box" id = recipe-image-delete-${imageElementNum } data-index="${imageElementNum}" >削除</div>
+                </div>  
+            </div> %>
+        </div>
+        <!-- レシピタイトル -->
+        <div class="row form-box">
+          <div class="forms-item indispensable col-md-3">
+            レシピタイトル
+          </div>
+          <%= f.text_field :title, class:"input-area recipes-title col-md-7", id:"recipe-title" %>
+        </div>
+        <!-- 料理の特徴 -->
+        <div class="row form-box">
+          <div class="forms-item col-md-3">
+            料理の特徴
+          </div>
+          <%= f.text_area :feature, class:"input-area-wide recipes-feature col-md-7", id:"recipe-feature", placeholder:"料理の特徴（1,000文字まで）茄子をごま油で焼いてから甘めの味付けでとろりとするまで煮ました。茄子に甘辛いタレが絡んで、白いご飯にぴったりです！" , maxlength:"1000" %>
+        </div>
+        <!-- 食べ方 -->
+        <div class="row form-box">
+          <div class="forms-item col-md-3">
+            食べ方
+          </div>
+          <%= f.text_area :eat, class:"input-area-wide recipes-eat col-md-7", id:"recipe-eat", placeholder:"食べ方のポイント" %>
+        </div>
+        <!-- カテゴリー -->
+        <div class="row form-box">
+          <div class="forms-item col-md-3">
+            カテゴリーの選択
+          </div>
+          <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"input-area recipes-category col-md-2", id:"recipe-category"}) %>
+        </div>
+        <!-- 冷蔵保存の日持ち -->
+        <div class="row form-box">
+          <div class="forms-item col-md-3">
+            冷蔵保存の日持ち
+          </div>
+          <div class="mx-3">
+            冷蔵保存で約<%= f.number_field :cold_date, class:"input-area recipes-cold-date col-3", min:"0" %>日
           </div>
         </div>
-        
-        <div id="detail-association-insertion-point"></div>
-          
+        <!-- 冷凍保存の日持ち -->
+        <div class="row form-box">
+          <div class="forms-item col-md-3">
+            冷凍保存の日持ち
+          </div>
+          <div class="mx-3">
+            冷凍保存で約<%= f.number_field :frozen_date, class:"input-area recipes-frozen-date col-3", min:"0"  %>日
+          </div>
+        </div>
+        <!-- 調理時間 -->
+        <div class="row form-box">
+          <div class="forms-item col-md-3">
+            調理時間
+          </div>
+          <div class="mx-3">
+            約<%= f.number_field :time, class:"input-area recipes-time", min:"0"  %>分
+          </div>
+        </div>
+        <!-- 材料 -->
+        <div id="btn-event" class="onegai">
+          <div class="row form-box">
+            <div class="forms-item col-md-3 col-2">
+              材料
+            </div>
+            
+            <div class="links col-md-2 col-5">
+              <%= link_to_add_association "追加", f, :ingredients,
+              class: 'add_fields',
+              id: 'add-btn',
+              data: {
+                association_insertion_node: '#detail-association-insertion-point',
+                association_insertion_method: 'after'
+              }
+              %>
+            </div>
+          </div>
+          <div id="detail-association-insertion-point"></div>
+
             <%= f.fields_for :ingredients do |form| %>
               <%= render "ingredient_fields", f: form %>
             <% end %>
-      </div>
-        <!--cocoon前の記述
+        </div>
+        <!-- つくり方 -->
         <div class="row form-box">
-          <%= f.fields_for :ingredients do |form| %>
-            <div class="forms-item col-md-3"></div>
-
-            <% thing_options = Thing.order(:id).map { |c| [c.thing_name, c.id, data: { children_path: things_path(c) }] } %>
-            <%= form.select(:thing_id, thing_options, { prompt: "---"}, {class:"input-area ingredients-thing-name col-md-3", id:"ingredient-thing-name"}) %>
-            <%#= form.collection_select(:thing_id, Thing.all, :id, :thing_name, { prompt: "---"}, {class:"input-area ingredients-thing-name col-md-3", id:"ingredient-thing-name"}) %>
-            <div class="input-area">単位</div>
-            <%= form.number_field :amount, class:"input-area ingredients-amount col-1",id:"ingredient-amount", min:"0" %>
-            <div class="input-area">単位</div>
-          <% end %>
-          <div class="add-btn">
+          <div class="forms-item col-md-3">
+            つくり方
           </div>
+          <%= f.text_area :text, class:"input-area-wide recipes-text col-md-7" %>
         </div>
-        -->
-      <!-- つくり方 -->
-      <div class="row form-box">
-        <div class="forms-item col-md-3">
-          つくり方
+        <!-- 送信ボタン -->
+        <div class='submit-btn'>
+          <%= f.submit "送信" ,class:"submit-red-btn" %>
         </div>
-        <%= f.text_area :text, class:"input-area-wide recipes-text col-md-7" %>
       </div>
-      <!-- 送信ボタン -->
-      <div class='submit-btn'>
-        <%= f.submit "送信" ,class:"submit-red-btn" %>
-      </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
 <%= render "shared/footer" %>
