@@ -1,3 +1,4 @@
+/* MV ------------------------------*/
 .top-slide-img {
   width: 100%;
   height: 70vh;
@@ -5,31 +6,111 @@
   margin-right: auto; 
   border-radius: 40px;
   object-fit: cover;
-  /* position: absolute; */
 }
-
-
-/* .contents .mv .mv-main .mv-main-img {
-  width: 80vw;
-  height: 70vh;
-  margin: 0 auto;
-  border-radius: 40px;
-  overflow: hidden;
+/* POINT TEXT------------------------------------*/
+.point-title{
+  font-family: はれのそら明朝;
+  margin: 100px 0 50px 0;
+  font-size: 5vw;
+  font-weight: bolder;
+  letter-spacing: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* background-color: aqua; */
+}
+.point-title span{
+  font-size: 15px;
+  letter-spacing: 1rem;
+}
+.point-discription{
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.15rem;
+  line-height: 2.5em;
+  text-align: center;
+}
+/* POINT ICON------------------------------------*/
+.point-box-big{
+  margin-top: 30px;
+  margin-bottom: 80px;
+}
+.point-box{
+  margin: 15px;
+  text-align: center;
+}
+.icon-box-L{
+  margin-bottom: 20px;
+  background-color: #cb2f27;
+  border-radius: 100%;
   position: relative;
-  /* z-indexにrelative、 absoluteいるらしい 
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-.contents .mv .mv-main .mv-main-img > span {
-  height: 100%;
+.icon-box-L:before{
+  content: '';
+  display: block;
   width: 100%;
-  object-fit: cover;
+  padding-top: 100%;
+}
+.icons-L-type{
+  height: 50%;
+  width: 50%;
   position: absolute;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-} */
-
-/* .top-slide-img:not(:first-child){
-  display:none;
-} */
-
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+.point-sb-title{
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.point-text{
+  font-size: 15px;
+  /* font-weight: 600; */
+}
+/* 画像と説明部分------------------------------------*/
+.about-content{
+  margin-bottom: 30px;
+}
+.about-gif{
+  position: relative;
+  margin: 10px;
+}
+.about-gif:before{
+  content: '';
+  display: block;
+  width: 100%;
+  padding-top: 70%;
+}
+.gif-about{
+  width: 100%;
+  height:100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  border-radius: 30px;
+  object-fit: cover;
+}
+.about-text-box-big{
+  display: flex;
+  align-items: flex-end;
+  flex-direction: row;
+}
+.about-text-box{
+  margin: 15px;
+}
+.about-title{
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.about-text{
+  margin-bottom: 20px;
+}

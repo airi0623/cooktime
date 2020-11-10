@@ -2,82 +2,84 @@
 <%= render "shared/fixed-btn" %>
 
 <div class="container">
-  <!-- 画像・ニックネーム -->
-  <div class="row">
-    <div class="col-md-4"></div>
-    <div class="col-md-4 icon-user-box" >
-      <div class="icon-square">
-        <%= image_tag @user.icon.url, class: "icon-user_img" %>
+  <div class="wrap-wide">
+    <!-- 画像・ニックネーム -->
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4 icon-user-box" >
+        <div class="icon-square">
+          <%= image_tag @user.icon.url, class: "icon-user_img" %>
+        </div>
+        <div class="nickname-show">
+          <h3><%= @user.nickname %></h2>
+        </div>
       </div>
-      <div class="nickname-show">
-        <h3><%= @user.nickname %></h2>
-      </div>
+      <div class="col-md-4"></div>
     </div>
-    <div class="col-md-4"></div>
-  </div>
-  <!-- プロフィール -->
-  <div class="row">
-    <div class="col-2"></div>
-    <div class="col-md-8">
-      <div class="profile-box">
-        <h3>Profile</h3>
-        <p><%= @user.profile %></p>
+    <!-- プロフィール -->
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-md-8">
+        <div class="profile-box">
+          <h3>Profile</h3>
+          <p><%= @user.profile %></p>
+        </div>
       </div>
+      <div class="col-2"></div>
     </div>
-    <div class="col-2"></div>
-  </div>
-  <div class="list-wrap">
-    <h2><%= @user.nickname %>さんが<br>投稿したレシピ</h2>
-    <div class='recipe-contents'>
-      <ul class='row'>
-        <!-- レシピ一つづつ -->
-        <% @recipes.each do |recipe|%>
-          <li class='list col-md-3 col-6'>
-            <%= link_to recipe_path(recipe.id) do %>
-              <!-- いいねトマト -->
-              <div class='like-box'>
-            <div><%= image_tag "icon-star-light_green.png", alt:"star", class:"icons-type"%></div>
-            <div class="like-box">お気に入り<span><%= recipe.likes.length %></span></div>
-              </div> 
-              <!-- タイトル -->
-              <div class="recipe-title">
-                <h3>
-                  <%= recipe.title %>
-                </h3>
-              </div>  
-              <!-- 画像 -->
-              <div class='recipe-img-index'>
-                <%= image_tag recipe.images[0].url, class: "img-recipe" %>
-              </div>
-              <!--画像の下の細かいコンテンツ-->
-              <div class='recipe-info'>
-                <table class="table-index" width="100%">
-                  <tr>
-                    <td class='index recipe-category'>
-                      <%= image_tag "icon-category.png", alt:"料理画像", class:"icons-type"%>
-                      <span><%= recipe.category.name %></span>
-                    </td>
-                    <td class='index recipe-time'>
-                      <%= image_tag "icon-time.png", alt:"料理画像", class:"icons-type"%>
-                      <span>約<%= recipe.time %>分</span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class='index recipe-days'>
-                      <%= image_tag "icon-cold.png", alt:"料理画像", class:"icons-type"%>
-                      <span>約<%= recipe.cold_date%>日</span>
-                    </td>
-                    <td class='index recipe-days'>
-                      <%= image_tag "icon-frozen.png", alt:"料理画像", class:"icons-type"%>
-                      <span>約<%= recipe.frozen_date %>日</span>
-                    </td>
-                  </tr>
-                </table>
-              </div>
-            <% end %>
-          </li>
-        <% end %>
-      </ul>
+    <div class="list-wrap">
+      <h2><%= @user.nickname %>さんが<br>投稿したレシピ</h2>
+      <div class='recipe-contents'>
+        <ul class='row'>
+          <!-- レシピ一つづつ -->
+          <% @recipes.each do |recipe|%>
+            <li class='list col-md-3 col-6'>
+              <%= link_to recipe_path(recipe.id) do %>
+                <!-- いいねトマト -->
+                <div class='like-box'>
+              <div><%= image_tag "icon-star-light_green.png", alt:"star", class:"icons-type"%></div>
+              <div class="like-box">お気に入り<span><%= recipe.likes.length %></span></div>
+                </div> 
+                <!-- タイトル -->
+                <div class="recipe-title">
+                  <h3>
+                    <%= recipe.title %>
+                  </h3>
+                </div>  
+                <!-- 画像 -->
+                <div class='recipe-img-index'>
+                  <%= image_tag recipe.images[0].url, class: "img-recipe" %>
+                </div>
+                <!--画像の下の細かいコンテンツ-->
+                <div class='recipe-info'>
+                  <table class="table-index" width="100%">
+                    <tr>
+                      <td class='index recipe-category'>
+                        <%= image_tag "icon-category.png", alt:"料理画像", class:"icons-type"%>
+                        <span><%= recipe.category.name %></span>
+                      </td>
+                      <td class='index recipe-time'>
+                        <%= image_tag "icon-time.png", alt:"料理画像", class:"icons-type"%>
+                        <span>約<%= recipe.time %>分</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class='index recipe-days'>
+                        <%= image_tag "icon-cold.png", alt:"料理画像", class:"icons-type"%>
+                        <span>約<%= recipe.cold_date%>日</span>
+                      </td>
+                      <td class='index recipe-days'>
+                        <%= image_tag "icon-frozen.png", alt:"料理画像", class:"icons-type"%>
+                        <span>約<%= recipe.frozen_date %>日</span>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

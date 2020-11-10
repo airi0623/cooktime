@@ -2,40 +2,45 @@
 <%= render "shared/fixed-btn" %>
 
 <div class="container">
-  <h2 class="h2-title">投稿したレシピ</h2>
-    <!-- レシピ一つづつ -->
-
-  <% @recipes.each do |recipe|%>
-    <div class='row'>
-      <div class="col-md-3 col-5">
-        <%= link_to recipe_path(recipe.id) do %>
-        <div class='img-box-my_recipe '>
-          <%= image_tag recipe.images[0].url, class: "img-recipe" %>
+  <div class="wrap">
+    <h2 class="h2-title">投稿したレシピ</h2>
+    <% if @recipes.present? %>
+      <!-- レシピ一つづつ -->
+      <% @recipes.each do |recipe|%>
+        <div class='row'>
+          <div class="col-md-3 col-5">
+            <%= link_to recipe_path(recipe.id) do %>
+            <div class='img-box-my_recipe '>
+              <%= image_tag recipe.images[0].url, class: "img-recipe" %>
+            </div>
+            <% end %>
+          </div>
+          <!-- タイトルなど -->
+          <div class="col-md-6 col-7">
+            <div class="box-my_recipe ">
+              <!-- いいねトマト -->
+              <div class='like-box'>
+                <div><%= image_tag "icon-star-light_green.png", alt:"star", class:"icons-type"%></div>
+                <div class="like-box">お気に入り<span><%= recipe.likes.length %></span></div>
+              </div> 
+              <h3 class="title-my_recipe"><%= recipe.title %></h3>
+            </div>
+          </div>
+          <div class="col-md-2 col-12">  
+            <div class="content-btn">
+              <%# <div class="edit-my_recipe"> %>
+                <%= link_to "編集", edit_recipe_path(recipe.id), method: :get, class: "btn-change-my_recipe" %>
+              <%# </div> %>
+              <%# <div class="delete-my_recipe"> %>
+                <%= link_to "削除", recipe_path(recipe.id), method: :delete, class: "btn-change-my_recipe" %>
+              <%# </div> %>
+            </div>
+          </div>
         </div>
-        <% end %>
-      </div>
-      <!-- タイトルなど -->
-      <div class="col-md-6 col-7">
-        <div class="box-my_recipe ">
-          <!-- いいねトマト -->
-          <div class='like-box'>
-            <div><%= image_tag "icon-star-light_green.png", alt:"star", class:"icons-type"%></div>
-            <div class="like-box">お気に入り<span><%= recipe.likes.length %></span></div>
-          </div> 
-          <h3 class="title-my_recipe"><%= recipe.title %></h3>
-        </div>
-      </div>
-      <div class="col-md-2 col-12">  
-        <div class="content-btn">
-          <%# <div class="edit-my_recipe"> %>
-            <%= link_to "編集", edit_recipe_path(recipe.id), method: :get, class: "btn-change-my_recipe" %>
-          <%# </div> %>
-          <%# <div class="delete-my_recipe"> %>
-            <%= link_to "削除", recipe_path(recipe.id), method: :delete, class: "btn-change-my_recipe" %>
-          <%# </div> %>
-        </div>
-      </div>
-    </div>
-  <% end %>
+      <% end %>
+    <% else%>
+      <span>投稿したレシピはありません</span>
+    <% end %>
+  </div>
 </div>
 <%= render "shared/footer" %>
