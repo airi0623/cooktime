@@ -1,4 +1,6 @@
 class RecipesController < ApplicationController
+  before_action :search_recipe, only:[:index, :search]
+  
   def about
   end
 
@@ -65,11 +67,19 @@ class RecipesController < ApplicationController
     @recipes = Recipe.all.order("created_at DESC")
   end
 
+  def search
+  end
+
   private
   def recipe_params
     params.require(:recipe).permit(
       {images: []},:title,:feature,:eat,:category_id,:cold_date,:frozen_date,:time,:text,
       ingredients_attributes:[:id, :recipe_id, :thing_id, :amount, :_destroy])
       .merge(user_id: current_user.id)
+  end
+
+  def search_recipe
+    @p = Recipe.ransack(params[:q])  # 検索オブジェクトを生成
+    @results = @p.result
   end
 end

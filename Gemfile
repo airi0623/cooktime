@@ -73,6 +73,7 @@ gem 'mini_magick'
 gem 'active_hash'
 gem "cocoon"
 gem 'jquery-rails'
+gem 'ransack'
 
 gem "aws-sdk-s3", require: false
 gem "fog-aws"
