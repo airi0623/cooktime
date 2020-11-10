@@ -1,39 +1,41 @@
 <%= render "shared/header" %>
 
-<div class="container my-5">
-  <h2 class="h2-title">ログイン</h2>
-  <%= form_with model: @user, url:new_user_session_path, class: 'registration-main', local: true do |f| %>
-  <div class='login-flash-message'>
-    <%= flash[:notice] %>
-    <%= flash[:alert] %>
-  </div>
-    <%# エラー文 %>
-    <%= render 'shared/error_messages', model: f.object %>
-
-    <%# フォーム内容 %>
-    <div class="login-user">
-      <div class="row form-box">
-        <div class="forms-item indispensable col-md-3">
-          メールアドレス
-        </div> 
-        <%= f.email_field :email , class:"input-area users-email col-md-7", id:"user-email", autofocus: true %>
-      </div>
-      <div class="row form-box">
-        <div class="forms-item indispensable col-md-3">
-          パスワード
-        </div>
-        <%= f.password_field :password , class:"input-area users-password col-md-7", id:"user-password" %>
-      </div> 
-      <div class='row login-btn-box'>
-        <div class='login-btn col-md-3'>
-          <%= f.submit "ログイン" ,class:"login-red-btn" %>
-        </div>
-        <div class='top-link col-md-3'>
-          <%= link_to "TOPページへ戻る", root_path, class:"top-red-link" %> 
-        </div>
-      </div>
+<div class="container">
+  <div class="wrap">
+    <h2 class="h2-title">ログイン</h2>
+    <%= form_with model: @user, url:new_user_session_path, class: 'registration-main', local: true do |f| %>
+    <div class='login-flash-message'>
+      <%= flash[:notice] %>
+      <%= flash[:alert] %>
     </div>
-  <% end %>
+      <%# エラー文 %>
+      <%= render 'shared/error_messages', model: f.object %>
+
+      <%# フォーム内容 %>
+      <div class="login-user">
+        <div class="row form-box">
+          <div class="forms-item indispensable col-md-3">
+            メールアドレス
+          </div> 
+          <%= f.email_field :email , class:"input-area users-email col-md-7", id:"user-email", autofocus: true %>
+        </div>
+        <div class="row form-box">
+          <div class="forms-item indispensable col-md-3">
+            パスワード
+          </div>
+          <%= f.password_field :password , class:"input-area users-password col-md-7", id:"user-password" %>
+        </div> 
+        <div class='row login-btn-box'>
+          <div class='login-btn col-md-3'>
+            <%= f.submit "ログイン" ,class:"login-red-btn" %>
+          </div>
+          <div class='top-link col-md-3'>
+            <%= link_to "TOPページへ戻る", root_path, class:"top-red-link" %> 
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
 <%= render "shared/footer" %>
 

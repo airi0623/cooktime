@@ -2,118 +2,120 @@
 <%= render "shared/fixed-btn" %>
 
 <div class="container">
-  <h2 class="h2-title"><%=@recipe.title%></h2>
-  <div class=tomato-box row>
-    <!-- いいねトマト -->
-    <div class='like-box col-md-3' id="like-btn-<%= @recipe.id %>">
-      <%= render 'likes/like', recipe: @recipe %>
-    </div> 
-    <!-- 選択中トマト -->
-    <div class='choice-box col-md-2' id="choice-btn-<%= @recipe.id %>">
-      <%= render 'choices/choice', recipe: @recipe %>
-    </div>
-  </div>
-  <!-- 画像・アイコン・カテゴリ・冷蔵・冷凍 -->
-  <div class="contents">
-    <div class="row ajust-mb-30">
-      <div class="col-md-2"></div>
-      <div class="col-md-8">
-        <div class="recipe-img " id='slide' >
-          <% @recipe.images.each do |image| %>
-            <li><%= image_tag image.url, alt:"料理画像", class:"center-block meal-img"%></li>
-          <% end %>
-        </div>
+  <div class="wrap">
+    <h2 class="h2-title"><%=@recipe.title%></h2>
+    <div class=tomato-box row>
+      <!-- いいねトマト -->
+      <div class='like-box col-md-3' id="like-btn-<%= @recipe.id %>">
+        <%= render 'likes/like', recipe: @recipe %>
+      </div> 
+      <!-- 選択中トマト -->
+      <div class='choice-box col-md-2' id="choice-btn-<%= @recipe.id %>">
+        <%= render 'choices/choice', recipe: @recipe %>
       </div>
-      <div class="col-md-2"></div>
     </div>
+    <!-- 画像・アイコン・カテゴリ・冷蔵・冷凍 -->
+    <div class="contents">
+      <div class="row ajust-mb-30">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <div class="recipe-img " id='slide' >
+            <% @recipe.images.each do |image| %>
+              <li><%= image_tag image.url, alt:"料理画像", class:"center-block meal-img"%></li>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
 
-    <!-- Userアイコン -->
-    <div class='user-icon-box'>
-      <%= link_to profile_user_path(@user.id)  do%>
-        <!-- :url記述したらエラーがでる -->
-        <div class="link-user_page row">
-          <div class="user-icon col-md-2"><%= image_tag @user.icon.url, alt:"アイコン", class:"user-icon-s"%></div>
-          <div class="class-md-4"><span class="user-name"><%= @user.nickname%>さん</span>が投稿したレシピ</div>
+      <!-- Userアイコン -->
+      <div class='user-icon-box'>
+        <%= link_to profile_user_path(@user.id)  do%>
+          <!-- :url記述したらエラーがでる -->
+          <div class="link-user_page row">
+            <div class="user-icon col-md-2"><%= image_tag @user.icon.url, alt:"アイコン", class:"user-icon-s"%></div>
+            <div class="class-md-4"><span class="user-name"><%= @user.nickname%>さん</span>が投稿したレシピ</div>
+          </div>
+        <% end%>
+      </div>
+      <!-- カテゴリ・冷蔵・冷凍 -->
+      <div class='row category-time-days'>
+        <div class="show-recipe-category col-md-3 col-6">
+          <%= image_tag "icon-category.png", alt:"料理画像", class:"icons-type"%>
+          <span><%= @recipe.category.name %></span>
         </div>
-      <% end%>
-    </div>
-    <!-- カテゴリ・冷蔵・冷凍 -->
-    <div class='row category-time-days'>
-      <div class="show-recipe-category col-md-3 col-6">
-        <%= image_tag "icon-category.png", alt:"料理画像", class:"icons-type"%>
-        <span><%= @recipe.category.name %></span>
-      </div>
-      <div class="show-recipe-time col-md-3 col-6">
-        <%= image_tag "icon-time.png", alt:"料理画像", class:"icons-type"%>
-        <span>約<span class="number"><%= @recipe.time %></span>分</span>
-      </div>
-      <div class="show-recipe-cold col-md-3 col-6">
-        <%= image_tag "icon-cold.png", alt:"料理画像", class:"icons-type"%>
-        <span>冷蔵保存 約<span class="number"><%= @recipe.cold_date %></span>日間</span>
-      </div>
-      <div class="show-recipe-frozen col-md-3 col-6">
-        <%= image_tag "icon-frozen.png", alt:"料理画像", class:"icons-type"%>
-        <span>冷凍保存 約<span class="number"><%= @recipe.frozen_date %></span>日間</span>
-      </div>
-    </div>
-    <!-- 特徴 -->
-    <div class='row feature-eat-box'>
-      <div class="col-md-6 ajust-box-re-show">
-        <div class="feature-eat">
-          <h3>料理の特徴</h3>
-          <p><%= @recipe.feature %></p>
+        <div class="show-recipe-time col-md-3 col-6">
+          <%= image_tag "icon-time.png", alt:"料理画像", class:"icons-type"%>
+          <span>約<span class="number"><%= @recipe.time %></span>分</span>
+        </div>
+        <div class="show-recipe-cold col-md-3 col-6">
+          <%= image_tag "icon-cold.png", alt:"料理画像", class:"icons-type"%>
+          <span>冷蔵保存 約<span class="number"><%= @recipe.cold_date %></span>日間</span>
+        </div>
+        <div class="show-recipe-frozen col-md-3 col-6">
+          <%= image_tag "icon-frozen.png", alt:"料理画像", class:"icons-type"%>
+          <span>冷凍保存 約<span class="number"><%= @recipe.frozen_date %></span>日間</span>
         </div>
       </div>
-      <div class="col-md-6 ajust-box-re-show">
-        <div class="feature-eat eat">
-          <h3>食べ方</h3>
-          <p><%= @recipe.eat %></p>
+      <!-- 特徴 -->
+      <div class='row feature-eat-box'>
+        <div class="col-md-6 ajust-box-re-show">
+          <div class="feature-eat">
+            <h3>料理の特徴</h3>
+            <p><%= @recipe.feature %></p>
+          </div>
+        </div>
+        <div class="col-md-6 ajust-box-re-show">
+          <div class="feature-eat eat">
+            <h3>食べ方</h3>
+            <p><%= @recipe.eat %></p>
+          </div>
         </div>
       </div>
-    </div>
-    <!-- 材料 -->
-    <div class='ingredients'>
-      <table class="table-ingredients col-md-8">
-        <tr>
-          <td class="flex-box">
-            <h3>材料</h3><span>(一人前)</span>
-          </td>
-          <td>
-          </td>
-          <td >
-            <input id="input-calc" type="number" name="nickname" class="input-calc-number">
-            <span>人前</span>
-          </td>
-        </tr>
-      </table>
-      <% @ingredients.each do |ingredient|%>
+      <!-- 材料 -->
+      <div class='ingredients'>
         <table class="table-ingredients col-md-8">
           <tr>
-            <td class="td-font">
-              <%= ingredient.thing.thing_name %>
+            <td class="flex-box">
+              <h3>材料</h3><span>(一人前)</span>
             </td>
-            <td class="td-position td-font">
-              <%= ingredient.thing.spoon %>
-              <span id="amount"><%= ingredient.amount %></span>
-              <%= ingredient.thing.unit %>
+            <td>
             </td>
-            <td class="td-font output-calc">
-              <%= ingredient.thing.spoon %>
-              <span id='output'>計算</span>
-              <%= ingredient.thing.unit %>
+            <td >
+              <input id="input-calc" type="number" name="nickname" class="input-calc-number">
+              <span>人前</span>
             </td>
           </tr>
         </table>
-      <% end %>
+        <% @ingredients.each do |ingredient|%>
+          <table class="table-ingredients col-md-8">
+            <tr>
+              <td class="td-font">
+                <%= ingredient.thing.thing_name %>
+              </td>
+              <td class="td-position td-font">
+                <%= ingredient.thing.spoon %>
+                <span id="amount"><%= ingredient.amount %></span>
+                <%= ingredient.thing.unit %>
+              </td>
+              <td class="td-font output-calc">
+                <%= ingredient.thing.spoon %>
+                <span id='output'>計算</span>
+                <%= ingredient.thing.unit %>
+              </td>
+            </tr>
+          </table>
+        <% end %>
+      </div>
+      <!-- つくり方 -->
+      <div class='cook col-md-12'>
+        <h3>つくり方</h3>
+        <p><%= @recipe.text %></p>
+      </div>
     </div>
-    <!-- つくり方 -->
-    <div class='cook col-md-12'>
-      <h3>つくり方</h3>
-      <p><%= @recipe.text %></p>
+    <div class="btn-more-box">
+      <%= link_to "レシピページ", more_recipes_path, class:"btn-more" %>
     </div>
-  </div>
-  <div class="btn-more-box">
-    <%= link_to "レシピページ", more_recipes_path, class:"btn-more" %>
   </div>
 </div>
 
