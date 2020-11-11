@@ -55,6 +55,13 @@
           <div class="forms-item indispensable col-md-3">
             パスワード
           </div> 
+          <%= f.password_field :current_password , class:"input-area col-md-7", id:"user-password", placeholder:"6文字以上の半角英数字" %>
+          <p class='info-text'>※現在のパスワードをご入力ください</p>
+        </div>
+        <div class="row form-box">
+          <div class="forms-item indispensable col-md-3">
+            パスワード
+          </div> 
           <%= f.password_field :password , class:"input-area col-md-7", id:"user-password", placeholder:"6文字以上の半角英数字" %>
           <p class='info-text'>※英字と数字の両方を含めて設定してください</p>
         </div>

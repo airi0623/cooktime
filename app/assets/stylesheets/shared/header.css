@@ -1,12 +1,9 @@
 .top-page-header{
   background-color: #fffbf6;
 }
-.navbar{
-  /* margin-bottom: 10px; */
-}
 /* ヘッダーのボタン ---------------------*/
 .nav-item{
-  margin:0px 10px 0 0;
+  margin:5px 10px 0 0;
   font-size: 14px;
   font-weight: bolder;
   color: #cb2f27;
@@ -15,21 +12,35 @@
   transition: 0.3s;
   color:  #f19e99;
 }
+
 /* ヘッダーの赤色ボタン ---------------------*/
-.square-btn{
+.btn-header-red{
   width: 100%;
   border-radius: 20px;
-  /* border: 2px solid#cb2f27; */
   color:white;
   background-color: #cb2f27;
   text-align: center;
 }
-.square-btn:hover{
+.btn-header-red:hover{
   transition: 0.5s ;
   color:white;
   text-align: center;
-  background-color:  #ca635e;;
+  background-color:  #ca635e;
 }
+.btn-header-border{
+  width: 100%;
+  border-radius: 20px;
+  color:#cb2f27;
+  border: 2px solid #cb2f27;
+  text-align: center;
+}
+.btn-header-border:hover{
+  transition: 0.5s ;
+  color:white;
+  text-align: center;
+  background-color:  #dd7069;
+}
+
 
 
 
