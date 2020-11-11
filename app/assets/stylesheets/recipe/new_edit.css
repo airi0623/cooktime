@@ -6,6 +6,10 @@ h2 {
 .recipes-post-main{
   margin-top: 80px;
 }
+.change-box{
+  margin: 0px 10px 10px 10px; 
+  cursor: pointer;
+}
 /* 画像プレビュー部分 -------------------------------*/
 /* 選択ボタン */
 .click-upload{

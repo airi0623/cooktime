@@ -10,12 +10,11 @@ if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
       const imageDataIndex = document.querySelector(`#image-box[data-index="${index}"]`);
 
       if (imageDataIndex === null){
-      const imageElementNum = document.querySelectorAll('#image-box').length
 
         // 画像を表示するためのdiv要素を生成
         const imageBox = document.createElement('div');
         imageBox.setAttribute('id', "image-box");
-        imageBox.setAttribute('class', "col-md-3 col-6")
+        imageBox.setAttribute('class', "image-box col-md-3 col-6")
         imageBox.setAttribute('data-index', index);
         
         // 画像を表示するためのdiv(小)要素を生成
@@ -55,8 +54,8 @@ if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
           
         // 編集ボタン押した時の挙動
         const editImage = document.getElementById(`recipe-image-edit-${index}`);
+          console.log("編集")
           editImage.addEventListener('click',function(e){
-            console.log("編集")
             const targetIndex = e.target.dataset.index;  //専用のメソッド dataset getAttributeでもいける？
             const fileField = document.querySelector(`input[type="file"][data-index="${targetIndex}"]`); //属性セレクター
             fileField.click();  //ボタンをクリックさせてる
@@ -69,10 +68,10 @@ if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
             console.log("削除")
             const targetIndex = e.target.dataset.index;
             const fileField = document.querySelector(`input[type="file"][data-index="${targetIndex}"]`);
-            const ImageElement = document.querySelector(`.image-box[data-index="${targetIndex}"]`)
+            const ImageElement = document.querySelector(`.image-box[data-index="${targetIndex}"]`);
                                                         //.image-boxに紐づくデータを取得.image-boxのデータもとってこれる
-            fileField.remove()
-            ImageElement.remove()
+            fileField.remove();
+            ImageElement.remove();
           });
 
         // ファイルにデータが入ったら再度発火
