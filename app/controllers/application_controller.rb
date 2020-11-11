@@ -14,4 +14,12 @@ class ApplicationController < ActionController::Base
       username == ENV["BASIC_AUTH_USER"] && password == ENV["BASIC_AUTH_PASSWORD"]
     end
   end
+
+  # registrations_controller.rb と passwords_controller.rb の check_guest は削除
+  def check_guest
+    email = resource&.email || params[:user][:email].downcase
+    if email == 'guest@gmail.com'
+      redirect_to root_path, alert: 'ゲストユーザーの変更・削除はできません。'
+    end
+  end
 end

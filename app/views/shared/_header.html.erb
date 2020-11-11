@@ -12,11 +12,12 @@
           <li class="nav-item"><%= link_to "cooktimeについて" ,about_recipes_path , method: :get, class:"nav-link text-btn" %></li>
           <li class="nav-item"><%= link_to "ランキング" ,likes_path , method: :get, class:"nav-link text-btn" %></li>
           <% if user_signed_in? %>
-            <li class="nav-item"><%= link_to "マイページ", user_path(current_user.id), method: :get, class: "nav-link square-btn user-nickname" %></li> 
-            <li class="nav-item"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "nav-link square-btn logout " %></li> 
+            <li class="nav-item"><%= link_to "マイページ", user_path(current_user.id), method: :get, class: "nav-link btn-header-red" %></li> 
+            <li class="nav-item"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "nav-link btn-header-red" %></li> 
           <% else %>
-            <li class="nav-item"><%= link_to 'ログイン', new_user_session_path, method: :get,class: "nav-link square-btn login" %></li>
-            <li class="nav-item"><%= link_to '新規登録', new_user_registration_path, class: "nav-link square-btn sign-up" %></li>
+            <li class="nav-item"><%= link_to 'ログイン', new_user_session_path, method: :get,class: "nav-link btn-header-red" %></li>
+            <li class="nav-item"><%= link_to '新規登録', new_user_registration_path, class: "nav-link btn-header-red" %></li>
+            <li class="nav-item"><%= link_to 'かんたんログイン', users_guest_sign_in_path, method: :post, class: "nav-link btn-header-border" %></li>
           <% end %>
         </ul>
       </div>
