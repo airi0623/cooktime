@@ -1,8 +1,9 @@
 
-#CookTime
+# CookTime
 __URL__：
 __TOP画像を入れる__
-![COOKTIME POINT](README-img/point.jpg "COOKTIME")
+<img width="100%" alt="cooktime-main" src="https://user-images.githubusercontent.com/69624304/98782205-eabead80-243a-11eb-8bf9-c61055e3f41f.png">
+
 
 __ログイン方法__
 
@@ -10,16 +11,17 @@ __ログイン方法__
 - リスト2
 - リスト3
 
-#このアプリでできること
+# このアプリでできること
 __URL__：
 __画像を入れる__
-![COOKTIME POINT](README-img/point.jpg "COOKTIME")
+<img width="100%" alt="cooktime-main" src="https://user-images.githubusercontent.com/69624304/98782205-eabead80-243a-11eb-8bf9-c61055e3f41f.png">
 
-#ターゲット・背景
+
+# ターゲット・背景
 
 __スライド画像で入れる__
 
-#使用技術
+# 使用技術
 - HTML
 - CSS
 - Javascript / JQuery / Ajax
@@ -30,7 +32,7 @@ __スライド画像で入れる__
 EC2 ( Amazon Linux 2 ) / RDS(MySQL) / S3 
 - GitHub  
 
-#機能一覧
+# 機能一覧
 __USER__
 
 - ユーザー登録・編集、ログイン機能全般 （gem:deviseを使用）
