@@ -13,6 +13,7 @@ __ログイン方法__
 #このアプリでできること
 __URL__：
 __画像を入れる__
+![COOKTIME POINT](README-img/point.jpg "COOKTIME")
 
 #ターゲット・背景
 
