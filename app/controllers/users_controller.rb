@@ -15,6 +15,9 @@ class UsersController < ApplicationController
   def my_recipe
     @recipes = Recipe.where(user_id: current_user.id).order("created_at DESC")
   end
-  
+  def likes_list
+    @ingredients = Ingredient.where(recipe_id: params[:id])
+    @likes  = Like.where(user_id: current_user.id)
+  end
 end
 
