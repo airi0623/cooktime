@@ -15,21 +15,6 @@ class UsersController < ApplicationController
   def my_recipe
     @recipes = Recipe.where(user_id: current_user.id).order("created_at DESC")
   end
-  def new_guest
-    user = User.find_or_create_by!(email: 'guest@gmail.com') do |user|
-      user.password = SecureRandom.urlsafe_base64
-      user.name = "かんたんログイン"
-      # user.confirmed_at = Time.now  # Confirmable を使用している場合は必要
-    end
-    sign_in user
-    redirect_to root_path, notice: 'ゲストユーザーとしてログインしました。'
-  end
-
-  private
-  def check_guest
-    if resource.email == 'guest@gmail.com'
-      redirect_to root_path, alert: 'ゲストユーザーは削除できません。'
-    end
-  end
+  
 end
 

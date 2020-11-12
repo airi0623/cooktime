@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'choices' => 'choices#index'
   get 'likes' => 'likes#index'
   get 'recipes/search'
-  post '/users/guest_sign_in', to: 'users#new_guest'
+  # post '/users/guest_sign_in', to: 'users#new_guest'
 
   resources :users do
     member do
