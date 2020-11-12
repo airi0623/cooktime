@@ -18,6 +18,7 @@ Rails.application.routes.draw do
       get 'profile'
       get 'my_recipe'
       get 'do_cook'
+      get 'likes_list'
     end
   end
 
