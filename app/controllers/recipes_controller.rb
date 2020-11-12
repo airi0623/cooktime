@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  before_action :search_recipe, only:[:index, :search, :more]
+  before_action :search_recipe, only:[:index, :search,:search_result, :more]
   
   def about
   end
@@ -59,7 +59,7 @@ class RecipesController < ApplicationController
     @recipes = Recipe.all.order("created_at DESC")
   end
 
-  def search
+  def search_result
   end
 
   private

@@ -13,18 +13,24 @@
   </div>
   <% if user_signed_in? %>
     <%= link_to do_cook_user_path(current_user.id)  do %>
-      <div class="recipe-fixed">
+      <div class="recipe-fixed top-fixed">
         <%= image_tag "icon-cook.png", alt:"RECIPE", class:"icon-type-fixed"%>
         <span>COOK</span> 
       </div>
     <%end%>
   <% else %>
     <%= link_to about_recipes_path  do %>
-      <div class="recipe-fixed">
+      <div class="recipe-fixed top-fixed">
         <%= image_tag "icon-watch.png", alt:"about", class:"icon-type-fixed"%>
         <span>ABOUT</span> 
       </div>
     <%end%>
   <% end %>  
+  <div class="recipe-fixed ">
+    <a href="/recipes/search" class="icon-recipe text-icon">
+      <%= image_tag "icon-search.png", alt:"SEARCH", class:"icon-type-fixed"%>
+      <span>SEARCH</span>
+    </a>
+  </div>
 </div>
 
