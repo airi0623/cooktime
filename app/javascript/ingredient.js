@@ -1,5 +1,4 @@
 $(function() {
-  console.log("OK")
 
   $('.select').on('change',function(e){
     //spoonとunitを定義

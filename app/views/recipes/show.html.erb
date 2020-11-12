@@ -82,7 +82,7 @@
             <td>
             </td>
             <td >
-              <input id="input-calc" type="number" name="nickname" class="input-calc-number">
+              <input data-recipe-id="<%=@recipe.id%>" type="number" name="amount" class="input-number">
               <span>人前</span>
             </td>
           </tr>
@@ -95,12 +95,12 @@
               </td>
               <td class="td-position td-font">
                 <%= ingredient.thing.spoon %>
-                <span id="amount"><%= ingredient.amount %></span>
+                <span class="amount <%=@recipe.id%>"><%= ingredient.amount %></span>
                 <%= ingredient.thing.unit %>
               </td>
               <td class="td-font output-calc">
                 <%= ingredient.thing.spoon %>
-                <span id='output' class="output">計算</span>
+                <span class='output <%=@recipe.id%>'>計算</span>
                 <%= ingredient.thing.unit %>
               </td>
             </tr>
