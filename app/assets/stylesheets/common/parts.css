@@ -44,3 +44,16 @@ a{
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
+/* ブロック要素をセンターに持ってくるため */
+.object-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* テーブルのパーツ */
+.td-right{
+  text-align: right;
+}
+.td-center{
+  text-align: center;
+}

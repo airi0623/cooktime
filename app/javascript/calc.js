@@ -1,11 +1,15 @@
 $(function() {
-  $('#input-calc').on('change',function(e){
-    console.log("OK")
-    amount = $('#amount').text();
-    console.log(amount)
-    inputNun = $('#input-calc').val();
-    $('#output').text(inputNun * amount);
-  
+  console.log("OK")
+  $('.input-number').on('change',function(e){
 
+    let klass = e.target.dataset.recipeId
+    $(".amount." + klass).each(( index, element ) => {
+      inputNum= e.target.value;
+
+      let amount = element.innerHTML
+      let klass = e.target.dataset.recipeId
+      
+      $(".output." + klass)[index].value = (inputNum * amount);
+    });
   })
 })

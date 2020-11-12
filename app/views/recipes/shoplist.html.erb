@@ -1,0 +1,30 @@
+
+<%= render "shared/header" %>
+<%= render "shared/fixed-btn" %>
+
+<div class="container">
+  <div class="wrap">
+    <h2 class="h2-title">買い物リスト</h2>
+    <% @ingredients.each do |id, total| %>
+      <div class="col-md-10">
+        <table class="table-list">
+          <tr>
+            <td width="40%">
+              <%= Thing.find(id).thing_name %>
+            </td>
+            <td width="20%" class="td-list-spoon">
+              <%= Thing.find(id).spoon %>
+            </td>
+            <td width="20%" class="td-list-amount">
+              <%= total %>
+            </td>
+            <td width="10%" class="td-list-unit">
+              <%= Thing.find(id).unit %>
+            </td>
+          </tr>
+        </table>
+      </div>
+    <% end %>
+  </div>
+</div>
+<%= render "shared/footer" %>
