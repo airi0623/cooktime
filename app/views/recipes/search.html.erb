@@ -2,65 +2,12 @@
 <%= render "shared/fixed-btn" %>
 
 <div class="container">
-  <!-- 検索結果 -----------------------------------------------------------> 
-  <div class="list-wrap">
-    <h2>検索結果</h2>
-    <div class='recipe-contents'>
-      <ul class='row'>
-      <!-- レシピ一つづつ -->
-        <% @results.each do |recipe|%>
-          <li class='list col-md-3 col-6'>
-            <%= link_to recipe_path(recipe.id) do %>
-              <!-- いいねトマト -->
-              <div class='like-box'>
-                <div><%= image_tag "icon-star-light_green.png", alt:"star", class:"icons-type"%></div>
-                <div class="like-box">お気に入り<span><%= recipe.likes.length %></span></div>
-              </div> 
-              <!-- タイトル -->
-              <div class="recipe-title">
-                <h3>
-                  <%= recipe.title %>
-                </h3>
-              </div>  
-              <!-- 画像 -->
-              <div class='recipe-img-index'>
-                <%= image_tag recipe.images[0].url, class: "img-recipe" %>
-              </div>
-              <!--画像の下の細かいコンテンツ-->
-              <div class='recipe-info'>
-                <table class="table-index" width="100%">
-                  <tr>
-                    <td class='index recipe-category'>
-                      <%= image_tag "icon-category.png", alt:"料理画像", class:"icons-type"%>
-                      <span><%= recipe.category.name %></span>
-                    </td>
-                    <td class='index recipe-time'>
-                      <%= image_tag "icon-time.png", alt:"料理画像", class:"icons-type"%>
-                      <span>約<%= recipe.time %>分</span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class='index recipe-days'>
-                      <%= image_tag "icon-cold.png", alt:"料理画像", class:"icons-type"%>
-                      <span>約<%= recipe.cold_date%>日</span>
-                    </td>
-                    <td class='index recipe-days'>
-                      <%= image_tag "icon-frozen.png", alt:"料理画像", class:"icons-type"%>
-                      <span>約<%= recipe.frozen_date %>日</span>
-                    </td>
-                  </tr>
-                </table>
-              </div>
-            <% end %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
-  </div>
-  <!-- 検索ボックス --------------------------------------------------------->
+
+
+<!-- 検索ボックス --------------------------------------------------------->
   <div class="search-contents">
     <h2>レシピ検索</h2>
-    <%= search_form_for @p, url: recipes_search_path do |f| %>
+    <%= search_form_for @p, url: recipes_search_result_path do |f| %>
       <%= f.label :title_or_feature_cont, 'キーワード', class:'col-md-3' %>
       <%= f.text_field :title_or_feature_cont, class: 'input-search col-md-8' %>
       <br>
