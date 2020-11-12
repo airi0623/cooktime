@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'likes' => 'likes#index'
   get 'recipes/search_result'
   get 'recipes/search'
+  post 'recipes/shoplist' 
 
   resources :users do
     member do

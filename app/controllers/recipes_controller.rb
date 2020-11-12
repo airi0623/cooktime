@@ -62,6 +62,24 @@ class RecipesController < ApplicationController
   def search_result
   end
 
+  def shoplist
+    @ingredients = {}
+    params[:ingredient].each do |id, ingredient|
+      # ↑paramsのingredientの箱に入っているから
+      total = ingredient.map(&:to_i).sum
+
+      name  = Thing.find(id).thing_name
+      spoon = Thing.find(id).spoon
+      unit = Thing.find(id).unit
+    
+      @ingredients[id] = total
+      # @ingredients => {"豚肉バラ"=>2, "きゅうり"=>2}
+      # name => "豚肉バラ"
+      # total => 800
+      # id => "12"
+    end
+  end
+
   private
   def recipe_params
     params.require(:recipe).permit(

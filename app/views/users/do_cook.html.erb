@@ -9,56 +9,63 @@
     <%# @choice.current_userもOKだが、controllerで@choiceの定義が必要 %>
       <span>選択した料理はありません</span>
     <% else%>
-      <% @choices.each do |choice| %>
-        <%= link_to recipe_path(choice.recipe.id) do %>
-          <div class='choice-box space-choice-box'  id="choice-btn-<%= choice.recipe_id %>" >
-            <%= render 'choices/choice_my', choice: choice %>
-          </div>
-          <div class="row under-line">
-            <div class="col-md-3 col-8">
-              <div class="recipe-img-do_cook">
-                <%= image_tag choice.recipe.images[0].url, class: "img-recipe" %>
-              </div>
+      <%= form_with url: recipes_shoplist_path ,local: true  do  |f|%>
+        <% @choices.each do |choice| %>
+          <%= link_to recipe_path(choice.recipe.id) do %>
+            <div class='choice-box space-choice-box'  id="choice-btn-<%= choice.recipe_id %>" >
+              <%= render 'choices/choice_my', choice: choice %>
             </div>
-            <div class="col-md-8">
-              <div class="ingredients-box">
-                <h3><%= choice.recipe.title %></h3>  
-                <table class="table-ingredients col-md-12">
-                  <tr>
-                    <td>
-                      <h4>材料</h4>
-                    </td>
-                    <td>
-                    </td>
-                    <td >
-                      <input data-recipe-id="<%=choice.recipe.id%>" type="number" name="amount" class="input-number">
-                      <span>人前</span>
-                    </td>
-                  </tr>
-                </table>
-                <table class="table-ingredients col-md-12">
-                  <% choice.recipe.ingredients.each do |ingredient|%>
+            <div class="row under-line">
+              <div class="col-md-3 col-8">
+                <div class="recipe-img-do_cook">
+                  <%= image_tag choice.recipe.images[0].url, class: "img-recipe" %>
+                </div>
+              </div>
+              <div class="col-md-8">
+                <div class="ingredients-box">
+                  <h3><%= choice.recipe.title %></h3>  
+                  <table class="table-ingredients col-md-12">
                     <tr>
-                      <td class="td-font" >
-                        <%= ingredient.thing.thing_name %>
+                      <td>
+                        <h4>材料</h4>
                       </td>
-                      <td class="td-position td-font">
-                        <%= ingredient.thing.spoon %>
-                        <span class="amount <%=choice.recipe.id%>"><%= ingredient.amount %></span>
-                        <%= ingredient.thing.unit %>
+                      <td>
                       </td>
-                      <td class="td-font output-calc">
-                        <%= ingredient.thing.spoon %>
-                        <span class="output <%=choice.recipe.id%>">計算</span>
-                        <%= ingredient.thing.unit %>
+                      <td >
+                        <input data-recipe-id="<%=choice.recipe.id%>" type="number" name="amount" class="input-number" required>
+                        <span>人前</span>
                       </td>
                     </tr>
-                  <% end %>
-                </table>
+                  </table>
+                  <table class="table-ingredients col-md-12">
+                    <% choice.recipe.ingredients.each do |ingredient|%>
+                      <tr>
+                        <td class="td-font" >
+                          <%= ingredient.thing.thing_name %>
+                        </td>
+                        <td class="td-position td-font">
+                          <%= ingredient.thing.spoon %>
+                          <span class="amount <%=choice.recipe.id%>"><%= ingredient.amount %></span>
+                          <%= ingredient.thing.unit %>
+                        </td>
+                        <td class="td-font output-calc">
+                          <%= ingredient.thing.spoon %>
+                          <!--<input name="ingredient[<%=ingredient.thing.id%>][]"  class="output <%=choice.recipe.id%> form-control" value="" >-->
+                          <input name="ingredient[<%=ingredient.thing.id%>][]" class="output <%=choice.recipe.id%>" value="">
+                          <!-- ingredient[<%=ingredient.thing.id%>][] ==> "ingredient"=>{"13"=>["2"], "12"=>["300", "0"]} -->
+                          <%= ingredient.thing.unit %>
+                        </td>
+                      </tr>
+                    <% end %>
+                  </table>
+                </div>
               </div>
             </div>
-          </div>
+          <% end %>
         <% end %>
+        <div class="object-center">
+          <%= f.submit "買い物リストを作る", class:"btn-more-reverse"%>
+        </div>
       <% end %>
     <% end %>
   </div>

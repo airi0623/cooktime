@@ -44,3 +44,9 @@ a{
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
+/* ブロック要素をセンターに持ってくるため */
+.object-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

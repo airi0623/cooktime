@@ -1,0 +1,27 @@
+.table-list{
+  font-size: 15px;
+  color: #cb2f27;
+  display: table;
+	table-layout: fixed;
+	width: 100%;
+	border-bottom:  #cb2f27 1px solid;
+}
+.table-list tr{
+  
+}
+.table-list td{
+  padding: 15px;
+}
+
+.td-list-spoon{
+  text-align: right;
+  /* background-color: aquamarine; */
+}
+.td-list-amount{
+  /* background-color: pink; */
+  text-align: center;
+}
+.td-list-unit{
+  /* background-color: blueviolet; */
+  text-align: left;
+}
