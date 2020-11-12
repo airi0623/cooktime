@@ -5,14 +5,14 @@ class Recipe < ApplicationRecord
   has_many      :ingredients, dependent: :destroy
   accepts_nested_attributes_for :ingredients, allow_destroy: true
   # 画像のアソシエーション
-  mount_uploaders :images, ImageUploader
+  mount_uploaders :images, ImageUploader, dependent: :destroy
   serialize :images, JSON
   # その他アソシエーション
   belongs_to :user
-  has_many :choices 
-  has_many :users, through: :choices
-  has_many :likes 
-  has_many :users, through: :likes
+  has_many :choices, dependent: :destroy
+  has_many :users, through: :choices, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :users, through: :likes, dependent: :destroy
   
   # すでにいいねしたかどうかを判断するためのメソッド
   def choiced_by?(user)

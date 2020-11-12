@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  before_action :search_recipe, only:[:index, :search]
+  before_action :search_recipe, only:[:index, :search, :more]
   
   def about
   end

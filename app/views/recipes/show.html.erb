@@ -114,7 +114,9 @@
       </div>
     </div>
     <div class="btn-more-box">
-      <%= link_to "レシピページ", more_recipes_path, class:"btn-more" %>
+      <%= link_to :back, class:"btn-more"  do %>
+        戻る
+      <% end %>
     </div>
   </div>
 </div>

@@ -24,16 +24,16 @@
                 <div class="like-box">お気に入り<span><%= recipe.likes.length %></span></div>
               </div> 
               <h3 class="title-my_recipe"><%= recipe.title %></h3>
+              <div class=""><%= recipe.feature %></div>
             </div>
           </div>
           <div class="col-md-2 col-12">  
             <div class="content-btn">
-              <%# <div class="edit-my_recipe"> %>
-                <%= link_to "編集", edit_recipe_path(recipe.id), method: :get, class: "btn-change-my_recipe" %>
-              <%# </div> %>
-              <%# <div class="delete-my_recipe"> %>
-                <%= link_to "削除", recipe_path(recipe.id), method: :delete, class: "btn-change-my_recipe" %>
-              <%# </div> %>
+              <%= link_to "編集", edit_recipe_path(recipe.id), method: :get, class: "btn-change-my_recipe" %>
+            <!--
+            <div class="delete-my_recipe">
+              <%= link_to "削除", recipe_path(recipe.id), method: :delete, class: "btn-change-my_recipe" %>
+            </div> -->
             </div>
           </div>
         </div>

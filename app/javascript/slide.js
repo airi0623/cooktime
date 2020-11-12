@@ -6,7 +6,7 @@ $(function() {
     fade: true,
     cssEase: 'linear',
 
-    arrows: false
+    arrows: true
   });
 });
 

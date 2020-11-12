@@ -2,31 +2,7 @@
 <%= render "shared/fixed-btn" %>
 
 <div class="container">
-  <!-- 検索ボックス --------------------------------------------------------->
-  <div class="search-contents">
-    <h2>レシピ検索</h2>
-    <%= search_form_for @p, url: recipes_search_path do |f| %>
-      <%= f.label :title_or_feature_cont, 'キーワード', class:'col-md-3' %>
-      <%= f.text_field :title_or_feature_cont, class: 'input-search col-md-8' %>
-      <br>
-      <%= f.label :category_id_eq, 'カテゴリー', class:'col-md-3' %>
-      <%= f.collection_select :category_id_eq, Category.all, :id, :name,{prompt: ""},{class:'input-search col-md-8'} %>
-      <br>
-      <%= f.label :cold_date_gteq, '冷蔵保存期間', class:'col-md-3' %>
-      <%= f.number_field :cold_date_gteq, class: 'input-search col-md-8' %>
-      <br>
-      <%= f.label :frozen_date_gteq, '冷凍保存期間', class:'col-md-3' %>
-      <%= f.number_field :frozen_date_gteq, class: 'input-search col-md-8' %>
-      <br>
-      <%= f.label :time_gteq, '調理時間', class:'col-md-3' %>
-      <%= f.number_field :time_gteq, class: 'input-search col-md-8' %>
-      <br>
-      <div class="col-12 search-btn-box">
-        <%= f.submit '検索', class: 'btn-search'%>
-      </div>
-    <% end %>
-  </div>
-  <!-- 新着レシピ -----------------------------------------------------------> 
+  <!-- 検索結果 -----------------------------------------------------------> 
   <div class="list-wrap">
     <h2>検索結果</h2>
     <div class='recipe-contents'>
@@ -80,10 +56,34 @@
         <% end %>
       </ul>
     </div>
-    <!-- もっと見るボタン -->
-    <div class="btn-more-box">
-      <%= link_to "もっと見る", more_recipes_path, class:"btn-more" %>
-    </div>
+  </div>
+  <!-- 検索ボックス --------------------------------------------------------->
+  <div class="search-contents">
+    <h2>レシピ検索</h2>
+    <%= search_form_for @p, url: recipes_search_path do |f| %>
+      <%= f.label :title_or_feature_cont, 'キーワード', class:'col-md-3' %>
+      <%= f.text_field :title_or_feature_cont, class: 'input-search col-md-8' %>
+      <br>
+      <%= f.label :category_id_eq, 'カテゴリー', class:'col-md-3' %>
+      <%= f.collection_select :category_id_eq, Category.all, :id, :name,{prompt: ""},{class:'input-search col-md-8'} %>
+      <br>
+      <%= f.label :cold_date_gteq, '冷蔵保存期間 (日数)', class:'col-md-3' %>
+      <%= f.number_field :cold_date_gteq, class: 'input-search col-md-8' %>
+      <br>
+      <%= f.label :frozen_date_gteq, '冷凍保存期間 (日数)', class:'col-md-3' %>
+      <%= f.number_field :frozen_date_gteq, class: 'input-search col-md-8' %>
+      <br>
+      <%= f.label :time_lteq, '調理時間 (分)', class:'col-md-3' %>
+      <%= f.number_field :time_lteq, class: 'input-search col-md-8' %>
+      <br>
+      <div class="info-text infotext-space">※検索結果について※<br>
+        ● 冷蔵保存期間/冷凍保存期間は入力した日数以上、保存可能なレシピがヒットします。<br>
+        ● 調理時間は入力した時間以下で調理できるレシピがヒットします。
+      </div>
+      <div class="col-12 search-btn-box">
+        <%= f.submit '検索', class: 'btn-search'%>
+      </div>
+    <% end %>
   </div>
 </div>
 <%= render "shared/footer" %>

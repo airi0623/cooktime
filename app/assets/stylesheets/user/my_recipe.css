@@ -42,3 +42,8 @@
   cursor : pointer;
   display: inline-block;
 }
+.btn-change-my_recipe:hover{
+  transition: 0.3s ;
+  background-color: #dd7069 ;
+  color: #ffffff;
+}
