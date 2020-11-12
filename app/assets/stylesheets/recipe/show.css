@@ -218,11 +218,6 @@ span .number{
 .ingredients{
   margin-bottom:25px;
 }
-.td-position{
-  text-align:left;
-  text-align:right;
-}
-
 /* 作り方 -----------------------------------------------*/
 p {
   white-space: pre-wrap;

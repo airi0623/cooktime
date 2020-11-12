@@ -1,7 +1,7 @@
 .fixed-btn{
   width:270px;
   height:60px;
-  padding: 10px;
+  padding: 10px 5px 10px 10px;
   right:0px;
   bottom:10px;
   Z-index:10;
@@ -9,7 +9,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
   background-color: #cb2f27;/* :#df5656 */
   color: #fffbf6;
   font-size:11px;

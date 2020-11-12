@@ -50,3 +50,10 @@ a{
   justify-content: center;
   align-items: center;
 }
+/* テーブルのパーツ */
+.td-right{
+  text-align: right;
+}
+.td-center{
+  text-align: center;
+}

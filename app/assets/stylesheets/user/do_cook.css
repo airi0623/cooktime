@@ -45,17 +45,13 @@
   color: black;
   font-weight: bolder ;
 }
-
 .table-ingredients{
   table-layout: fixed; 
-  font-size: 15px;
   color: black;
+  font-size: 14px;
   font-weight: bolder ;
 }
-.td-position{
-  text-align: center;
-}
-/* 共通 何人前入力・選択ボタン */
+/* 共通 ●前入力・選択ボタン */
 .calc-choice-box{
   display: flex;
   justify-content: center;
@@ -68,7 +64,7 @@
   align-items: center;
 }
 .input-number{
-  width: 50px;
+  width: 40%;
   height: 40px;
   margin-right: 5px;
   padding: 10px;
@@ -83,16 +79,22 @@
   font-weight: bolder;
 }
 /* 計算が反映されるところ */
-.output-calc{
+.output-box{
+  width:100%;
   height: 40px;
-}
-.output{
-  width:50px;
-  height: 40px;
-  padding: 10px;
   border: none;
   background-color: #fde9e2;
   border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.output{
+  width:100%;
+  border: none;
+  background-color: #fde9e2;
+  border-radius: 10px;
+  text-align: center;
 }
 /* 選択ボタン */
 .space-choice-box{
