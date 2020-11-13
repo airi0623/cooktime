@@ -1,35 +1,41 @@
 
 # CookTime
-__URL__：URLを入れる
-<img width="100%" alt="スクリーンショット 2020-11-11 16 37 42" src="https://user-images.githubusercontent.com/69624304/98783054-450c3e00-243c-11eb-8c8f-2e868f80f973.png">
+__URL__：http://175.41.218.75/
+<img width="100%" alt="スクリーンショット 2020-11-13 23 35 36" src="https://user-images.githubusercontent.com/69624304/99088927-0333f100-2610-11eb-8bdd-cced32705e85.png">
 
 
 __ログイン方法__
 
-- リスト1
-- リスト2
-- リスト3
+- かんたんログイン(ページ右上)
+- 新規登録
 
 # このアプリでできること
-__URL__：URLを入れる
+__URL__：http://175.41.218.75/recipes/about
 <img width="100%" alt="スクリーンショット 2020-11-11 16 36 52" src="https://user-images.githubusercontent.com/69624304/98783105-59e8d180-243c-11eb-836b-90fdc3c98dc0.png">>
 
 ### 買い物リスト自動作成
-選択したレシピに必要な材料リストをワンクリックで自動作成！
+Solarized dark                                    |  Solarized Ocean
+:------------------------------------------------:|:--------------------------------------------------:
+選択したレシピに必要な材料リストをワンクリックで自動作成！  |  ![about-shop-list](https://user-images.githubusercontent.com/69624304/99103078-5b73ee80-2622-11eb-9b8c-961ad551f8dc.gif)
+
 
 ### 材料の自動計算
 家族の人数を入力するとレシピの材料を自動計算！
+![about-calc](https://user-images.githubusercontent.com/69624304/99103981-b528e880-2623-11eb-8979-b32699bc8d76.gif)
 
 ### レシピ登録
 おすすめレシピを登録して働くママ仲間をお助け！
 自分のレシピメモにもお使いください♪
+![about-like](https://user-images.githubusercontent.com/69624304/99104089-db4e8880-2623-11eb-96bf-ddd3005eb402.gif)
+
 
 ### お気に入りチェック
 お気に入りのレシピをチェックしてマイページにストック!
+![about-recipe](https://user-images.githubusercontent.com/69624304/99104046-c96ce580-2623-11eb-8ea6-83d2c7750995.gif)
+
 
 # ターゲット・背景
-
-__スライド画像で入れる__
+<img width="100%" alt="スクリーンショット 2020-11-14 3 36 33" src="https://user-images.githubusercontent.com/69624304/99108480-bc9fc000-262a-11eb-81a8-843f5a106697.png">
 
 # 使用技術
 - HTML
@@ -62,3 +68,18 @@ __その他__
 - Bootstrapによるレスポンシブ対応
 - モデルに対する複数バリデーション(文字数・メールアドレス・パスワードなど)
 - Rspec / Rubocop テスト機能 【実装中】
+
+# ER図
+<img width="100%" alt="スクリーンショット 2020-11-14 3 23 41" src="https://user-images.githubusercontent.com/69624304/99108563-e35df680-262a-11eb-8ae1-a8bcd07ce05c.png">
+
+# 追加実装・変更予定
+
+__１）材料検索__
+買い物リスト作成で材料を計算するため、単位を固定する必要があった。
+そのため、材料をユーザーが入力するのではなく、Active::Hashに材料を記載し、プルダウンで選択するようにしたが、検索機能がなければ材料を選択しづらい。今後、材料を入力するとDBから候補を出すような実装に変更していく。
+
+__２）単体テスト・結合テスト__
+単体テスト、結合テストを行う。
+
+__3）フォロー機能__
+ユーザーフォロー機能を実装する。
