@@ -10,13 +10,16 @@ span .number{
 /* アイコン */
 /* icons-typeはparts */
 .link-user_page{
+  width :100vw;
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 .user-icon{
   margin: 0 30px;
   text-align: center;
+}
+.user-name-box{
+  margin: 0 20px;
 }
 .user-name:hover{
   color:#dd7069;

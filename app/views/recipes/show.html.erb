@@ -27,14 +27,13 @@
         </div>
         <div class="col-md-2"></div>
       </div>
-
       <!-- Userアイコン -->
-      <div class='user-icon-box'>
+      <div class='user-icon-box row'>
         <%= link_to profile_user_path(@user.id)  do%>
           <!-- :url記述したらエラーがでる -->
           <div class="link-user_page row">
-            <div class="user-icon col-md-2"><%= image_tag @user.icon.url, alt:"アイコン", class:"user-icon-s"%></div>
-            <div class="class-md-4"><span class="user-name"><%= @user.nickname%>さん</span>が投稿したレシピ</div>
+            <div class="col-md-2 user-icon"><%= image_tag @user.icon.url, alt:"アイコン", class:"user-icon-s"%></div>
+            <div class="col-md-4 user-name-box"><span class="user-name"><%= @user.nickname%>さん</span>が投稿したレシピ</div>
           </div>
         <% end%>
       </div>
@@ -78,8 +77,6 @@
           <tr>
             <td class="flex-box">
               <h3>材料</h3><span>(一人前)</span>
-            </td>
-            <td>
             </td>
             <td >
               <input data-recipe-id="<%=@recipe.id%>" type="number" name="amount"  class="input-number">
