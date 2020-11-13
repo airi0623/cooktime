@@ -25,6 +25,7 @@
   letter-spacing: 1rem;
 }
 .img-logo-box{
+  margin-bottom: 15px;
   width:100%;
   display: flex;
   justify-content: center;
