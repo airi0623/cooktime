@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_06_154430) do
+ActiveRecord::Schema.define(version: 2020_11_13_045047) do
 
   create_table "choices", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2020_11_06_154430) do
   create_table "ingredients", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "recipe_id"
     t.integer "thing_id", null: false
-    t.integer "amount", null: false
+    t.decimal "amount", precision: 6, scale: 2, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["recipe_id"], name: "index_ingredients_on_recipe_id"

@@ -25,13 +25,15 @@ class RecipesController < ApplicationController
   end
 
   def show
+    @ingredients = Ingredient.where(recipe_id: params[:id])
     @recipe = Recipe.find(params[:id])
     @user = User.find(@recipe.user_id)
-    @ingredients = Ingredient.where(recipe_id: params[:id])
+    # binding.pry
   end
 
   def edit
     @recipe = Recipe.find(params[:id])
+    @ingredient = @recipe.ingredients.build
   end
 
   def update
@@ -66,11 +68,9 @@ class RecipesController < ApplicationController
     @ingredients = {}
     params[:ingredient].each do |id, ingredient|
       # ↑paramsのingredientの箱に入っているから
-      total = ingredient.map(&:to_i).sum
-
+      require 'bigdecimal'
+      total = ingredient.map(&:to_f).sum
       name  = Thing.find(id).thing_name
-      spoon = Thing.find(id).spoon
-      unit = Thing.find(id).unit
     
       @ingredients[id] = total
       # @ingredients => {"豚肉バラ"=>2, "きゅうり"=>2}

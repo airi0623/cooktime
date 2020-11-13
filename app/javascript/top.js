@@ -1,9 +1,8 @@
 $(function() {
-
   $('#slick').slick({
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 300,
     fade: true,
     cssEase: 'linear',
     

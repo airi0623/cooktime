@@ -1,4 +1,4 @@
-class AddImageToRecipes < ActiveRecord::Migration[6.0]
+class AddImagesToRecipes < ActiveRecord::Migration[6.0]
   def change
     add_column :recipes, :images, :string
   end
