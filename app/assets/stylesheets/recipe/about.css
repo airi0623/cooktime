@@ -10,7 +10,7 @@
 /* POINT TEXT------------------------------------*/
 .point-title{
   font-family: はれのそら明朝;
-  margin: 100px 0 50px 0;
+  margin: 100px 0 0px 0;
   font-size: 5vw;
   font-weight: bolder;
   letter-spacing: 0.5rem;
@@ -23,6 +23,15 @@
 .point-title span{
   font-size: 15px;
   letter-spacing: 1rem;
+}
+.img-logo-box{
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img-logo-L{
+  width:90%;
 }
 .point-discription{
   font-size: 15px;
@@ -77,6 +86,7 @@
 /* 画像と説明部分------------------------------------*/
 .about-content{
   margin-bottom: 30px;
+  /* border: 2px dotted #cb2f27; */
 }
 .about-gif{
   position: relative;
@@ -97,6 +107,7 @@
   object-fit: cover;
   border-radius: 30px;
   object-fit: cover;
+  border: 2px dotted #cb2f27;
 }
 .about-text-box-big{
   display: flex;

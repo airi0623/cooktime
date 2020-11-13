@@ -1,7 +1,12 @@
-.recipe-logo{
+.main-logo{
   font-size: 28px;
   font-weight: 700;
   color: #cb2f27;
+}
+.img-logo-S{
+  height: 40px;
+  width: 200px;
+  object-fit: cover;
 }
 .top-page-header{
   background-color: #fffbf6;
@@ -12,6 +17,9 @@
   font-size: 14px;
   font-weight: bolder;
   color: #cb2f27;
+}
+.nav-link{
+  margin-left: 8px;
 }
 .nav-link:hover{
   transition: 0.3s;

@@ -82,7 +82,7 @@
             <td>
             </td>
             <td >
-              <input data-recipe-id="<%=@recipe.id%>" type="number" name="amount" class="input-number">
+              <input data-recipe-id="<%=@recipe.id%>" type="number" name="amount"  class="input-number">
               <span>人前</span>
             </td>
           </tr>
@@ -105,7 +105,7 @@
               </td>
               <td width="15%">
                 <div class="output-box">
-                  <input name="ingredient[<%=ingredient.thing.id%>][]" class="output <%=ingredient.recipe.id%>" value="">
+                  <input name="ingredient[<%=ingredient.thing.id%>][]" class="output <%=ingredient.recipe.id%>" value="" type="">
                   <!-- ingredient[<%=ingredient.thing.id%>][] ==> "ingredient"=>{"13"=>["2"], "12"=>["300", "0"]} -->
                 </div>
               </td>
