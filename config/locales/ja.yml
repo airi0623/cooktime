@@ -1,0 +1,22 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+        family_name: 姓
+        first_name: 名
+      recipe:
+        title: レシピタイトル
+        feature: 料理の特徴
+        eat: 食べ方
+        category_id: カテゴリー
+        cold_date: 冷蔵保存日数
+        frozen_date: 冷蔵保存日数
+        time: 調理時間
+        text: 作り方
+        image: 画像
+  activemodel:
+    attributes:
+      ingredient:
+        thing_id: 材料名
+        amount: 材料の必要量
