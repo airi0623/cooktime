@@ -3,8 +3,8 @@ ja:
     attributes:
       user:
         nickname: ニックネーム
-        family_name: 姓
-        first_name: 名
+        family_name: 苗字
+        first_name: 名前
       recipe:
         title: レシピタイトル
         feature: 料理の特徴
@@ -14,9 +14,7 @@ ja:
         frozen_date: 冷蔵保存日数
         time: 調理時間
         text: 作り方
-        image: 画像
-  activemodel:
-    attributes:
-      ingredient:
+        images: 画像
+      recipe/ingredients:
         thing_id: 材料名
         amount: 材料の必要量

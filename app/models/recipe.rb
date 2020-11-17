@@ -35,7 +35,9 @@ class Recipe < ApplicationRecord
     validates :user_id
     validates :title
     validates :eat
-    validates :category_id, numericality: { other_than: 1, message: "を選択してください" } 
+    validates :category_id, numericality: { other_than: 2, message: "を選択してください" } 
     validates :time,        format: {with: /\d/}
+    validates :text
+    validates :images
   end
 end

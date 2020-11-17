@@ -81,29 +81,30 @@ RSpec.describe User, type: :model do
         end
 
         # お名前全角:姓 ---------------------
-        it  "お名前(全角):姓が空では登録できないこと" do
+        it  "お名前(全角):苗字が空では登録できないこと" do
           @user.family_name = ""
           @user.valid?
-          expect(@user.errors.full_messages).to include("姓を入力してください", "姓は全角(漢字・平仮名)で入力してください")
+          binding.pry
+          expect(@user.errors.full_messages).to include("苗字を入力してください", "苗字は全角(漢字・平仮名)で入力してください")
         end
 
-        it  "お名前(全角):姓が日本語全角でないとは登録できないこと" do
+        it  "お名前(全角):苗字が日本語全角でないとは登録できないこと" do
           @user.family_name = "kana"
           @user.valid?
-          expect(@user.errors.full_messages).to include("姓は全角(漢字・平仮名)で入力してください")
+          expect(@user.errors.full_messages).to include("苗字は全角(漢字・平仮名)で入力してください")
         end
 
         # お名前全角:名 ---------------------
-        it  "お名前(全角):名が空では登録できないこと" do
+        it  "お名前(全角):名前が空では登録できないこと" do
           @user.first_name = ""
           @user.valid?
-          expect(@user.errors.full_messages).to include("名を入力してください", "名は全角(漢字・平仮名)で入力してください")
+          expect(@user.errors.full_messages).to include("名前を入力してください", "名前は全角(漢字・平仮名)で入力してください")
         end
 
-        it  "お名前(全角):名が日本語全角でないとは登録できないこと" do
+        it  "お名前(全角):名前が日本語全角でないとは登録できないこと" do
           @user.first_name = "kana"
           @user.valid?
-          expect(@user.errors.full_messages).to include("名は全角(漢字・平仮名)で入力してください")
+          expect(@user.errors.full_messages).to include("名前は全角(漢字・平仮名)で入力してください")
         end
       end
     end
