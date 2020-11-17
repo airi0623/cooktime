@@ -57,3 +57,7 @@ a{
 .td-center{
   text-align: center;
 }
+/* レシピ登録がないときエラーが出ないように  */
+.no-recipe{
+  margin: 20px;
+}
