@@ -8,6 +8,7 @@ RSpec.describe Recipe, type: :model do
     before do
       user = FactoryBot.create(:user)  
       @recipe = FactoryBot.build(:recipe, user_id: user.id, images:[image])
+      binding.pry
     end
 
     describe 'レシピ新規登録' do
