@@ -7,11 +7,12 @@
     <%= form_with(model: @recipe, class:"recipes-post-main", local: true) do |f| %>
       <!-- エラー文 -->
       <%= render 'shared/error_messages', model: f.object %>
+      <div class="attention">＊＊一度登録したレシピの変更はできますが、削除はできません＊＊</div>
 
       <div class="new-recipes">
         <!-- 画像ボタン -->
         <div class="row form-box">
-          <div class="forms-item indispensable col-md-3">
+          <div class="forms-item col-md-3 indispensable">
             画像
           </div>
           <label for="recipe-image" class ="click-upload col-md-7" id ="click-upload-id">
@@ -34,35 +35,35 @@
         </div>
         <!-- レシピタイトル -->
         <div class="row form-box">
-          <div class="forms-item indispensable col-md-3">
+          <div class="forms-item col-md-3 indispensable">
             レシピタイトル
           </div>
           <%= f.text_field :title, class:"input-area recipes-title col-md-7", id:"recipe-title" %>
         </div>
         <!-- 料理の特徴 -->
         <div class="row form-box">
-          <div class="forms-item col-md-3">
+          <div class="forms-item col-md-3 indispensable ">
             料理の特徴
           </div>
           <%= f.text_area :feature, class:"input-area-wide recipes-feature col-md-7", id:"recipe-feature", placeholder:"料理の特徴（1,000文字まで）茄子をごま油で焼いてから甘めの味付けでとろりとするまで煮ました。茄子に甘辛いタレが絡んで、白いご飯にぴったりです！" , maxlength:"1000" %>
         </div>
         <!-- 食べ方 -->
         <div class="row form-box">
-          <div class="forms-item col-md-3">
+          <div class="forms-item col-md-3 indispensable ">
             食べ方
           </div>
           <%= f.text_area :eat, class:"input-area-wide recipes-eat col-md-7", id:"recipe-eat", placeholder:"食べ方のポイント" %>
         </div>
         <!-- カテゴリー -->
         <div class="row form-box">
-          <div class="forms-item col-md-3">
+          <div class="forms-item col-md-3 indispensable">
             カテゴリーの選択
           </div>
           <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"input-area recipes-category col-md-2", id:"recipe-category"}) %>
         </div>
         <!-- 冷蔵保存の日持ち -->
         <div class="row form-box">
-          <div class="forms-item col-md-3">
+          <div class="forms-item col-md-3 indispensable">
             冷蔵保存の日持ち
           </div>
           <div class="mx-3">
@@ -71,7 +72,7 @@
         </div>
         <!-- 冷凍保存の日持ち -->
         <div class="row form-box">
-          <div class="forms-item col-md-3">
+          <div class="forms-item col-md-3 indispensable">
             冷凍保存の日持ち
           </div>
           <div class="mx-3">
@@ -80,7 +81,7 @@
         </div>
         <!-- 調理時間 -->
         <div class="row form-box">
-          <div class="forms-item col-md-3">
+          <div class="forms-item col-md-3 indispensable">
             調理時間
           </div>
           <div class="mx-3">
@@ -90,7 +91,7 @@
         <!-- 材料 -->
         <div id="btn-event" class="onegai">
           <div class="row form-box">
-            <div class="forms-item col-md-3 col-2">
+            <div class="forms-item col-md-3 col-2 indispensable">
               材料
             </div>
             
@@ -131,7 +132,7 @@
           -->
         <!-- つくり方 -->
         <div class="row form-box">
-          <div class="forms-item col-md-3">
+          <div class="forms-item col-md-3 indispensable">
             つくり方
           </div>
           <%= f.text_area :text, class:"input-area-wide recipes-text col-md-7" %>

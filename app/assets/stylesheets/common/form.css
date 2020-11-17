@@ -1,4 +1,4 @@
-/* フォーム */
+/* フォーム ----------------------------*/
 .form-box{
   margin-top: 30px;
 }
@@ -50,4 +50,19 @@
   border-radius: 30px;
   background-color: #dd7069;
   color: #FFFF;
+}
+/* フォーム注意表示 ----------------------------*/
+.indispensable::after{
+  content: "＊";
+  font-size: 11px;
+  vertical-align: super;
+  margin-left: 1px;
+  color: #cb2e27;
+}
+.attention{
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: bolder;
+  color: #cb2f27;
 }
