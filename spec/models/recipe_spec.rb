@@ -2,13 +2,16 @@ require 'rails_helper'
 
 RSpec.describe Recipe, type: :model do
   describe 'recipes#create' do
+    # icon画像
+    let(:icon_path) { File.join(Rails.root, 'spec/factories/test_image.png') }
+    let(:icon) { Rack::Test::UploadedFile.new(icon_path) }
+    # レシピ画像
     let(:image_path) { File.join(Rails.root, 'spec/factories/test_image.png') }
     let(:image) { Rack::Test::UploadedFile.new(image_path) }
     
     before do
-      user = FactoryBot.create(:user)  
+      user = FactoryBot.create(:user, icon: icon)
       @recipe = FactoryBot.build(:recipe, user_id: user.id, images:[image])
-      binding.pry
     end
 
     describe 'レシピ新規登録' do
@@ -32,7 +35,7 @@ RSpec.describe Recipe, type: :model do
         it "料理の特徴の情報がないと登録できない" do
           @recipe.feature = nil 
           @recipe.valid?
-          expect(@recipe.errors.full_messages).to include("カテゴリーを選択してください")
+          expect(@recipe.errors.full_messages).to include("料理の特徴を入力してください")
         end
         it "食べ方の情報がないと登録できない" do
           @recipe.eat = nil 
@@ -47,12 +50,12 @@ RSpec.describe Recipe, type: :model do
         it "冷蔵庫の保存期間がないと登録できない" do
           @recipe.cold_date = nil 
           @recipe.valid?
-          expect(@recipe.errors.full_messages).to include("冷蔵庫の保存期間を入力してください")
+          expect(@recipe.errors.full_messages).to include("冷蔵保存日数を入力してください")
         end
         it "冷凍庫の保存期間がないと登録できない" do
           @recipe.frozen_date = nil 
           @recipe.valid?
-          expect(@recipe.errors.full_messages).to include("冷凍庫の保存期間を入力してください")
+          expect(@recipe.errors.full_messages).to include("冷凍保存日数を入力してください")
         end
         it "調理時間の情報がないと登録できない" do
           @recipe.time = nil 

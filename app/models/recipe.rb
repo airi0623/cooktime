@@ -34,8 +34,11 @@ class Recipe < ApplicationRecord
   with_options presence: true do
     validates :user_id
     validates :title
+    validates :feature
     validates :eat
     validates :category_id, numericality: { other_than: 1, message: "を選択してください" } 
+    validates :cold_date
+    validates :frozen_date
     validates :time,        format: {with: /\d/}
     validates :text
     validates :images

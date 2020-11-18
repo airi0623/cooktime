@@ -3,15 +3,15 @@ class Thing < ActiveHash::Base
     #野菜
       #根菜
     {id: 1, thing_name:'にんじん', spoon:'', unit:'本'},
-    {id: 4, thing_name:'大根', spoon:'', unit:'本'},
-    {id: 5, thing_name:'じゃがいも', spoon:'', unit:'個'},
+    {id: 2, thing_name:'大根', spoon:'', unit:'本'},
+    {id: 3, thing_name:'じゃがいも', spoon:'', unit:'個'},
       #葉野菜
-    {id: 2, thing_name:'ねぎ', spoon:'', unit:'本'},
-    {id: 19, thing_name:'ブロッコリー', spoon:'', unit:'g'},
+    {id: 4, thing_name:'ねぎ', spoon:'', unit:'本'},
+    {id: 5, thing_name:'ブロッコリー', spoon:'', unit:'g'},
       #果物
     {id: 21, thing_name:'レモン', spoon:'', unit:'個'},
       #その他
-    {id: 3, thing_name:'きゅうり', spoon:'', unit:'本'},
+    {id: 19, thing_name:'きゅうり', spoon:'', unit:'本'},
     {id: 6, thing_name:'玉ねぎ', spoon:'', unit:'個'},
     {id: 7, thing_name:'茄子', spoon:'', unit:'個'},
     {id: 20, thing_name:'トマト', spoon:'', unit:'個'},

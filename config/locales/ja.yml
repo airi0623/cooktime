@@ -11,7 +11,7 @@ ja:
         eat: 食べ方
         category_id: カテゴリー
         cold_date: 冷蔵保存日数
-        frozen_date: 冷蔵保存日数
+        frozen_date: 冷凍保存日数
         time: 調理時間
         text: 作り方
         images: 画像

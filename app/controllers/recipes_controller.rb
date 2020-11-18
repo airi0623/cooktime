@@ -28,7 +28,6 @@ class RecipesController < ApplicationController
     @ingredients = Ingredient.where(recipe_id: params[:id])
     @recipe = Recipe.find(params[:id])
     @user = User.find(@recipe.user_id)
-    # binding.pry
   end
 
   def edit
