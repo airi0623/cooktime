@@ -31,11 +31,4 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-}
-.attention{
-  margin-bottom: 10px;
-  text-align: center;
-  font-size: 13px;
-  font-weight: bolder;
-  color: #cb2f27;
-}
+
