@@ -15,6 +15,7 @@ RSpec.describe Choice, type: :model do
       @choice = FactoryBot.build(:like, user_id: user.id, recipe_id: recipe.id)
     end
 
+    
     describe 'レシピ選択' do
       context 'レシピ選択がうまくいくとき' do
         it "user_id、recipe_idが存在すれば登録できること" do
