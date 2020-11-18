@@ -42,9 +42,7 @@ RSpec.describe User, type: :model do
         it "重複したemailが存在する場合登録できないこと" do
           @user.save
           another_user = FactoryBot.build(:user, email: @user.email, icon: icon)
-          binding.pry
           another_user.valid?
-          
           expect(another_user.errors.full_messages).to include("Eメールはすでに存在します")
         end
         # Password ---------------------
