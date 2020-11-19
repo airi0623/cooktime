@@ -7,7 +7,8 @@
       <%= image_tag "icon-star-red.png", alt:"★", class:"icon-star"%>
       <span class="recipes-index-title">人気レシピ</span>
     </div>
-    <% if @raning == nil %>
+
+    <% if @ranking != nil %>
       <!-- MAIN 人気のレシピ全体 -------------------------------------------->
       <div class="row img-main-box">
         <div class='main-box col-md-7'>

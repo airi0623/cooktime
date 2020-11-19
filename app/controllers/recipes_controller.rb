@@ -17,6 +17,7 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(recipe_params) 
+    binding.pry
     if @recipe.save
       redirect_to my_recipe_user_path(id: current_user) # redirect先で必要なidを入れる
     else

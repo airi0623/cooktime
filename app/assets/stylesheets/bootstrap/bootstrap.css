@@ -158,10 +158,6 @@ a {
   background-color: transparent;
 }
 
-a:hover {
-  /* color: #dd7069; */
-  /* text-decoration: underline; */
-}
 
 a:not([href]) {
   color: inherit;
@@ -631,8 +627,6 @@ pre code {
 .col-xl-auto {
   position: relative;
   width: 100%;
-  /* padding-right: 15px;
-  padding-left: 15px; */
 }
 
 .col {
@@ -4431,7 +4425,6 @@ input[type="button"].btn-block {
   background-size: 100% 100%;
 }
 
-/* navbar-Grid */
 @media (max-width: 575.98px) {
   .navbar-expand-sm > .container,
   .navbar-expand-sm > .container-fluid, .navbar-expand-sm > .container-sm, .navbar-expand-sm > .container-md, .navbar-expand-sm > .container-lg, .navbar-expand-sm > .container-xl {
@@ -4644,23 +4637,6 @@ input[type="button"].btn-block {
   display: none;
 }
 
-.navbar-light .navbar-brand {
-  /* color: rgba(0, 0, 0, 0.9); */
-}
-
-.navbar-light .navbar-brand:hover, .navbar-light .navbar-brand:focus {
-  /* color: rgba(0, 0, 0, 0.9); */
-}
-
-/* .navbar-light .navbar-nav .nav-link {
-  color: rgba(0, 0, 0, 0.5);
-} */
-
-/* リンクをhoverしたときに変わる色 */
-/* .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
-  color: rgba(0, 0, 0, 0.7);
-} */
-
 .navbar-light .navbar-nav .nav-link.disabled {
   color: rgba(0, 0, 0, 0.3);
 }
@@ -4717,17 +4693,12 @@ input[type="button"].btn-block {
   color: #fff;
 }
 
-.navbar-dark .navbar-toggler {
-  /* color: rgba(255, 255, 255, 0.5); */
-  /* border-color: rgba(255, 255, 255, 0.1); */
-}
 
 .navbar-dark .navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 .navbar-dark .navbar-text {
-  /* color: rgba(255, 255, 255, 0.5); */
   color: #cb2f27;
 }
 
@@ -10275,4 +10246,3 @@ a.text-dark:hover, a.text-dark:focus {
     border-color: #dee2e6;
   }
 }
-/*# sourceMappingURL=bootstrap.css.map */
