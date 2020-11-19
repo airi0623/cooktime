@@ -1,15 +1,12 @@
 module SignInSupport
   def sign_in(user)
-    visit root_path
-    fill_in 'クリックして画像をアップロード', with: @user.icon
-    fill_in 'ニックネーム', with: @user.nickname
-    fill_in 'プロフィール', with: @user.profile
-    fill_in 'お名前(全角)', with: @user.famile_name
-    fill_in 'お名前(全角)', with: @user.first_name
-    fill_in 'メールアドレス', with: @user.email
-    fill_in 'パスワード', with: @user.password
-    fill_in 'パスワード(確認用)', with: @user.password_confirmation
-    click_on("Log in")
-    expect(current_path).to eq root_path
+    attach_file('user[icon]', icon_path, make_visible: true)
+    fill_in 'user-nickname', with: @user.nickname
+    fill_in 'user-profile', with: @user.profile
+    fill_in 'user-family', with: @user.family_name
+    fill_in 'user-first', with: @user.first_name
+    fill_in 'user-email', with: @user.email
+    fill_in 'user-password', with: @user.password
+    fill_in 'user-password-confirmation', with: @user.password_confirmation
   end
 end

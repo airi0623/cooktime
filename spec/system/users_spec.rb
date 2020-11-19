@@ -25,21 +25,14 @@ RSpec.describe 'ユーザー新規登録', type: :system do
 
   context 'ユーザー新規登録ができるとき' do 
     it '正しい情報を入力すればユーザー新規登録ができてトップページに移動する' do
-      #新規登録ページに移動する
+      # 新規登録ページに移動する
       visit root_path
       # トップページに新規登録ページへ遷移するボタンがあることを確認する
       expect(page).to have_content('新規登録')
       # 新規登録ページへ移動する
       visit new_user_registration_path
       # ユーザー情報を入力する
-      attach_file('user[icon]', icon_path, make_visible: true)
-      fill_in 'user-nickname', with: @user.nickname
-      fill_in 'user-profile', with: @user.profile
-      fill_in 'user-family', with: @user.family_name
-      fill_in 'user-first', with: @user.first_name
-      fill_in 'user-email', with: @user.email
-      fill_in 'user-password', with: @user.password
-      fill_in 'user-password-confirmation', with: @user.password_confirmation
+      sign_in(@user)
       # サインアップボタンを押すとユーザーモデルのカウントが1上がる
       expect{
         find('input[name="commit"]').click
