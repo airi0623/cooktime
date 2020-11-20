@@ -2,9 +2,8 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   describe 'users#create' do
-    let(:icon_path) { File.join(Rails.root, 'spec/factories/test_image.png') }
-    let(:icon) { Rack::Test::UploadedFile.new(icon_path) }
-
+    # let(:icon_path) { File.join(Rails.root, 'spec/factories/test_image.png') }
+    # let(:icon) { Rack::Test::UploadedFile.new(icon_path) }
     before do
       @user = FactoryBot.build(:user, icon: icon)
     end
