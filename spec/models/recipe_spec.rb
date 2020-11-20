@@ -10,6 +10,7 @@ RSpec.describe Recipe, type: :model do
     let(:image) { Rack::Test::UploadedFile.new(image_path) }
     
     before do
+      recipe_registration
       user = FactoryBot.create(:user, icon: icon)
       @recipe = FactoryBot.build(:recipe, user_id: user.id, images:[image])
     end

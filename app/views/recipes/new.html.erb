@@ -56,7 +56,7 @@
         </div>
         <!-- カテゴリー -->
         <div class="row form-box">
-          <div class="forms-item col-md-3 indispensable">
+          <div class="forms-item col-md-3 indispensable" >
             カテゴリーの選択
           </div>
           <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"input-area recipes-category col-md-2", id:"recipe-category"}) %>
@@ -67,7 +67,7 @@
             冷蔵保存の日持ち
           </div>
           <div class="mx-3">
-            冷蔵保存で約<%= f.number_field :cold_date, class:"input-area recipes-cold-date col-3", min:"0" %>日
+            冷蔵保存で約<%= f.number_field :cold_date, class:"input-area  col-3" ,id:"recipe-cold-date", min:"0" %>日
           </div>
         </div>
         <!-- 冷凍保存の日持ち -->
@@ -76,7 +76,7 @@
             冷凍保存の日持ち
           </div>
           <div class="mx-3">
-            冷凍保存で約<%= f.number_field :frozen_date, class:"input-area recipes-frozen-date col-3", min:"0"  %>日
+            冷凍保存で約<%= f.number_field :frozen_date, class:"input-area col-3", id:"recipe-frozen-date", min:"0"  %>日
           </div>
         </div>
         <!-- 調理時間 -->
@@ -85,7 +85,7 @@
             調理時間
           </div>
           <div class="mx-3">
-            約<%= f.number_field :time, class:"input-area recipes-time", min:"0"  %>分
+            約<%= f.number_field :time, class:"input-area", id:"recipe-time", min:"0"  %>分
           </div>
         </div>
         <!-- 材料 -->
@@ -135,7 +135,7 @@
           <div class="forms-item col-md-3 indispensable">
             つくり方
           </div>
-          <%= f.text_area :text, class:"input-area-wide recipes-text col-md-7" %>
+          <%= f.text_area :text, class:"input-area-wide col-md-7", id:"recipe-text" %>
         </div>
         <!-- 送信ボタン -->
         <div class='submit-btn'>
