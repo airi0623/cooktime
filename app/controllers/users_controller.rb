@@ -19,5 +19,6 @@ class UsersController < ApplicationController
     @ingredients = Ingredient.where(recipe_id: params[:id])
     @likes  = Like.where(user_id: current_user.id)
   end
+
 end
 

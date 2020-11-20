@@ -4,7 +4,7 @@
 <div class="container">
   <div class="wrap">
     <h2 class="h2-title">投稿したレシピ</h2>
-    <% if @recipes.present? %>
+    <% if @recipes != nil %>
       <!-- レシピ一つづつ -->
       <% @recipes.each do |recipe|%>
         <div class='row'>
@@ -29,7 +29,7 @@
           </div>
           <div class="col-md-2 col-12">  
             <div class="content-btn">
-              <%= link_to "編集", edit_recipe_path(recipe.id), method: :get, class: "btn-change-my_recipe" %>
+              <%= link_to "編集", edit_recipe_path(recipe.id), method: :get, class: "btn-change-my_recipe", id:"edit-recipe-#{recipe.id}" %>
             <!--
             <div class="delete-my_recipe">
               <%= link_to "削除", recipe_path(recipe.id), method: :delete, class: "btn-change-my_recipe" %>

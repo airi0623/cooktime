@@ -31,8 +31,14 @@ class RecipesController < ApplicationController
   end
 
   def edit
+    authenticate_user!
     @recipe = Recipe.find(params[:id])
     @ingredients = Ingredient.where(recipe_id: params[:id])
+    if current_user.id == @recipe.user_id
+      edit_recipe_path(@recipe.id)
+    else
+      redirect_to root_path
+    end
   end
 
   def update
