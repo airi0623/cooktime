@@ -8,7 +8,8 @@
           <%# thing_options = Thing.order(:id).map { |c| [c.thing_name, c.id, data: { unit: c.unit, spoon:c.spoon }] } %>
           <%#= f.select(:thing_id, thing_options, { prompt: "---"}, {class:"select", data:{select:0}, id:"thing-select" }) %>
           <%#= f.text_field :thing_id, class:"select", data:{select:0}, id:"thing-select" %>
-          <input data-select=0 type="text" class="select" id="thing-select" required>
+          <%#input data-select=0 type="text" class="select" id="thing-select" required%>
+          <%= f.text_field :name, class:"select", id:'thing-select', data:{select:0}%>
           <%= f.number_field :thing_id, type:"hidden", class:"box-thing", id:'id-thing', data:{thing:0}%>
           <div class="box-result" id='search-result' data-result="0" >
           </div>

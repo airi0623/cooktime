@@ -1,4 +1,4 @@
-if (location.pathname.match("recipes/new")){
+// if (location.pathname.match("recipes/new") ) {
   document.addEventListener('DOMContentLoaded', function(){
 
   // 追加フォームを区別するために数字を与える
@@ -96,4 +96,4 @@ if (location.pathname.match("recipes/new")){
       });
     });
   });
-};
+// };

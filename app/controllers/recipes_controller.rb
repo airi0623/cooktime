@@ -13,7 +13,7 @@ class RecipesController < ApplicationController
     @ingredient = @recipe.ingredients.build
   end
   def create
-    @recipe = Recipe.new(recipe_params) 
+    @recipe = Recipe.new(recipe_params)
     if @recipe.save
       redirect_to my_recipe_user_path(id: current_user) # redirect先で必要なidを入れる
     else
@@ -24,6 +24,7 @@ class RecipesController < ApplicationController
     @ingredients = Ingredient.where(recipe_id: params[:id])
     @recipe = Recipe.find(params[:id])
     @user = User.find(@recipe.user_id)
+    @things = Thing.all
   end
   def edit
     authenticate_user!
@@ -88,7 +89,7 @@ class RecipesController < ApplicationController
   def recipe_params
     params.require(:recipe).permit(
       {images: []},:title,:feature,:eat,:category_id,:cold_date,:frozen_date,:time,:text,
-      ingredients_attributes:[:id, :recipe_id, :thing_id, :amount, :_destroy])
+      ingredients_attributes:[:id, :recipe_id, :thing_id, :name, :amount, :_destroy])
       .merge(user_id: current_user.id)
   end
 

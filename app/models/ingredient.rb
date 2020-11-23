@@ -9,6 +9,7 @@ class Ingredient < ApplicationRecord
     # validates :recipe_id
     # idをバリデーションに入れるとまだ発行されていないidのためエラーがでる
     validates :thing_id
+    validates :name
     validates :amount, format: {with: /\d/}
   end
 end
