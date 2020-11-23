@@ -1,6 +1,6 @@
 class Ingredient < ApplicationRecord
-  extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to_active_hash :thing
+  # extend ActiveHash::Associations::ActiveRecordExtensions
+  # belongs_to_active_hash :thing
 
   belongs_to :recipe
   belongs_to :thing

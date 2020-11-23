@@ -10,11 +10,12 @@ $(function() {
   });
 
   let index = 1;
-  $('.onegai') 
+  $('.inserted-item') 
     .on('cocoon:after-insert', function(e, insertedItem) {
       $(insertedItem).find('.select').attr('data-select', index);
       $(insertedItem).find('.box-spoon').attr('data-spoon', index);
       $(insertedItem).find('.box-unit').attr('data-unit', index);
+      $(insertedItem).find('.box-result').attr('data-result', index);
       index = index+1
 
       $('.select').on('change',function(e){

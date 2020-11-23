@@ -1,4 +1,4 @@
-if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
+if (location.pathname.match("recipes/new") || location.pathname.match("recipes/edit") ){
   document.addEventListener('DOMContentLoaded', function(){
 
     const clickUpload= document.getElementById('click-upload-id');

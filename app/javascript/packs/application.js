@@ -8,15 +8,18 @@ require('jquery')
 require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
-import "cocoon";
 
-require("../ingredient")
+import "cocoon";
+//require ("select2")
+
+// require("../ingredient")
 require("../preview")
 require("../top")
 require('../slick.min')
 require('../slide')
 require('../calc')
 require('../preview_one')
+require('../search_thing')
 
 
 // require("../slide")
