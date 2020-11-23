@@ -74,13 +74,11 @@ class RecipesController < ApplicationController
       # id => "12"
     end
   end
-
   def search_thing
     if params[:keyword] == ""
       return nil 
     else
       tag = Thing.where(['kana LIKE ?', "%#{params[:keyword]}%"])
-
       render json: { keyword: tag }
     end
   end

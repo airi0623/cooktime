@@ -1,4 +1,5 @@
-// if (location.pathname.match("recipes/new") ) {
+if (location.pathname.match("recipes/new") ) {
+  console.log("incremental")
   document.addEventListener('DOMContentLoaded', function(){
 
   // 追加フォームを区別するために数字を与える
@@ -14,7 +15,6 @@
     });
 
   // clickイベントが起きる前のイベントを動かす
-    console.log("1つの時")
     const inputElement = document.querySelector(`#thing-select[data-select="0"]`);
     inputElement.addEventListener("keyup",function(){
       const keyword = document.querySelector(`#thing-select[data-select="0"]`).value;
@@ -53,7 +53,6 @@
     // ２つ目以降 **JqueryとJavascriptのあたいの取得方法が違うのか、混同するとうまくいかなかった
     $('.inserted-item') 
     .on('cocoon:after-insert', function() {
-      console.log("2つ以上の時")
       $('.select').on('keyup', function(){
         const dataSelectNum = $(this).attr('data-select')
         console.log("data属性は"+dataSelectNum)
@@ -96,4 +95,4 @@
       });
     });
   });
-// };
+};

@@ -19,7 +19,7 @@ require('../slick.min')
 require('../slide')
 require('../calc')
 require('../preview_one')
-require('../search_thing')
+require('../incremental')
 
 
 // require("../slide")
