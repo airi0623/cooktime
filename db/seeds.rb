@@ -8,7 +8,7 @@
 
 require 'faker'
 
-Thingのデータ作成
+#Thingのデータ作成
 Thing.create(thing_name:'にんじん', kana:'にんじん',spoon:'', unit:'本')
 Thing.create(thing_name:'大根', kana:'だいこん', spoon:'', unit:'本')
 Thing.create(thing_name:'じゃがいも', kana:'じゃがいも', spoon:'', unit:'個')
