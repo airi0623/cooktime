@@ -12,6 +12,7 @@
         <li class="nav-item"><%= link_to "cooktimeについて" ,about_recipes_path , method: :get, class:"nav-link" %></li>
         <li class="nav-item"><%= link_to "ランキング" ,likes_path , method: :get, class:"nav-link" %></li>
         <li class="nav-item"><%= link_to "レシピ投稿" ,new_recipe_path , method: :get, class:"nav-link mr-3" %></li>
+        <li class="nav-item"><%= link_to "レシピ一覧" , more_recipes_path , method: :get, class:"nav-link mr-3" %></li>
         <% if user_signed_in? %>
           <li class="nav-item"><%= link_to "マイページ", user_path(current_user.id), method: :get, class: "nav-link btn-header-red" %></li> 
           <li class="nav-item"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "nav-link btn-header-red" %></li> 

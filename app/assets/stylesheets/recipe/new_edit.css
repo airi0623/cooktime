@@ -151,3 +151,11 @@ h2 {
   font-weight: bolder;
   color: #cb2f27;
 }
+/* インクリメンタルサーチ */
+.box-result{
+  margin-left:15px;
+}
+.result{
+  cursor: pointer;
+  border-bottom: 2px dotted #cb2f27;
+}

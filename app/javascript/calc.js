@@ -1,5 +1,4 @@
 $(function() {
-  console.log("OK")
   $('.input-number').on('change',function(e){
 
     let klass = e.target.dataset.recipeId
