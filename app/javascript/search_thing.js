@@ -6,6 +6,7 @@ if (location.pathname.match("recipes/new")){
   $('.inserted-item') 
     .on('cocoon:after-insert', function(e, insertedItem) {
       $(insertedItem).find('.select').attr('data-select', index);
+      $(insertedItem).find('.box-thing').attr('data-thing', index);
       $(insertedItem).find('.box-spoon').attr('data-spoon', index);
       $(insertedItem).find('.box-unit').attr('data-unit', index);
       $(insertedItem).find('.box-result').attr('data-result', index);
@@ -38,12 +39,9 @@ if (location.pathname.match("recipes/new")){
             const clickElement = document.getElementById(tag.id);
             clickElement.addEventListener("click", () => {
               document.querySelector(`#thing-select[data-select="0"]`).value = clickElement.textContent;
-              
-              const dataSpoon = document.querySelector(`#spoon-auto[data-spoon="0"]`);
-              const dataUnit = document.querySelector(`#unit-auto[data-unit="0"]`);
-              dataUnit.innerHTML = tag.unit;
-              dataSpoon.innerHTML = tag.spoon;
-
+              document.querySelector(`#id-thing[data-thing="0"]`).value = tag.id;
+              document.querySelector(`#spoon-auto[data-spoon="0"]`).innerHTML = tag.spoon;
+              document.querySelector(`#unit-auto[data-unit="0"]`).innerHTML = tag.unit;
               clickElement.remove();
               searchResult.innerHTML = "";
             });
@@ -77,18 +75,18 @@ if (location.pathname.match("recipes/new")){
               const childElement2 = document.createElement("div");
               childElement2.setAttribute("class", "result");
               childElement2.setAttribute("id", tag.id);
+              childElement2.setAttribute("value", tag.id);
               childElement2.innerHTML = tag.thing_name;
               searchResult2.appendChild(childElement2);
             
               const clickElement2 = document.getElementById(tag.id);
               clickElement2.addEventListener("click", () => {
                 document.querySelector(`#thing-select[data-select="${dataSelectNum}"]`).value = clickElement2.textContent;
-                
-                const dataSpoon2 = document.querySelector(`#spoon-auto[data-spoon="${dataSelectNum}"]`);
-                const dataUnit2 = document.querySelector(`#unit-auto[data-unit="${dataSelectNum}"]`);
-                dataUnit2.innerHTML = tag.unit;
-                dataSpoon2.innerHTML = tag.spoon;
-  
+                console.log(tag.id)
+                document.querySelector(`#id-thing[data-thing="${dataSelectNum}"]`).value = tag.id;
+                document.querySelector(`#spoon-auto[data-spoon="${dataSelectNum}"]`).innerHTML = tag.spoon;
+                document.querySelector(`#unit-auto[data-unit="${dataSelectNum}"]`).innerHTML = tag.unit;
+
                 clickElement2.remove();
                 searchResult2.innerHTML = "";
               });
