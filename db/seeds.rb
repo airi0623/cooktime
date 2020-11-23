@@ -69,7 +69,7 @@ require 'faker'
   frozen_date = Faker::Number.between(from: 1, to: 10)
   time  = Faker::Number.between(from: 2, to: 200)
   text = 'テストで登録しているレシピです。テストで登録しているレシピです。テストで登録しているレシピです。テストで登録しているレシピです。テストで登録しているレシピです。テストで登録しているレシピです。テストで登録しているレシピです。'
-  images = [open('./db/fixtures/img.png')]
+  images = [open('./db/fixtures/test.png')]
   Recipe.create!(
     user_id:      user_id,
     title:        title,
