@@ -7,6 +7,7 @@
     <%= form_with(model: @recipe, class:"recipes-post-main", local: true) do |f| %>
       <!-- エラー文 -->
       <%= render 'shared/error_messages', model: f.object %>
+      <div class="attention">＊＊一度登録したレシピの変更はできますが、削除はできません＊＊</div>
 
       <div class="new-recipes">
         <!-- 画像ボタン -->
@@ -104,6 +105,7 @@
               %>
             </div>
           </div>
+          
           <div id="detail-association-insertion-point"></div>
 
             <%= f.fields_for :ingredients do |form| %>
