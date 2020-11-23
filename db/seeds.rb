@@ -86,21 +86,21 @@ require 'faker'
   )
 end
 
-# Ingredientのデータ作成
-20.times do
-  recipe_id = Faker::Number.between(from: 1, to: 20)
-  thing_id = Faker::Number.between(from: 1, to: 25)
-  name = "テスト"
-  amount = Faker::Number.between(from: 2, to: 99)
-  Ingredient.create!(
-    recipe_id: recipe_id,
-    thing_id:  thing_id,
-    name:      name,
-    amount:    amount,
-    created_at:         "2020-11-01 00:00:00",
-    updated_at:         "2020-11-01 00:00:00"
-  )
-end
+# # Ingredientのデータ作成
+# 20.times do
+#   recipe_id = Faker::Number.between(from: 1, to: 20)
+#   thing_id = Faker::Number.between(from: 1, to: 25)
+#   name = "テスト"
+#   amount = Faker::Number.between(from: 2, to: 99)
+#   Ingredient.create!(
+#     recipe_id: recipe_id,
+#     thing_id:  thing_id,
+#     name:      name,
+#     amount:    amount,
+#     created_at:         "2020-11-01 00:00:00",
+#     updated_at:         "2020-11-01 00:00:00"
+#   )
+# end
 
 
 
