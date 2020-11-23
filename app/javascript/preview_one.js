@@ -1,4 +1,4 @@
-if (location.pathname.match("users/new")){
+if (location.pathname.match("users/sign_up")){
   document.addEventListener('DOMContentLoaded', function(){
     const ImageList = document.getElementById('image-list');
 

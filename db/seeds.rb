@@ -61,14 +61,14 @@ require 'faker'
 #recipeのデータ作成
 20.times do
   user_id = Faker::Number.between(from: 1, to: 3)
-  title = Faker::Base.regexify("[aあ]{1,15}")
-  feature = Faker::Base.regexify("[aあ]{1,100}")
-  eat = Faker::Base.regexify("[aあ]{1,100}")
+  title = 'test_recipe'
+  feature = 'テストで登録しているレシピです。テストで登録しているレシピです。テストで登録しているレシピです。テストで登録しているレシピです。テストで登録しているレシピです。テストで登録しているレシピです。テストで登録しているレシピです。'
+  eat = 'テストで登録しているレシピです。テストで登録しているレシピです。テストで登録しているレシピです。テストで登録しているレシピです。テストで登録しているレシピです。テストで登録しているレシピです。テストで登録しているレシピです。'
   category_id = Faker::Number.between(from: 2, to: 6)
-  cold_date = Faker::Number.between(from: 2, to: 99)
-  frozen_date = Faker::Number.between(from: 2, to: 99)
-  time  = Faker::Number.between(from: 2, to: 999)
-  text = Faker::Base.regexify("[aあ]{1,100}")
+  cold_date = Faker::Number.between(from: 1, to: 10)
+  frozen_date = Faker::Number.between(from: 1, to: 10)
+  time  = Faker::Number.between(from: 2, to: 200)
+  text = 'テストで登録しているレシピです。テストで登録しているレシピです。テストで登録しているレシピです。テストで登録しているレシピです。テストで登録しているレシピです。テストで登録しているレシピです。テストで登録しているレシピです。'
   images = [open('./db/fixtures/img.png')]
   Recipe.create!(
     user_id:      user_id,
@@ -90,7 +90,7 @@ end
 20.times do
   recipe_id = Faker::Number.between(from: 1, to: 20)
   thing_id = Faker::Number.between(from: 1, to: 25)
-  name = Faker::Base.regexify("[aあ]{1,8}")
+  name = "テスト"
   amount = Faker::Number.between(from: 2, to: 99)
   Ingredient.create!(
     recipe_id: recipe_id,
