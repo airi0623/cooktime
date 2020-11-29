@@ -81,7 +81,6 @@ if (location.pathname.match("recipes/new") ) {
               const clickElement2 = document.getElementById(tag.id);
               clickElement2.addEventListener("click", () => {
                 document.querySelector(`#thing-select[data-select="${dataSelectNum}"]`).value = clickElement2.textContent;
-                console.log(tag.id)
                 document.querySelector(`#id-thing[data-thing="${dataSelectNum}"]`).value = tag.id;
                 document.querySelector(`#spoon-auto[data-spoon="${dataSelectNum}"]`).innerHTML = tag.spoon;
                 document.querySelector(`#unit-auto[data-unit="${dataSelectNum}"]`).innerHTML = tag.unit;

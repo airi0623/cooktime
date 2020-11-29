@@ -33,5 +33,9 @@ Rails.application.routes.draw do
       get 'more'
       get 'search_thing'
     end
+    member do
+      get 'search_record'
+      get 'search_thing_edit'
+    end
   end
 end
