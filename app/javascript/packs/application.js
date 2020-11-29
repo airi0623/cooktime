@@ -13,14 +13,14 @@ import "cocoon";
 //require ("select2")
 
 // require("../ingredient")
-require("../preview")
-require("../top")
+require('../preview')
+require('../top')
 require('../slick.min')
 require('../slide')
 require('../calc')
 require('../preview_one')
 require('../incremental')
-
+require('../edit_incremental')
 
 // require("../slide")
 //require("../scripts")

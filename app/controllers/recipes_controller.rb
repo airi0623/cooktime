@@ -82,6 +82,10 @@ class RecipesController < ApplicationController
       render json: { keyword: tag }
     end
   end
+  def search_record
+    unit = Thing.where(['id LIKE ?', "#{params[:keyword]}"])
+    render json: { keyword: unit }
+  end
 
   private
   def recipe_params
