@@ -82,6 +82,14 @@ class RecipesController < ApplicationController
       render json: { keyword: tag }
     end
   end
+  def search_thing_edit
+    if params[:keyword] == ""
+      return nil 
+    else
+      tag = Thing.where(['kana LIKE ?', "%#{params[:keyword]}%"])
+      render json: { keyword: tag }
+    end
+  end
   def search_record
     unit = Thing.where(['id LIKE ?', "#{params[:keyword]}"])
     render json: { keyword: unit }
