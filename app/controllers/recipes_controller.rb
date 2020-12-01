@@ -94,6 +94,10 @@ class RecipesController < ApplicationController
     unit = Thing.where(['id LIKE ?', "#{params[:keyword]}"])
     render json: { keyword: unit }
   end
+  def search_image
+    for_img = Recipe.where(['id LIKE ?', "#{params[:keyword]}"])
+    render json: { keyword: for_img }
+  end
 
   private
   def recipe_params

@@ -71,6 +71,13 @@ h2 {
   font-size: 14px;
   font-weight: bolder;
 }
+/* 登録した画像・新規登録画像 */
+.recip-edit{
+  margin-top: 30px;
+  font-size: 13px;
+  font-weight: bolder;
+  color: #cb2f27;
+}
 /* 材料箇所のデザイン ------------------------------ */
 /* 材料追加ボタン */
 .add_fields{

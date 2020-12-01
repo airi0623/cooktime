@@ -1,7 +1,9 @@
-<%= form_with(model: @recipe, class:"recipes-post-main", local: true) do |f| %>
+<%= form_with(model: @recipe, class:"recipes-post-main", id:"form_id", data:{form:@recipe.id}, local: true) do |f| %>
       <!-- エラー文 -->
       <%= render 'shared/error_messages', model: f.object %>
-      <div class="attention">＊＊一度登録したレシピの変更はできますが、削除はできません＊＊</div>
+      <% if controller.action_name == "new" %>
+        <div class="attention">＊＊一度登録したレシピの変更はできますが、削除はできません＊＊</div>
+      <% end %>
 
       <div class="new-recipes">
         <!-- 画像ボタン -->
@@ -16,17 +18,26 @@
           </label>
         </div>
         <!-- 画像挿入 -->
-        <div class="row form-box image-box-big" id="image-box-big-id">
-          <%#<div id="image-box" class="image-box col-md-3 col-6" data-index="index" >
-              <div class = "image-box-s" >
-                <img src ="URL" class = "image-size">
-              </div>` 
-                <div class = "change-box-edit-delete">
-                  <div class = "change-box" id = recipe-image-edit-${imageElementNum } data-index="${imageElementNum}" >編集</div>
-                  <div class = "change-box" id = recipe-image-delete-${imageElementNum } data-index="${imageElementNum}" >削除</div>
-                </div>  
-            </div> %>
-        </div>
+        <% if controller.action_name == "new" %>
+          <div class="row image-box-big" id="image-box-big-id">
+            <%#<div id="image-box" class="image-box col-md-3 col-6" data-index="index" >
+                <div class = "image-box-s" >
+                  <img src ="URL" class = "image-size">
+                </div>` 
+                  <div class = "change-box-edit-delete">
+                    <div class = "change-box" id = recipe-image-edit-${imageElementNum } data-index="${imageElementNum}" >編集</div>
+                    <div class = "change-box" id = recipe-image-delete-${imageElementNum } data-index="${imageElementNum}" >削除</div>
+                  </div>  
+              </div> %>
+          </div>
+        <%else%>
+          <div class="recip-edit">登録中の画像</div>
+          <div class="row image-box-big" id="exit_image-box-big-id">
+          </div>
+          <div class="recip-edit">*画像を変更する場合、新たにアップロードしてください*</div>
+          <div class="row image-box-big" id="image-box-big-id">
+          </div>
+        <%end%>
         <!-- レシピタイトル -->
         <div class="row form-box">
           <div class="forms-item col-md-3 indispensable">
