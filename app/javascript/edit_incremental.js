@@ -24,7 +24,6 @@ if (location.pathname.match("/edit") ) {
     //既に存在する材料に単位を表示させる
     const times = document.querySelectorAll('.select').length
     for ( let i = 0; i < times; i++ ) {
-      //console.log(i)
       const keyValue = document.querySelector(`#id-thing[data-thing="edit-${i}"]`).value
       const XHR = new XMLHttpRequest();
       XHR.open("GET", `search_record/?keyword=${keyValue}`, true);

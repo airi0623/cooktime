@@ -36,6 +36,7 @@ Rails.application.routes.draw do
     member do
       get 'search_record'
       get 'search_thing_edit'
+      get 'search_image'
     end
   end
 end
