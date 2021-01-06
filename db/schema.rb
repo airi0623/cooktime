@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 2021_01_06_083040) do
     t.bigint "user_id"
     t.bigint "recipe_id"
     t.string "repo", null: false
+    t.string "repo_image", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["recipe_id"], name: "index_reports_on_recipe_id"
