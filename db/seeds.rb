@@ -126,3 +126,18 @@ require 'faker'
 # Like.create(user_id: 5, recipe_id: 27)
 # Like.create(user_id: 5, recipe_id: 28)
 
+# つくれぽのデータ作成
+10.times do
+  user_id = Faker::Number.between(from: 1, to: 10)
+  recipe_id = Faker::Number.between(from: 1, to: 5)
+  repo_image = open('./db/fixtures/test.png')
+  repo = Faker::Base.regexify("[aあ]{1,100}")
+  Report.create!(
+    user_id:     user_id,
+    recipe_id:   recipe_id,
+    repo_image:  repo_image,
+    repo:        repo,
+    created_at:         "2020-11-01 00:00:00",
+    updated_at:         "2020-11-01 00:00:00"
+  )
+end
