@@ -15,7 +15,6 @@ span .number{
   align-items: center;
 }
 .user-icon{
-  margin: 0 30px;
   text-align: center;
 }
 .user-name-box{
@@ -234,4 +233,53 @@ p {
 }
 .cook{
   margin-top: 50px;
+}
+/* ボタン＞戻る・つくれぽ登録 --------------------------------*/
+.btn-back{
+  height: 50px;
+  width: 300px;
+  margin: 5px 10px 0 10px;
+  border-radius: 10px;
+  background-color: #cb2f27;
+  color: #ffff;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-repo{
+  height: 50px;
+  width: 300px;
+  margin: 5px 10px 0 10px;
+  border-radius: 10px;
+  background-color: #cb2f27;
+  color: #ffff;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-2-box{
+  margin-top:30px;
+  display: flex;
+  justify-content: center;
+}
+.btn-back:hover{
+  transition: 0.3s ;
+  color: #ffffff;
+  background-color:#dd7069 ;
+}
+.btn-repo:hover{
+  transition: 0.3s ;
+  color: #ffffff;
+  background-color:#dd7069 ;
+}
+/* つくれぽ --------------------------------*/
+.wrap-repo{
+  margin: 60px 0 0 0;
+  height:300px;
+  border-radius: 18px 18px 18px 18px/ 18px 18px 18px 18px;
+  border: solid 2px #724B3D;
 }

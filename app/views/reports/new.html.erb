@@ -1,0 +1,39 @@
+<%= render "shared/header" %>
+<%= render "shared/fixed-btn" %>
+
+<div class="container">
+  <div class="wrap">
+    <h2 class="h2-title">つくレポ投稿</h2>
+    <%= form_with model:@report, url: recipe_reports_path, class:"" , local: true do |f| %>
+      <!-- エラー文 -->
+      <%= render 'shared/error_messages', model: f.object %>
+      
+      <!-- 画像ボタン -->
+        <div class="row form-box">
+          <div class="forms-item col-md-3 indispensable">
+            画像
+          </div>
+          <label for="user-icon-m" class ="click-upload col-md-7" id ="click-upload-id">
+            <span>画像をアップロード</span>
+            <%= f.file_field :repo_image, class:"upload-btn user-icon-m col-md-7", id:"user-icon-m"%> 
+          </label>
+        </div>
+        <div class="row">
+          <div class="col-md-3 margin-15"></div>
+          <div class="col-md-7 icon-box" id="image-list">
+            <!--ここに登録された画像のプレビューが表示される-->
+          </div>
+        </div>
+        <div class="row form-box">
+          <div class="forms-item col-md-3 indispensable ">
+            つくレポ
+          </div>
+          <%= f.text_area :repo, class:"input-area-wide recipes-eat col-md-7"%>
+        </div>
+        <div class='submit-btn'>
+          <%= f.submit "送信" ,class:"submit-red-btn" %>
+        </div>
+    <%end%>
+  </div>
+</div>
+<%= render "shared/footer" %>

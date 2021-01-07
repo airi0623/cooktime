@@ -9,6 +9,7 @@ class Recipe < ApplicationRecord
   serialize :images, JSON
   # その他アソシエーション
   belongs_to :user
+  has_many :reports
   has_many :choices, dependent: :destroy
   has_many :users, through: :choices, dependent: :destroy
   has_many :likes, dependent: :destroy
