@@ -10,8 +10,8 @@
           <%= link_to recipe_path(recipe.id) do %>
             <!-- いいねトマト -->
             <div class='like-box'>
-            <div><%= image_tag "icon-star-light_green.png", alt:"star", class:"icons-type"%></div>
-            <div class="like-box">お気に入り<span><%= recipe.likes.length %></span></div>
+              <div><%= image_tag "icon-star-light_green.png", alt:"star", class:"icons-type"%></div>
+              <div class="like-box">お気に入り<span><%= recipe.likes.length %></span></div>
             </div> 
             <!-- タイトル -->
             <div class="recipe-title">

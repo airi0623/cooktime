@@ -14,6 +14,11 @@ class ReportsController < ApplicationController
     end
   end
 
+  def show
+    @recipe = Recipe.find(params[:recipe_id])
+    @reports = Report.where(recipe_id: @recipe.id)
+  end
+
   private
   def repo_params
     params.require(:report).permit(:repo_image, :repo).merge( recipe_id: @recipe.id, user_id: current_user.id)

@@ -2,7 +2,7 @@
 <%= render "shared/fixed-btn" %>
 
 <div class="container">
-  <div class="wrap">
+  <div class="wrap-s">
     <h2 class="h2-title"><%=@recipe.title%></h2>
     <div class=tomato-box row>
       <!-- いいねトマト -->
@@ -128,8 +128,31 @@
       <% end %>
     </div>
   </div>
-  <div class="wrap-repo">
-    <h3 class="h3-title">つくレポ</h3>
-  </div>
 </div>
+  <div class="wrap-repo">
+    <div class="h3-title">つくレポ</div>
+    <div class="color">
+      <ul class="row">
+        <% @reports.each do |report|%>
+          <li class="repo-box col-md-3">
+            <div class="white-box">
+              <div class='repo-time'>
+                <%= report.created_at.to_s(:datetime_jp) %>
+              </div>
+              <div class='repo-img-index'>
+                <%= image_tag report.repo_image.url, class: "img-repo" %>
+              </div>
+              <div class="repo-text">
+                <%= report.repo %>
+              </div>
+              <div class='repo-user-info'>
+                <%= image_tag report.user.icon.url, class: "user-icon-xs" %>
+                <div class="repo-user-name" ><%= report.user.nickname %></div>
+              </div> 
+            </div> 
+          </li>  
+        <% end %>
+      </ul>
+    </div>
+  </div>
 <%= render "shared/footer" %>
