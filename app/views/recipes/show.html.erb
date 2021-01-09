@@ -129,30 +129,32 @@
     </div>
   </div>
 </div>
-  <div class="wrap-repo">
-    <div class="h3-title">つくレポ</div>
-    <div class="color">
-      <ul class="row">
-        <% @reports.each do |report|%>
-          <li class="repo-box col-md-3">
-            <div class="white-box">
-              <div class='repo-time'>
-                <%= report.created_at.to_s(:datetime_jp) %>
-              </div>
-              <div class='repo-img-index'>
-                <%= image_tag report.repo_image.url, class: "img-repo" %>
-              </div>
-              <div class="repo-text">
-                <%= report.repo %>
-              </div>
-              <div class='repo-user-info'>
-                <%= image_tag report.user.icon.url, class: "user-icon-xs" %>
-                <div class="repo-user-name" ><%= report.user.nickname %></div>
+  <% if @reports.present? %>
+    <div class="wrap-repo">
+      <div class="h3-title">つくレポ</div>
+      <div class="color">
+        <ul class="row">
+          <% @reports.each do |report|%>
+            <li class="repo-box col-md-3">
+              <div class="white-box">
+                <div class='repo-time'>
+                  <%= report.created_at.to_s(:datetime_jp) %>
+                </div>
+                <div class='repo-img-index'>
+                  <%= image_tag report.repo_image.url, class: "img-repo" %>
+                </div>
+                <div class="repo-text">
+                  <%= report.repo %>
+                </div>
+                <div class='repo-user-info'>
+                  <%= image_tag report.user.icon.url, class: "user-icon-xs" %>
+                  <div class="repo-user-name" ><%= report.user.nickname %></div>
+                </div> 
               </div> 
-            </div> 
-          </li>  
-        <% end %>
-      </ul>
+            </li>  
+          <% end %>
+        </ul>
+      </div>
     </div>
-  </div>
+  <%end%>
 <%= render "shared/footer" %>
