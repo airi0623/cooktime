@@ -2,7 +2,7 @@
 <%= render "shared/fixed-btn" %>
 
 <div class="container">
-  <div class="wrap">
+  <div class="wrap-s">
     <h2 class="h2-title"><%=@recipe.title%></h2>
     <div class=tomato-box row>
       <!-- いいねトマト -->
@@ -32,8 +32,8 @@
         <%= link_to profile_user_path(@user.id)  do%>
           <!-- :url記述したらエラーがでる -->
           <div class="link-user_page row">
-            <div class="col-md-2 user-icon"><%= image_tag @user.icon.url, alt:"アイコン", class:"user-icon-s"%></div>
-            <div class="col-md-4 user-name-box"><span class="user-name"><%= @user.nickname%>さん</span>が投稿したレシピ</div>
+            <div class="col-md-1 user-icon"><%= image_tag @user.icon.url, alt:"アイコン", class:"user-icon-s"%></div>
+            <div class="col-md-5 user-name-box"><span class="user-name"><%= @user.nickname%>さん</span>が投稿したレシピ</div>
           </div>
         <% end%>
       </div>
@@ -119,11 +119,42 @@
         <p><%= @recipe.text %></p>
       </div>
     </div>
-    <div class="btn-more-box">
-      <%= link_to :back, class:"btn-more"  do %>
+    <div class="row btn-2-box">
+      <%= link_to :back, class:"btn-back"  do %>
         戻る
+      <% end %>
+      <%= link_to new_recipe_report_path(@recipe.id), class:"btn-repo"  do %>
+        つくレポを投稿する
       <% end %>
     </div>
   </div>
 </div>
+  <% if @reports.present? %>
+    <div class="wrap-repo">
+      <div class="h3-title">つくレポ</div>
+      <div class="color">
+        <ul class="row">
+          <% @reports.each do |report|%>
+            <li class="repo-box col-md-3">
+              <div class="white-box">
+                <div class='repo-time'>
+                  <%= report.created_at.to_s(:datetime_jp) %>
+                </div>
+                <div class='repo-img-index'>
+                  <%= image_tag report.repo_image.url, class: "img-repo" %>
+                </div>
+                <div class="repo-text">
+                  <%= report.repo %>
+                </div>
+                <div class='repo-user-info'>
+                  <%= image_tag report.user.icon.url, class: "user-icon-xs" %>
+                  <div class="repo-user-name" ><%= report.user.nickname %></div>
+                </div> 
+              </div> 
+            </li>  
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  <%end%>
 <%= render "shared/footer" %>

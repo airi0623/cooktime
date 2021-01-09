@@ -21,7 +21,8 @@ require('../incremental')
 require('../edit_incremental')
 require('../preview')
 require('../edit_preview')
-require('../preview_one')
+require('../preview_one_signup')
+require('../preview_one_report')
 // require('../edit_preview_one')
 
 

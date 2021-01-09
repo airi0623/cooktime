@@ -14,7 +14,6 @@
           <label for="recipe-image" class ="click-upload col-md-7" id ="click-upload-id">
             <span>クリックして画像をアップロード</span>
             <%= f.file_field :image, multiple: true, class:"upload-btn", id:"recipe-image", name:"recipe[images][]", data: {index:0} %> 
-            <%# ファイル選択ボタンを生成 jsで生成 %>
           </label>
         </div>
         <!-- 画像挿入 -->

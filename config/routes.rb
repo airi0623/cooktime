@@ -28,6 +28,7 @@ Rails.application.routes.draw do
     post 'likes' => 'likes#create'
     delete '/likes' => 'likes#destroy'
     resources :ingredients
+    resources :reports
     collection do
       get 'about'
       get 'more'

@@ -30,10 +30,14 @@
 }
 /* 編集削除ボタン */
 .content-btn{
+  width:100%;
+  display: flex;
+  justify-content: center;
 }
 .btn-change-my_recipe{
   margin: 5px;
   padding:8px 30px;
+  width:90%;
   color:#cb2f27;
   font-weight: bolder;
   font-size: 13px;
@@ -41,6 +45,7 @@
   border: 2px solid #cb2f27;
   cursor : pointer;
   display: inline-block;
+  text-align: center;
 }
 .btn-change-my_recipe:hover{
   transition: 0.3s ;

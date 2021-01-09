@@ -25,6 +25,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @user = User.find(@recipe.user_id)
     @things = Thing.all
+    @reports = Report.where(recipe_id: @recipe.id).order("created_at DESC")
   end
   def edit
     authenticate_user!
