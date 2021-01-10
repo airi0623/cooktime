@@ -23,10 +23,14 @@ class User < ApplicationRecord
 
   def self.guest
     find_or_create_by!(email: 'guest@gmail.com') do |user|
-      user.password = SecureRandom.urlsafe_base64
+      user.password = SecureRandom.alphanumeric(10)
       user.nickname = "かんたん太郎"
+      user.email = 'guest@gmail.com'
+      user.profile = "このアカウントを使うとかんたんにログインしていただけます。
+      採用担当者様がよりかんたんにサイトを閲覧していただけるよう設置いただいました。"
       user.family_name = "かんたん"
       user.first_name = "太郎"
+      user.icon = open('./db/fixtures/icon.png')
     end
   end
 end
