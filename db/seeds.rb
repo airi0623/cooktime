@@ -37,7 +37,7 @@ Thing.create(thing_name:'卵', kana:'たまご', spoon:'', unit:'個')
 Thing.create(thing_name:'米', kana:'こめ', spoon:'', unit:'g')
 
 # userのデータ作成
-2.times do
+3.times do
   icon = open('./db/fixtures/icon.png')
   nickname  = Faker::Name.last_name 
   profile = Faker::Base.regexify("[aあ]{1,100}")
@@ -107,27 +107,15 @@ end
 
 
 # # お気に入りのデータ作成
-20.times do
-  recipe_id = Faker::Number.between(from: 1, to: 20)
-  thing_id = Faker::Number.between(from: 1, to: 25)
-  name = "テスト"
-  amount = Faker::Number.between(from: 2, to: 99)
-  Ingredient.create!(
-    recipe_id: recipe_id,
-    user_id:  thing_id,
-    created_at:         "2020-11-01 00:00:00",
-    updated_at:         "2020-11-01 00:00:00"
-  )
-end
-
-Like.create(user_id: 7, recipe_id: 62)
-Like.create(user_id: 7, recipe_id: 63)
-Like.create(user_id: 5, recipe_id: 23)
-Like.create(user_id: 5, recipe_id: 24)
-Like.create(user_id: 5, recipe_id: 25)
-Like.create(user_id: 5, recipe_id: 26)
-Like.create(user_id: 5, recipe_id: 27)
-Like.create(user_id: 5, recipe_id: 28)
+Like.create(user_id: 1, recipe_id: 1)
+Like.create(user_id: 1, recipe_id: 2)
+Like.create(user_id: 1, recipe_id: 3)
+Like.create(user_id: 2, recipe_id: 1)
+Like.create(user_id: 2, recipe_id: 2)
+Like.create(user_id: 2, recipe_id: 3)
+Like.create(user_id: 3, recipe_id: 1)
+Like.create(user_id: 3, recipe_id: 2)
+Like.create(user_id: 3, recipe_id: 4)
 
 # つくれぽのデータ作成
 10.times do
