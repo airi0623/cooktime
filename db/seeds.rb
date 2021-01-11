@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'faker'
+require 'gimei'
 
 #Thingのデータ作成
 Thing.create(thing_name:'にんじん', kana:'にんじん',spoon:'', unit:'本')
@@ -68,9 +69,9 @@ end
   feature = 'テストで登録しているレシピです。テストで登録しているレシピです。テストで登録しているレシピです。テストで登録しているレシピです。テストで登録しているレシピです。テストで登録しているレシピです。テストで登録しているレシピです。'
   eat = 'テストで登録しているレシピです。テストで登録しているレシピです。テストで登録しているレシピです。テストで登録しているレシピです。テストで登録しているレシピです。テストで登録しているレシピです。テストで登録しているレシピです。'
   category_id = Faker::Number.between(from: 2, to: 6)
-  cold_date = Faker::Number.between(from: 1, to: 10)
-  frozen_date = Faker::Number.between(from: 1, to: 10)
-  time  = Faker::Number.between(from: 2, to: 200)
+  cold_date = Faker::Number.between(from: 5, to: 10)
+  frozen_date = Faker::Number.between(from: 5, to: 10)
+  time  = Faker::Number.between(from: 10, to: 30)
   text = 'テストで登録しているレシピです。テストで登録しているレシピです。テストで登録しているレシピです。テストで登録しているレシピです。テストで登録しているレシピです。テストで登録しているレシピです。テストで登録しているレシピです。'
   images = [open('./db/fixtures/test.png')]
   Recipe.create!(

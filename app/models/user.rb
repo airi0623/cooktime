@@ -23,7 +23,8 @@ class User < ApplicationRecord
 
   def self.guest
     find_or_create_by!(email: 'guest@gmail.com') do |user|
-      user.password = SecureRandom.alphanumeric(10)
+      user.password = SecureRandom.urlsafe_base64
+      # user.password = SecureRandom.alphanumeric(10)
       user.nickname = "かんたん太郎"
       user.email = 'guest@gmail.com'
       user.profile = "このアカウントを使うとかんたんにログインしていただけます。
