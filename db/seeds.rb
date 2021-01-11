@@ -41,8 +41,10 @@ Thing.create(thing_name:'米', kana:'こめ', spoon:'', unit:'g')
   icon = open('./db/fixtures/icon.png')
   nickname  = Faker::Name.last_name 
   profile = Faker::Base.regexify("[aあ]{1,100}")
-  family_name = Gimei.last.kanji
-  first_name = Gimei.first.kanji
+  # family_name = Gimei.last.kanji
+  family_name = '料理'
+  # first_name = Gimei.first.kanji
+  first_name = '花子'
   email = Faker::Internet.free_email
   password = '1a1a1a1a'
   User.create!(
