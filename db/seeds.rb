@@ -69,11 +69,7 @@ User.create(icon: open('./db/fixtures/icon_3.png'), profile:'テストユーザ�
 # end
 
 #recipeのデータ作成
-Recipe.create(images:[open('./db/fixtures/img_1.png'), open('./db/fixtures/img_2.png')], profile:'テストユーザーです。料理と猫が好きです！私もみんなに見てもらえるレシピ投稿頑張ります！', nickname:'シャム猫花子', family_name:'シャム', first_name:'猫花子', email: 's@s', password: '1a1a1a1a', encrypted_password: '1a1a1a1a')
-
-#recipeのデータ作成
-20.times do
-  n = 1
+20.times do |n|
   i = n % 5
   user_id = Faker::Number.between(from: 1, to: 2)
   title = 'レシピタイトル'
@@ -99,7 +95,7 @@ Recipe.create(images:[open('./db/fixtures/img_1.png'), open('./db/fixtures/img_2
     created_at:   "2020-11-01 00:00:00",
     updated_at:   "2020-11-01 00:00:00"
   )
-  n += 1
+  n = n + 1
 end
 
 # Ingredientのデータ作成
@@ -134,8 +130,8 @@ Like.create(user_id: 3, recipe_id: 4)
 10.times do
   user_id = Faker::Number.between(from: 1, to: 2)
   recipe_id = Faker::Number.between(from: 1, to: 5)
-  repo_image =  ('./db/fixtures/test.png')
-  repo = Faker::Base.regexify("[aあ]{1,100}")
+  repo_image =  open('./db/fixtures/img_1.jpg')
+  repo = "美味しく作れました！とっても簡単で子供も大喜び！"
   Report.create!(
     user_id:     user_id,
     recipe_id:   recipe_id,
