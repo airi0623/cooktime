@@ -1,6 +1,6 @@
 
 # CookTime
-__URL__：http://175.41.218.75/
+__URL__：http://cooktime.work/
 <img width="100%" alt="スクリーンショット 2020-11-13 23 35 36" src="https://user-images.githubusercontent.com/69624304/99088927-0333f100-2610-11eb-8bdd-cced32705e85.png">
 
 
@@ -10,7 +10,7 @@ __ログイン方法__
 - 新規登録
 
 # このアプリでできること
-__URL__：http://175.41.218.75/recipes/about
+__URL__：http://cooktime.work/recipes/about
 <img width="100%" alt="スクリーンショット 2020-11-11 16 36 52" src="https://user-images.githubusercontent.com/69624304/98783105-59e8d180-243c-11eb-836b-90fdc3c98dc0.png">
 
 ### 買い物リスト自動作成
