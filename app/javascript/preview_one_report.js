@@ -19,7 +19,7 @@ if (location.pathname.match("reports/new")){
 
     document.getElementById('user-icon-m').addEventListener('change', function(e){
       // 画像が表示されている場合のみ、すでに存在している画像を削除する
-      console.log("OK")
+      
       const imageContent = document.getElementById('user-icon');
       if (imageContent){
         imageContent.remove();
